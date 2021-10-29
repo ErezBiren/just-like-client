@@ -13,7 +13,19 @@ h1 {
 .form {
   background-color: white;
   height: 80vh;
-  border-radius: 25px;
+  width: 674px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-color: var(--second-color);
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 10%;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  margin: 15%;
 }
 
 .community {

@@ -6,6 +6,8 @@
   cursor: pointer;
   color: var(--main-color);
   background-color: transparent;
+  min-height: 62px;
+  width: 100%;
 }
 
 .buttonContent {
