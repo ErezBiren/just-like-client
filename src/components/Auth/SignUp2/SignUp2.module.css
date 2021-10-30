@@ -1,0 +1,54 @@
+h1 {
+  color: var(--main-color);
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+}
+
+.form {
+  background-color: white;
+  height: 80vh;
+  min-width: 674px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-color: var(--second-color);
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 5%;
+  box-shadow: 5px 10px 18px #3833332c;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5% 15%;
+}
+
+.communityButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.regularSign {
+  display: flex;
+}
+
+.backgoundImageContainer {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.signupContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

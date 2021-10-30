@@ -1,7 +1,6 @@
-import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as BackgroundImage } from "../../../assets/auth/group100.svg";
-import { ReactComponent as Logo } from "../../../assets/auth/PurpleLogo.svg";
-import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";
+import React, { useState } from "react";
+import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
+import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
@@ -11,6 +10,10 @@ import { validateEmail } from "../../../services/validationsService";
 
 function SignUp() {
   const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    linkedin: "",
     email: "",
     password: "",
   });
@@ -35,19 +38,6 @@ function SignUp() {
 
     logIn(data.email, data.password);
   };
-  const connectWithLinkedin = (e) => {
-    e.preventDefault();
-    alert("linkedin");
-  };
-  const connectWithGoogle = (e) => {
-    e.preventDefault();
-    alert("google");
-  };
-
-  // const handleOpenResetPassword = (e) => {
-  //   e.preventDefault();
-  //   alert("handleOpenResetPassword");
-  // };
 
   return (
     <div class={styles.main}>
@@ -55,10 +45,27 @@ function SignUp() {
         <form onSubmit={handleSubmit}>
           <div class={styles.formContent}>
             <Logo width="125" height="125" />
-            <h1>התחברות למערכת</h1>
-            <HorizontalSeparatorWithText text="או התחברו עם">
-              {" "}
-            </HorizontalSeparatorWithText>
+            <h1>הרשמה למערכת</h1>
+            <TextField
+              placeholder="שם פרטי*"
+              onChange={handleChange}
+              name="firstName"
+            />
+            <TextField
+              placeholder="שם משפחה*"
+              onChange={handleChange}
+              name="lastName"
+            />
+            <TextField
+              placeholder="קישור לפרופיל לינקדאין*"
+              onChange={handleChange}
+              name="linkedin"
+            />
+            <TextField
+              placeholder="נייד*"
+              onChange={handleChange}
+              name="phone"
+            />
             <TextField
               placeholder="כתובת מייל*"
               onChange={handleChange}
@@ -69,10 +76,10 @@ function SignUp() {
               onChange={handleChange}
               name="password"
             />
-            <RoundedButton>התחברות</RoundedButton>
+            <RoundedButton style="width:50px">להרשמה</RoundedButton>
             <div className={styles.signupContainer}>
-              <span>לא נרשמת?</span>
-              <a href="#">להרשמה</a>
+              <span>נרשמת?</span>
+              <a href="#">להתחברות</a>
             </div>
           </div>
         </form>
