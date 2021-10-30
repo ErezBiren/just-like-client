@@ -13,4 +13,11 @@
 .buttonContent {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.textContainer {
+  margin-right: 15px;
+  font-size: 1rem;
+  font-weight: bold;
 }

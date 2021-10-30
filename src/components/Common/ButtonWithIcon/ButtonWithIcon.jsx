@@ -6,7 +6,7 @@ function ButtonWithIcon({ text, Icon, onClick }) {
     <button className={styles.button} onClick={onclick}>
       <div className={styles.buttonContent}>
         <Icon />
-        <div>{text}</div>
+        <div className={styles.textContainer}>{text}</div>
       </div>
     </button>
   );

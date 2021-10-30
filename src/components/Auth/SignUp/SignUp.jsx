@@ -1,17 +1,15 @@
 import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as BackgroundImage } from "../../../assets/auth/coupleDancing.svg";
+import { ReactComponent as BackgroundImage } from "../../../assets/auth/group100.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/PurpleLogo.svg";
-import { ReactComponent as LinkedinIcon } from "../../../assets/auth/linkedinLogin.svg";
-import { ReactComponent as GoogleIcon } from "../../../assets/auth/googleLogin.svg";
 import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
-import styles from "./Login.module.css";
-import { logIn } from "./../../../services/AuthService";
-import { validateEmail } from "./../../../services/validationsService";
+import styles from "./SignUp.module.css";
+import { logIn } from "../../../services/AuthService";
+import { validateEmail } from "../../../services/validationsService";
 
-function Login() {
+function SignUp() {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -58,18 +56,6 @@ function Login() {
           <div class={styles.formContent}>
             <Logo width="125" height="125" />
             <h1>התחברות למערכת</h1>
-            <div class={styles.communityButtons}>
-              <ButtonWithIcon
-                text="התחברות עם לינקדאין"
-                onClick={connectWithLinkedin}
-                Icon={LinkedinIcon}
-              />
-              <ButtonWithIcon
-                text="התחברות עם גוגל"
-                onClick={connectWithGoogle}
-                Icon={GoogleIcon}
-              />
-            </div>
             <HorizontalSeparatorWithText text="או התחברו עם">
               {" "}
             </HorizontalSeparatorWithText>
@@ -99,4 +85,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
