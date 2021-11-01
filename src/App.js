@@ -3,11 +3,11 @@ import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import SignUp2 from "./components/Auth/SignUp2/SignUp2";
 import Home from "./pages/Home";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter basename="Just_Like_Client">
+    <HashRouter basename="Just_Like_Client">
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -22,7 +22,7 @@ function App() {
           <SignUp2 />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
