@@ -8,9 +8,6 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
       <Route path="/login">
         <Login />
       </Route>
@@ -19,6 +16,9 @@ function App() {
       </Route>
       <Route path="/signup2">
         <SignUp2 />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   );
