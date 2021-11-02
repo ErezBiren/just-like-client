@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Just_Like_Client/static/css/main.6962333a.chunk.css",
-    "main.js": "/Just_Like_Client/static/js/main.4b4f956c.chunk.js",
-    "main.js.map": "/Just_Like_Client/static/js/main.4b4f956c.chunk.js.map",
-    "runtime-main.js": "/Just_Like_Client/static/js/runtime-main.d25f053c.js",
-    "runtime-main.js.map": "/Just_Like_Client/static/js/runtime-main.d25f053c.js.map",
-    "static/js/2.61e9af4d.chunk.js": "/Just_Like_Client/static/js/2.61e9af4d.chunk.js",
-    "static/js/2.61e9af4d.chunk.js.map": "/Just_Like_Client/static/js/2.61e9af4d.chunk.js.map",
-    "static/js/3.981bc658.chunk.js": "/Just_Like_Client/static/js/3.981bc658.chunk.js",
-    "static/js/3.981bc658.chunk.js.map": "/Just_Like_Client/static/js/3.981bc658.chunk.js.map",
-    "index.html": "/Just_Like_Client/index.html",
-    "static/css/main.6962333a.chunk.css.map": "/Just_Like_Client/static/css/main.6962333a.chunk.css.map",
-    "static/js/2.61e9af4d.chunk.js.LICENSE.txt": "/Just_Like_Client/static/js/2.61e9af4d.chunk.js.LICENSE.txt",
-    "static/media/coupleDancing.fb052e24.svg": "/Just_Like_Client/static/media/coupleDancing.fb052e24.svg",
-    "static/media/girlSittingWifhLaptop.4a3215b7.svg": "/Just_Like_Client/static/media/girlSittingWifhLaptop.4a3215b7.svg",
-    "static/media/googleLogin.a3ad9ad6.svg": "/Just_Like_Client/static/media/googleLogin.a3ad9ad6.svg",
-    "static/media/justLikeLogo.023dcb0b.svg": "/Just_Like_Client/static/media/justLikeLogo.023dcb0b.svg",
-    "static/media/linkedinLogin.b8fdcb74.svg": "/Just_Like_Client/static/media/linkedinLogin.b8fdcb74.svg",
-    "static/media/team.9e60ed92.svg": "/Just_Like_Client/static/media/team.9e60ed92.svg"
+    "main.css": "/just-like-client/static/css/main.a6814165.chunk.css",
+    "main.js": "/just-like-client/static/js/main.38f2df9b.chunk.js",
+    "main.js.map": "/just-like-client/static/js/main.38f2df9b.chunk.js.map",
+    "runtime-main.js": "/just-like-client/static/js/runtime-main.7c163bff.js",
+    "runtime-main.js.map": "/just-like-client/static/js/runtime-main.7c163bff.js.map",
+    "static/js/2.234589e6.chunk.js": "/just-like-client/static/js/2.234589e6.chunk.js",
+    "static/js/2.234589e6.chunk.js.map": "/just-like-client/static/js/2.234589e6.chunk.js.map",
+    "static/js/3.981bc658.chunk.js": "/just-like-client/static/js/3.981bc658.chunk.js",
+    "static/js/3.981bc658.chunk.js.map": "/just-like-client/static/js/3.981bc658.chunk.js.map",
+    "index.html": "/just-like-client/index.html",
+    "static/css/main.a6814165.chunk.css.map": "/just-like-client/static/css/main.a6814165.chunk.css.map",
+    "static/js/2.234589e6.chunk.js.LICENSE.txt": "/just-like-client/static/js/2.234589e6.chunk.js.LICENSE.txt",
+    "static/media/coupleDancing.2e5b201f.svg": "/just-like-client/static/media/coupleDancing.2e5b201f.svg",
+    "static/media/girlSittingWifhLaptop.53623d1a.svg": "/just-like-client/static/media/girlSittingWifhLaptop.53623d1a.svg",
+    "static/media/googleLogin.432a951a.svg": "/just-like-client/static/media/googleLogin.432a951a.svg",
+    "static/media/justLikeLogo.69a8696e.svg": "/just-like-client/static/media/justLikeLogo.69a8696e.svg",
+    "static/media/linkedinLogin.53b114c2.svg": "/just-like-client/static/media/linkedinLogin.53b114c2.svg",
+    "static/media/team.bb7d1a0e.svg": "/just-like-client/static/media/team.bb7d1a0e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d25f053c.js",
-    "static/js/2.61e9af4d.chunk.js",
-    "static/css/main.6962333a.chunk.css",
-    "static/js/main.4b4f956c.chunk.js"
+    "static/js/runtime-main.7c163bff.js",
+    "static/js/2.234589e6.chunk.js",
+    "static/css/main.a6814165.chunk.css",
+    "static/js/main.38f2df9b.chunk.js"
   ]
 }
