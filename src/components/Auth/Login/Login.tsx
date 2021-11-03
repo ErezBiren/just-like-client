@@ -9,11 +9,14 @@ import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
 import styles from "./Login.module.css";
-import { logIn } from "./../../../services/AuthService";
-import { validateEmail } from "./../../../services/validationsService";
+import { logIn } from "../../../services/AuthService";
+import { validateEmail } from "../../../services/validationsService";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../../store/auth-Slice";
 
 function Login() {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const [data, setData] = useState({
     email: "",
@@ -35,18 +38,20 @@ function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any) => {
     e.preventDefault();
 
     logIn(data.email, data.password);
 
-    history.push("/home");
+    dispatch(authActions.login());
+
+    history.push("/");
   };
-  const connectWithLinkedin = (e) => {
+  const connectWithLinkedin = (e : any) => {
     e.preventDefault();
     alert("linkedin");
   };
-  const connectWithGoogle = (e) => {
+  const connectWithGoogle = (e : any) => {
     e.preventDefault();
     alert("google");
   };
@@ -57,13 +62,13 @@ function Login() {
   // };
 
   return (
-    <div class={styles.main}>
-      <div class={styles.form}>
+    <div className={styles.main}>
+      <div className={styles.form}>
         <form onSubmit={handleSubmit}>
-          <div class={styles.formContent}>
+          <div className={styles.formContent}>
             <Logo width="125" height="125" />
             <h1>התחברות למערכת</h1>
-            <div class={styles.communityButtons}>
+            <div className={styles.communityButtons}>
               <ButtonWithIcon
                 text="התחברות עם לינקדאין"
                 onClick={connectWithLinkedin}

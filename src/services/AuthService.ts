@@ -1,4 +1,4 @@
-export const logIn = (email, password) => {
+export const logIn = (email: string, password: string) => {
   let url = `http:\\aaa?key=${process.env.REACT_APP_FIREBASE_WEB_API_KEY}`;
 
   fetch(url, {

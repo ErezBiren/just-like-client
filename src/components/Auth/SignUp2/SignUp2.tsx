@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/girlSittingWifhLaptop.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
@@ -16,14 +16,14 @@ function SignUp2() {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     logIn(data.email, data.password);
@@ -40,10 +40,10 @@ function SignUp2() {
   ];
 
   return (
-    <div class={styles.main}>
-      <div class={styles.form}>
+    <div className={styles.main}>
+      <div className={styles.form}>
         <form onSubmit={handleSubmit}>
-          <div class={styles.formContent}>
+          <div className={styles.formContent}>
             <Logo width="125" height="125" />
             <h1>נשמח להכיר אותך</h1>
 

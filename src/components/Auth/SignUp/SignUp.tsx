@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
@@ -18,7 +18,7 @@ function SignUp() {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     let error = "";
 
     if (e.target.name === "email") {
@@ -33,17 +33,17 @@ function SignUp() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     logIn(data.email, data.password);
   };
 
   return (
-    <div class={styles.main}>
-      <div class={styles.form}>
+    <div className={styles.main}>
+      <div className={styles.form}>
         <form onSubmit={handleSubmit}>
-          <div class={styles.formContent}>
+          <div className={styles.formContent}>
             <Logo width="125" height="125" />
             <h1>הרשמה למערכת</h1>
             <TextField
