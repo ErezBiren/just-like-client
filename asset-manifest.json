@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/just-like-client/static/css/main.a6814165.chunk.css",
-    "main.js": "/just-like-client/static/js/main.38f2df9b.chunk.js",
-    "main.js.map": "/just-like-client/static/js/main.38f2df9b.chunk.js.map",
-    "runtime-main.js": "/just-like-client/static/js/runtime-main.7c163bff.js",
-    "runtime-main.js.map": "/just-like-client/static/js/runtime-main.7c163bff.js.map",
-    "static/js/2.234589e6.chunk.js": "/just-like-client/static/js/2.234589e6.chunk.js",
-    "static/js/2.234589e6.chunk.js.map": "/just-like-client/static/js/2.234589e6.chunk.js.map",
-    "static/js/3.981bc658.chunk.js": "/just-like-client/static/js/3.981bc658.chunk.js",
-    "static/js/3.981bc658.chunk.js.map": "/just-like-client/static/js/3.981bc658.chunk.js.map",
+    "main.css": "/just-like-client/static/css/main.d8e60644.chunk.css",
+    "main.js": "/just-like-client/static/js/main.c1e09117.chunk.js",
+    "main.js.map": "/just-like-client/static/js/main.c1e09117.chunk.js.map",
+    "runtime-main.js": "/just-like-client/static/js/runtime-main.e5de3ffa.js",
+    "runtime-main.js.map": "/just-like-client/static/js/runtime-main.e5de3ffa.js.map",
+    "static/js/2.a8bbe8a8.chunk.js": "/just-like-client/static/js/2.a8bbe8a8.chunk.js",
+    "static/js/2.a8bbe8a8.chunk.js.map": "/just-like-client/static/js/2.a8bbe8a8.chunk.js.map",
+    "static/js/3.e734b45f.chunk.js": "/just-like-client/static/js/3.e734b45f.chunk.js",
+    "static/js/3.e734b45f.chunk.js.map": "/just-like-client/static/js/3.e734b45f.chunk.js.map",
     "index.html": "/just-like-client/index.html",
-    "static/css/main.a6814165.chunk.css.map": "/just-like-client/static/css/main.a6814165.chunk.css.map",
-    "static/js/2.234589e6.chunk.js.LICENSE.txt": "/just-like-client/static/js/2.234589e6.chunk.js.LICENSE.txt",
+    "static/css/main.d8e60644.chunk.css.map": "/just-like-client/static/css/main.d8e60644.chunk.css.map",
+    "static/js/2.a8bbe8a8.chunk.js.LICENSE.txt": "/just-like-client/static/js/2.a8bbe8a8.chunk.js.LICENSE.txt",
     "static/media/coupleDancing.2e5b201f.svg": "/just-like-client/static/media/coupleDancing.2e5b201f.svg",
     "static/media/girlSittingWifhLaptop.53623d1a.svg": "/just-like-client/static/media/girlSittingWifhLaptop.53623d1a.svg",
     "static/media/googleLogin.432a951a.svg": "/just-like-client/static/media/googleLogin.432a951a.svg",
@@ -20,9 +20,9 @@
     "static/media/team.bb7d1a0e.svg": "/just-like-client/static/media/team.bb7d1a0e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7c163bff.js",
-    "static/js/2.234589e6.chunk.js",
-    "static/css/main.a6814165.chunk.css",
-    "static/js/main.38f2df9b.chunk.js"
+    "static/js/runtime-main.e5de3ffa.js",
+    "static/js/2.a8bbe8a8.chunk.js",
+    "static/css/main.d8e60644.chunk.css",
+    "static/js/main.c1e09117.chunk.js"
   ]
 }
