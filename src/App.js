@@ -3,13 +3,17 @@ import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import SignUp2 from "./components/Auth/SignUp2/SignUp2";
 import Home from "./pages/Home";
+import { useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
   return (
     <Switch>
       <Route path="/login">
-        <Login />
+        {isLoggedIn && <Login />}
+        {!isLoggedIn && <Home />}
       </Route>
       <Route path="/signup">
         <SignUp />
@@ -18,7 +22,7 @@ function App() {
         <SignUp2 />
       </Route>
       <Route path="/">
-        <Home />
+        <Login />
       </Route>
     </Switch>
   );

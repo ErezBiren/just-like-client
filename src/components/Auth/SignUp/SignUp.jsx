@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
-import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
 import styles from "./SignUp.module.css";
 import { logIn } from "../../../services/AuthService";
@@ -79,7 +79,7 @@ function SignUp() {
             <RoundedButton style="width:50px">להרשמה</RoundedButton>
             <div className={styles.signupContainer}>
               <span>נרשמת?</span>
-              <a href="#">להתחברות</a>
+              <Link to="/login">להתחברות</Link>
             </div>
           </div>
         </form>

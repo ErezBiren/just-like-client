@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/coupleDancing.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import { ReactComponent as LinkedinIcon } from "../../../assets/auth/linkedinLogin.svg";
@@ -12,6 +13,8 @@ import { logIn } from "./../../../services/AuthService";
 import { validateEmail } from "./../../../services/validationsService";
 
 function Login() {
+  const history = useHistory();
+
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -36,6 +39,8 @@ function Login() {
     e.preventDefault();
 
     logIn(data.email, data.password);
+
+    history.push("/home");
   };
   const connectWithLinkedin = (e) => {
     e.preventDefault();
@@ -86,7 +91,7 @@ function Login() {
             <RoundedButton>התחברות</RoundedButton>
             <div className={styles.signupContainer}>
               <span>לא נרשמת?</span>
-              <a href="#">להרשמה</a>
+              <Link to="/signup">להרשמה</Link>
             </div>
           </div>
         </form>
