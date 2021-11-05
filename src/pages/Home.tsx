@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import RoundedButton from "../components/Common/RoundedButton/RoundedButton";
 
 function Home() {
   const [value, setValue] = useState("");
@@ -22,28 +23,30 @@ function Home() {
         <Sidebar />
       </div>
       <div className={styles.main}>
-        <div className={styles.topControls}>
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-            <OutlinedInput
-              id="outlined-adornment-password"
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    edge="end"
-                  >
-                    <SearchIcon />
-                  </IconButton>
-                </InputAdornment>
-              }
-              label="Password"
-            />
-            <InputLabel htmlFor="outlined-adornment-password">
-              חיפוש
-            </InputLabel>
-          </FormControl>
+        <div className={styles.mainInner}>
+          <div className={styles.topControls}>
+            <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+              <OutlinedInput
+                id="outlined-adornment-password"
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      edge="end"
+                    >
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+              <InputLabel htmlFor="outlined-adornment-password">
+                חיפוש
+              </InputLabel>
+            </FormControl>
+          </div>
+          <Dashboard />
         </div>
-        <Dashboard />
       </div>
     </div>
   );

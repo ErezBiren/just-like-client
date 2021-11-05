@@ -12,9 +12,12 @@
 }
 
 .main {
-  height: 100vh;
   width: 50%;
   border-left: 2px solid var(--border-color);
+}
+
+.mainInner {
+  margin: 5%;
 }
 
 .topControls {

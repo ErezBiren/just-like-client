@@ -1,0 +1,11 @@
+.root {
+  width: 370px;
+  height: auto;
+  background-color: var(--background-color);
+}
+
+/* todo: erez why we need to do this ???? */
+h1 {
+  color: black;
+  font-size: 1 rem;
+}
