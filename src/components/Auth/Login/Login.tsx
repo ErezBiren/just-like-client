@@ -23,7 +23,7 @@ function Login() {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     let error = "";
 
     if (e.target.name === "email") {
@@ -38,20 +38,20 @@ function Login() {
     });
   };
 
-  const handleSubmit = (e : any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     logIn(data.email, data.password);
 
-    dispatch(authActions.login());
+    dispatch(authActions.login({}));
 
     history.push("/");
   };
-  const connectWithLinkedin = (e : any) => {
+  const connectWithLinkedin = (e: any) => {
     e.preventDefault();
     alert("linkedin");
   };
-  const connectWithGoogle = (e : any) => {
+  const connectWithGoogle = (e: any) => {
     e.preventDefault();
     alert("google");
   };
