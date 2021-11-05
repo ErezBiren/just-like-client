@@ -1,7 +1,9 @@
 .root {
-  width: 370px;
+  /* width: 370px; */
   height: auto;
   background-color: var(--background-color);
+  border-radius: 20px;
+  padding: 5px;
 }
 
 /* todo: erez why we need to do this ???? */

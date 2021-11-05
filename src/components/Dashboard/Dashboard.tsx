@@ -1,44 +1,17 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 import DoughnutChart from "../Common/DoughnutChart";
 import styles from "./Dashboard.module.css";
 import Department from "./Department";
 
-const departments = [
-  {
-    name: "מחלקת עיצוב",
-    color: "#5c3153",
-    missions: [
-      { name: "aa", completed: 100 },
-      { name: "bb", completed: 30 },
-      { name: "ccc", completed: 53 },
-    ],
-  },
-  {
-    name: "מחלקת הדרכות",
-    color: "#C73CA8",
-    missions: [
-      { name: "aa", completed: 60 },
-      { name: "bb", completed: 30 },
-      { name: "ccc", completed: 100 },
-    ],
-  },
-  {
-    name: "מחלקת ניהול קהילה",
-    color: "#3CC73C",
-    missions: [
-      { name: "aa", completed: 100 },
-      { name: "ccc", completed: 63 },
-    ],
-  },
-  {
-    name: "מחלקת אסטרטגיה",
-    color: "#FDBC4E",
-    missions: [{ name: "aa", completed: 100 }],
-  },
-];
-
 function Dashboard() {
+  const departments = useSelector(
+    (state: RootState) => state.dashboard.departments
+  );
+
   return (
     <div className={styles.root}>
+      <h2>היי שמעון, צהריים טובים</h2>
       <div className={styles.charts}>
         <DoughnutChart />
         <DoughnutChart />
@@ -48,7 +21,7 @@ function Dashboard() {
           <Department
             key={idx}
             color={department.color}
-            missions={department.missions}
+            projects={department.projects}
             name={department.name}
           />
         ))}
