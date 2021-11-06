@@ -15,10 +15,9 @@
 }
 
 .departments {
-  overflow-y: auto;
   width: 100%;
   display: grid;
   grid-gap: 5%;
   justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, 370px);
 }
