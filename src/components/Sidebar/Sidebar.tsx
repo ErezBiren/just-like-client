@@ -1,4 +1,3 @@
-
 import { ReactComponent as Logo } from "../../assets/auth/justLikeLogo.svg";
 import TreeView from "@mui/lab/TreeView";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -41,7 +40,8 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
     },
     "&.Mui-focused, &.Mui-selected, &.Mui-selected.Mui-focused": {
       backgroundColor: `var(--tree-view-bg-color, ${theme.palette.action.selected})`,
-      color: "var(--tree-view-color)",
+      color: `var(--main-color)`,
+      borderLeft: `3px solid var(--main-color)`,
     },
     [`& .${treeItemClasses.label}`]: {
       fontWeight: "inherit",
@@ -100,7 +100,7 @@ function Sidebar() {
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowLeftIcon />}
         defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: "auto" }}
+        sx={{ height: 264, flexGrow: 1, maxWidth: 400 }}
       >
         <StyledTreeItem
           nodeId="1"
@@ -141,7 +141,7 @@ function Sidebar() {
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowLeftIcon />}
         defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{ height: 264, flexGrow: 1, maxWidth: 400, overflowY: "auto" }}
+        sx={{ height: 264, flexGrow: 1, maxWidth: 400 }}
       >
         <StyledTreeItem
           nodeId="6"

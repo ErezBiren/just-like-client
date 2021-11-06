@@ -1,10 +1,14 @@
 const ProgressBar = (props) => {
   const { bgcolor, completed, percentage } = props;
 
+  const percentageStyles = {
+    textAlign: "left",
+  };
+
   const containerStyles = {
     height: 20,
     width: "100%",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#DDDDDD",
     borderRadius: 50,
     marginBottom: 20,
   };
@@ -14,23 +18,18 @@ const ProgressBar = (props) => {
     width: `${percentage}%`,
     backgroundColor: bgcolor,
     borderRadius: "inherit",
-    textAlign: "right",
   };
 
   const completedStyles = {
-    height: "100%",
     textAlign: "left",
-    backgroundColor: "#d61717f",
     borderRadius: 50,
-  };
-
-  const percentageStyles = {
-    textAlign: "left",
+    backgroundColor: "#aaaaf",
   };
 
   return (
     <div>
       <div style={percentageStyles}>{percentage}%</div>
+
       <div style={containerStyles}>
         <div style={fillerStyles}>
           <div style={completedStyles}>{completed}</div>

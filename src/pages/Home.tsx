@@ -1,6 +1,9 @@
 import styles from "./Home.module.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Dashboard from "../components/Dashboard/Dashboard";
+import { ReactComponent as BellIcon } from "../assets/dashboard/bell.svg";
+import { ReactComponent as MessageCircleIcon } from "../assets/dashboard/message-circle.svg";
+
 import {
   FormControl,
   IconButton,
@@ -9,6 +12,7 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import RoundedButton from "../components/Common/RoundedButton/RoundedButton";
 
 function Home() {
   return (
@@ -40,6 +44,19 @@ function Home() {
             </FormControl>
           </div>
           <Dashboard />
+        </div>
+      </div>
+      <div className={styles.rightSide}>
+        <div className={styles.leftTopControls}>
+          <div className={styles.bellContainer}>
+            <BellIcon />
+          </div>
+          <div className={styles.messageIconContainer}>
+            <MessageCircleIcon />
+          </div>
+        </div>
+        <div className={styles.createMissionBtnContainer}>
+          <RoundedButton>+ צור משימה</RoundedButton>
         </div>
       </div>
     </div>
