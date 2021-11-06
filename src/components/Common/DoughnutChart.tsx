@@ -32,7 +32,7 @@ function DoughnutChart(props: IDougnatProps) {
     elements: {
       arc: {
         borderWidth: 10,
-        borderColor: "#f5f5f5",
+        borderColor: "#ffffff",
         weight: 3,
       },
     },

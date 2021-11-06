@@ -7,8 +7,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: var(--background-color);
-  border: 2px solid var(--border-color);
+
+  border: 1px solid var(--second-color);
+  background-color: white;
   border-radius: 20px;
   margin-bottom: 20px; /*todo: erez fix this */
   margin-top: 20px;
