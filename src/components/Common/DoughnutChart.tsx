@@ -1,36 +1,58 @@
-import { Doughnut, Chart } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
+import styles from "./DoughnutChart.module.css";
 
-const data = {
-  labels: ["מחלקה 1", "Blue", "Yellow"],
-  datasets: [
-    {
-      data: [12, 30, 20],
-      backgroundColor: ["#C73CA8", "#3CC73C", "#FDBC4E"],
-      hoverOffset: 4,
+interface IDougnatProps {
+  labels: string[];
+  backgroundColors: string[];
+  datasetsData: number[];
+}
+
+function DoughnutChart(props: IDougnatProps) {
+  const { labels, backgroundColors, datasetsData } = props;
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        data: datasetsData,
+        backgroundColor: backgroundColors,
+        hoverOffset: 4,
+      },
+    ],
+    text: "23%",
+  };
+
+  const options = {
+    plugins: {
+      legend: {
+        display: true,
+      },
     },
-  ],
-  text: "23%",
-};
-
-const options = {
-  legend: {
-    display: false,
-    position: "bottom",
-  },
-  cutout: 95,
-  elements: {
-    arc: {
-      borderWidth: 10,
-      borderColor: "#f5f5f5",
-      weight: 3,
+    cutout: 95,
+    elements: {
+      arc: {
+        borderWidth: 10,
+        borderColor: "#f5f5f5",
+        weight: 3,
+      },
     },
-  },
-};
+  };
 
-function DoughnutChart() {
   return (
     <div>
-      <Doughnut data={data} options={options} />
+      <Doughnut data={data} options={options}></Doughnut>
+      {/* <div className={styles.legend}>
+        {datasetsData.map((datasetData, idx) => (
+          <div
+            key={idx}
+            //bgcolor={backgroundColors[idx]}
+            //percentage={project.percentage}
+            //completed={project.completed}
+          >
+            {datasetData}
+          </div>
+        ))}
+      </div> */}
     </div>
   );
 }

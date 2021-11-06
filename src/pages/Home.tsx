@@ -1,22 +1,16 @@
 import styles from "./Home.module.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Dashboard from "../components/Dashboard/Dashboard";
-import Autocomplete from "@mui/material/Autocomplete";
-import { useState } from "react";
 import {
   FormControl,
   IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
-  TextField,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import RoundedButton from "../components/Common/RoundedButton/RoundedButton";
 
 function Home() {
-  const [value, setValue] = useState("");
-
   return (
     <div className={styles.root}>
       <div className={styles.sidebar}>
