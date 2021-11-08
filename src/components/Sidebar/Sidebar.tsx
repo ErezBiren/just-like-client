@@ -76,8 +76,20 @@ function StyledTreeItem(props: StyledTreeItemProps) {
 function Sidebar() {
   const navigate = useNavigate();
 
-  const onTreeViewItemClicked = (e: SyntheticEvent) => {
-    navigate("dashboard");
+  const onTreeViewItemClicked = (e: React.MouseEvent<HTMLElement>) => {
+    const input = e.target as HTMLElement;
+    console.log(input.innerText);
+
+    switch (input.innerText) {
+      case "מאגר רשומים":
+        navigate("users");
+        break;
+      case "דשבורד":
+        navigate("dashboard");
+        break;
+      default:
+        break;
+    }
   };
 
   return (

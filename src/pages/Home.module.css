@@ -6,7 +6,7 @@
 
 .sidebar {
   height: 100vh;
-  width: 20%;
+  width: 20vw;
   border-left: 2px solid var(--border-color);
   position: static;
 }
@@ -17,30 +17,28 @@
   background-color: var(--background-color);
 }
 
-.mainInner {
-  margin: 5%;
-}
-
-.leftPanel {
-  width: 40%;
-  justify-content: center;
-  align-content: center;
-}
-
 .topControls {
   height: 10vh;
-  width: 100%;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.createMissionBtnContainer {
-  height: 10vh;
-  width: 200px;
+.searchContainer {
+  margin-right: 5%;
 }
 
 .leftTopControls {
-  height: 10vh;
+  margin-left: 5%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 10vw;
+}
+
+.mainArea {
 }
 
 .bellContainer {
@@ -51,9 +49,6 @@
   cursor: pointer;
 }
 
-.subscribers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+.userPlusContainer {
+  cursor: pointer;
 }
