@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/girlSittingWifhLaptop.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
-import styles from "./SignUp2.module.css";
+import classes from "./SignUp2.module.css";
 import { logIn } from "../../../services/AuthService";
 import ComboBox from "../../Common/ComboBox/ComboBox";
 
@@ -40,10 +40,10 @@ function SignUp2() {
   ];
 
   return (
-    <div className={styles.main}>
-      <div className={styles.form}>
+    <div className={classes.main}>
+      <div className={classes.form}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.formContent}>
+          <div className={classes.formContent}>
             <Logo width="125" height="125" />
             <h1>נשמח להכיר אותך</h1>
 
@@ -52,7 +52,7 @@ function SignUp2() {
             <ComboBox placeHolder="תחום התמחות" items={specialties} />
 
             <RoundedButton style="width:50px">להרשמה</RoundedButton>
-            <div className={styles.signupContainer}>
+            <div className={classes.signupContainer}>
               <span>כבר נרשמת?</span>
               <a href="#">להתחברות</a>
             </div>
@@ -60,7 +60,7 @@ function SignUp2() {
         </form>
       </div>
 
-      <div className={styles.backgoundImageContainer}>
+      <div className={classes.backgoundImageContainer}>
         <BackgroundImage width="722" height="674" />
       </div>
     </div>

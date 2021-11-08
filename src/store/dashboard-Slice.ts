@@ -44,53 +44,7 @@ export const initialState: IDashboardState = {
                 { name: "ccc", completed: 4, percentage: 63 },
             ],
         },
-        {
-            name: "מחלקת אסטרטגיה",
-            color: "#FDBC4E",
-            projects: [{ name: "aa", completed: 5, percentage: 100 }],
-        },
-        {
-            name: "מחלקת אסטרטגיה",
-            color: "#FDBC4E",
-            projects: [{ name: "aa", completed: 5, percentage: 100 }],
-        },
-        {
-            name: "מחלקת אסטרטגיה",
-            color: "#FDBC4E",
-            projects: [{ name: "aa", completed: 5, percentage: 100 }],
-        },
-        {
-            name: "מחלקת אסטרטגיה",
-            color: "#FDBC4E",
-            projects: [{ name: "aa", completed: 5, percentage: 100 }],
-        },
-        {
-            name: "מחלקת עיצוב",
-            color: "#5c3153",
-            projects: [
-                { name: "aa", completed: 5, percentage: 100 },
-                { name: "bb", completed: 5, percentage: 30 },
-                { name: "ccc", completed: 5, percentage: 53 },
-            ],
-        },
-        {
-            name: "מחלקת עיצוב",
-            color: "#5c3153",
-            projects: [
-                { name: "aa", completed: 5, percentage: 100 },
-                { name: "bb", completed: 5, percentage: 30 },
-                { name: "ccc", completed: 5, percentage: 53 },
-            ],
-        },
-        {
-            name: "מחלקת עיצוב",
-            color: "#5c3153",
-            projects: [
-                { name: "aa", completed: 5, percentage: 100 },
-                { name: "bb", completed: 5, percentage: 30 },
-                { name: "ccc", completed: 5, percentage: 53 },
-            ],
-        },
+
     ]
 };
 

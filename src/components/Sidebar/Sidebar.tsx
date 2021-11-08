@@ -8,27 +8,22 @@ import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-
-declare module "react" {
-  interface CSSProperties {
-    "--tree-view-color"?: string;
-    "--tree-view-bg-color"?: string;
-  }
-}
+import classes from "./Sidebar.module.css";
+import { useNavigate } from "react-router-dom";
+import { SyntheticEvent } from "react";
 
 type StyledTreeItemProps = TreeItemProps & {
-  bgColor?: string;
-  color?: string;
   labelIcon: React.ElementType<SvgIconProps>;
   labelInfo?: string;
   labelText: string;
+  name: string;
 };
 
 const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   color: theme.palette.text.secondary,
   [`& .${treeItemClasses.content}`]: {
+    height: 56,
     color: theme.palette.text.secondary,
-    paddingRight: theme.spacing(1),
     fontWeight: theme.typography.fontWeightMedium,
     "&.Mui-expanded": {
       fontWeight: theme.typography.fontWeightRegular,
@@ -39,7 +34,7 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
     "&.Mui-focused, &.Mui-selected, &.Mui-selected.Mui-focused": {
       backgroundColor: `var(--tree-view-bg-color, ${theme.palette.action.selected})`,
       color: `var(--main-color)`,
-      borderLeft: `3px solid var(--main-color)`,
+      borderRight: `5px solid var(--main-color)`,
     },
     [`& .${treeItemClasses.label}`]: {
       fontWeight: "inherit",
@@ -55,14 +50,7 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
 }));
 
 function StyledTreeItem(props: StyledTreeItemProps) {
-  const {
-    bgColor,
-    color,
-    labelIcon: LabelIcon,
-    labelInfo,
-    labelText,
-    ...other
-  } = props;
+  const { labelIcon: LabelIcon, labelInfo, labelText, ...other } = props;
 
   return (
     <StyledTreeItemRoot
@@ -80,71 +68,70 @@ function StyledTreeItem(props: StyledTreeItemProps) {
           </Typography>
         </Box>
       }
-      style={{
-        "--tree-view-color": color,
-        "--tree-view-bg-color": bgColor,
-      }}
       {...other}
     />
   );
 }
 
 function Sidebar() {
+  const navigate = useNavigate();
+
+  const onTreeViewItemClicked = (e: SyntheticEvent) => {
+    navigate("dashboard");
+  };
+
   return (
     <>
       <Logo width="125" height="125" />
       <TreeView
-        aria-label="gmail"
+        className={classes.root}
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowLeftIcon />}
-        defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{ height: 264, flexGrow: 1, maxWidth: 400 }}
       >
         <StyledTreeItem
+          name="dashboard"
           nodeId="1"
           labelText="דשבורד"
           labelIcon={DashboardOutlinedIcon}
+          onClick={onTreeViewItemClicked}
         />
         <StyledTreeItem
+          name="departmens"
           nodeId="2"
           labelText="מחלקות"
           labelIcon={FolderOutlinedIcon}
         >
           <StyledTreeItem
+            name="departmens"
             nodeId="3"
             labelText="מחלקת אסטרטגיה"
             labelIcon={CircleIcon}
           />
           <StyledTreeItem
+            name="departmens"
             nodeId="4"
             labelText="מחלקת הדרכות"
             labelIcon={CircleIcon}
           />
           <StyledTreeItem
+            name="departmens"
             nodeId="5"
             labelText="מחלקת הדרכות"
             labelIcon={CircleIcon}
           />
           <StyledTreeItem
+            name="departmens"
             nodeId="6"
             labelText="מחלקת הדרכות"
             labelIcon={CircleIcon}
           />
         </StyledTreeItem>
-      </TreeView>
-
-      <TreeView
-        aria-label="gmail"
-        defaultExpanded={["3"]}
-        defaultCollapseIcon={<ArrowDropDownIcon />}
-        defaultExpandIcon={<ArrowLeftIcon />}
-        defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{ height: 264, flexGrow: 1, maxWidth: 400 }}
-      >
         <StyledTreeItem
-          nodeId="6"
+          name="users"
+          nodeId="7"
           labelText="מאגר רשומים"
           labelIcon={PeopleOutlineIcon}
+          onClick={onTreeViewItemClicked}
         />
       </TreeView>
     </>

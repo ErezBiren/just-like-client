@@ -4,7 +4,7 @@ import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
-import styles from "./SignUp.module.css";
+import classes from "./SignUp.module.css";
 import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 
@@ -40,10 +40,10 @@ function SignUp() {
   };
 
   return (
-    <div className={styles.main}>
-      <div className={styles.form}>
+    <div className={classes.main}>
+      <div className={classes.form}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.formContent}>
+          <div className={classes.formContent}>
             <Logo width="125" height="125" />
             <h1>הרשמה למערכת</h1>
             <TextField
@@ -77,7 +77,7 @@ function SignUp() {
               name="password"
             />
             <RoundedButton style="width:50px">להרשמה</RoundedButton>
-            <div className={styles.signupContainer}>
+            <div className={classes.signupContainer}>
               <span>נרשמת?</span>
               <Link to="/login">להתחברות</Link>
             </div>
@@ -85,7 +85,7 @@ function SignUp() {
         </form>
       </div>
 
-      <div className={styles.backgoundImageContainer}>
+      <div className={classes.backgoundImageContainer}>
         <BackgroundImage width="722" height="674" />
       </div>
     </div>

@@ -5,34 +5,24 @@ import SignUp2 from "./components/Auth/SignUp2/SignUp2";
 import Home from "./pages/Home";
 import NotFoundPage from "./pages/NotFoundPage";
 import { useSelector } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { RootState } from "./store/store";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   return (
     <HashRouter>
-      <Switch>
-        <Route exact path="/">
-          {!isLoggedIn && <Login />}
-          {isLoggedIn && <Home />}
+      <Routes>
+        <Route path="/*" element={<Home />}>
+         
         </Route>
-        <Route path="/login">
-          {!isLoggedIn && <Login />}
-          {isLoggedIn && <Home />}
-        </Route>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-        <Route path="/signup2">
-          <SignUp2 />
-        </Route>
-        <Route path="/">
-          <NotFoundPage></NotFoundPage>
-        </Route>
-      </Switch>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup2" element={<SignUp2 />} />
+        {/* <Route path="/" element={<NotFoundPage />} /> */}
+      </Routes>
     </HashRouter>
   );
 }

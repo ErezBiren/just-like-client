@@ -3,12 +3,12 @@
   flex-direction: column;
 }
 
-.charts {
+.chartContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
-  border: 1px solid var(--second-color);
+  border: 1px solid var(--border-color);
   background-color: white;
   border-radius: 20px;
   margin-bottom: 20px; /*todo: erez fix this */

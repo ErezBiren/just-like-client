@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./HorizontalSeparatorWithText.module.css";
+import classes from "./HorizontalSeparatorWithText.module.css";
 
 const HorizontalSeparatorWithText: React.FC<{ text: string }> = ({ text }) => {
-  return <div className={styles.separator}>{text}</div>;
+  return <div className={classes.separator}>{text}</div>;
 };
 
 export default HorizontalSeparatorWithText;

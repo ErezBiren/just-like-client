@@ -1,11 +1,11 @@
 import React from "react";
-import Styles from "./TextField.module.css";
+import classes from "./TextField.module.css";
 
 function TextField({ name, placeholder, onChange }) {
   return (
     <input
       name={name}
-      className={Styles.input}
+      className={classes.input}
       placeholder={placeholder}
       onChange={onChange}
     ></input>

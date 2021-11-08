@@ -1,5 +1,5 @@
 import { Doughnut } from "react-chartjs-2";
-import styles from "./DoughnutChart.module.css";
+import classes from "./DoughnutChart.module.css";
 
 interface IDougnatProps {
   labels: string[];
@@ -41,7 +41,7 @@ function DoughnutChart(props: IDougnatProps) {
   return (
     <div>
       <Doughnut data={data} options={options}></Doughnut>
-      {/* <div className={styles.legend}>
+      {/* <div className={classes.legend}>
         {datasetsData.map((datasetData, idx) => (
           <div
             key={idx}

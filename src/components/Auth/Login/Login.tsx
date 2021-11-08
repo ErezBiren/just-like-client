@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/coupleDancing.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import { ReactComponent as LinkedinIcon } from "../../../assets/auth/linkedinLogin.svg";
@@ -8,14 +8,14 @@ import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
-import styles from "./Login.module.css";
+import classes from "./Login.module.css";
 import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../../store/auth-Slice";
 
 function Login() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [data, setData] = useState({
@@ -45,7 +45,7 @@ function Login() {
 
     dispatch(authActions.login({}));
 
-    history.push("/");
+    navigate("/");
   };
   const connectWithLinkedin = (e: any) => {
     e.preventDefault();
@@ -62,13 +62,13 @@ function Login() {
   // };
 
   return (
-    <div className={styles.main}>
-      <div className={styles.form}>
+    <div className={classes.main}>
+      <div className={classes.form}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.formContent}>
+          <div className={classes.formContent}>
             <Logo width="125" height="125" />
             <h1>התחברות למערכת</h1>
-            <div className={styles.communityButtons}>
+            <div className={classes.communityButtons}>
               <ButtonWithIcon
                 text="התחברות עם לינקדאין"
                 onClick={connectWithLinkedin}
@@ -94,7 +94,7 @@ function Login() {
               name="password"
             />
             <RoundedButton>התחברות</RoundedButton>
-            <div className={styles.signupContainer}>
+            <div className={classes.signupContainer}>
               <span>לא נרשמת?</span>
               <Link to="/signup">להרשמה</Link>
             </div>
@@ -102,7 +102,7 @@ function Login() {
         </form>
       </div>
 
-      <div className={styles.backgoundImageContainer}>
+      <div className={classes.backgoundImageContainer}>
         <BackgroundImage width="722" height="674" />
       </div>
     </div>

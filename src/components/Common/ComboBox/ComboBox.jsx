@@ -1,8 +1,8 @@
-import styles from "./ComboBox.module.css";
+import classes from "./ComboBox.module.css";
 
 function ComboBox({ placeHolder, items }) {
   return (
-    <select className={styles.select}>
+    <select className={classes.select}>
       <option value="" disabled selected hidden>
         {placeHolder}
       </option>

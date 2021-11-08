@@ -1,12 +1,12 @@
-import styles from "./ButtonWithIcon.module.css";
+import classes from "./ButtonWithIcon.module.css";
 
 function ButtonWithIcon({ text, Icon, onClick }) {
   return (
-    <button className={styles.button} onClick={onclick}>
-      <div className={styles.buttonContent}>
+    <button className={classes.button} onClick={onclick}>
+      <div className={classes.buttonContent}>
         <Icon />
 
-        <div className={styles.textContainer}>{text}</div>
+        <div className={classes.textContainer}>{text}</div>
       </div>
     </button>
   );
