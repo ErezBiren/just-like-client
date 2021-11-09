@@ -86,7 +86,6 @@ function Sidebar() {
 
   const onTreeViewItemClicked = (e: React.MouseEvent<HTMLElement>) => {
     const input = e.target as HTMLElement;
-    console.log(input.innerText);
 
     switch (input.innerText) {
       case "מאגר רשומים":
@@ -96,8 +95,10 @@ function Sidebar() {
         navigate("dashboard");
         break;
       default:
-        const id = 1;
-        navigate(`departments/${id}`);
+        const department = departments.find((d) => d.name === input.innerText);
+        
+        
+        navigate(`departments/${department?.id}`);
         break;
     }
   };
