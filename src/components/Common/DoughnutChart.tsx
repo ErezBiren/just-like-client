@@ -16,10 +16,9 @@ function DoughnutChart(props: IDougnatProps) {
       {
         data: datasetsData,
         backgroundColor: backgroundColors,
-        hoverOffset: 4,
+        hoverOffset: 6,
       },
     ],
-    text: "23%",
   };
 
   const options = {
@@ -31,7 +30,7 @@ function DoughnutChart(props: IDougnatProps) {
     cutout: 95,
     elements: {
       arc: {
-        borderWidth: 10,
+        borderWidth: 0,
         borderColor: "#ffffff",
         weight: 3,
       },
@@ -39,20 +38,15 @@ function DoughnutChart(props: IDougnatProps) {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Doughnut data={data} options={options}></Doughnut>
-      {/* <div className={classes.legend}>
-        {datasetsData.map((datasetData, idx) => (
-          <div
-            key={idx}
-            //bgcolor={backgroundColors[idx]}
-            //percentage={project.percentage}
-            //completed={project.completed}
-          >
-            {datasetData}
-          </div>
-        ))}
-      </div> */}
+      {
+        // <div className={classes.legend}>
+        //   {datasetsData.map((datasetData, idx) => (
+        //     <div key={idx}>{datasetData}</div>
+        //   ))}
+        // </div>
+      }
     </div>
   );
 }

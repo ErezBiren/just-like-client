@@ -3,7 +3,8 @@
 }
 
 .dataGrid {
-  height: 400vh;
+  margin-top: 3vh;
+  height: 75vh;
   width: 100%;
   background-color: white;
 }

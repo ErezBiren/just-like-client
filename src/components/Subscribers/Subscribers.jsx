@@ -24,7 +24,7 @@ function subscribers() {
     <div className={classes.root}>
       <h5>נרשמים</h5>
       <h2>1,500</h2>
-      <h5>15 נובמבר 2021</h5>
+      <h5 className={classes.date}>15 נובמבר 2021</h5>
       <div className={classes.charts}>
         {subscribersList.map((subscriber, idx) => (
           <VerticalProgressBar

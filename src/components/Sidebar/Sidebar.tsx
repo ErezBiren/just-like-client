@@ -10,20 +10,28 @@ import CircleIcon from "@mui/icons-material/Circle";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import classes from "./Sidebar.module.css";
 import { useNavigate } from "react-router-dom";
-import { SyntheticEvent } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+
+declare module "react" {
+  interface CSSProperties {
+    "--tree-view-color"?: string;
+  }
+}
 
 type StyledTreeItemProps = TreeItemProps & {
   labelIcon: React.ElementType<SvgIconProps>;
   labelInfo?: string;
   labelText: string;
-  name: string;
+  color?: string;
 };
 
 const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   color: theme.palette.text.secondary,
   [`& .${treeItemClasses.content}`]: {
     height: 56,
-    color: theme.palette.text.secondary,
+
+    color: "var(--tree-view-color)",
     fontWeight: theme.typography.fontWeightMedium,
     "&.Mui-expanded": {
       fontWeight: theme.typography.fontWeightRegular,
@@ -50,30 +58,30 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
 }));
 
 function StyledTreeItem(props: StyledTreeItemProps) {
-  const { labelIcon: LabelIcon, labelInfo, labelText, ...other } = props;
+  const { labelIcon: LabelIcon, labelInfo, labelText, color, ...other } = props;
 
   return (
     <StyledTreeItemRoot
       label={
         <Box sx={{ display: "flex", alignItems: "center", p: 0.5, pr: 0 }}>
           <LabelIcon />
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: "inherit", flexGrow: 1 }}
-          >
-            {labelText}
-          </Typography>
-          <Typography variant="caption" color="inherit">
-            {labelInfo}
-          </Typography>
+          <Typography variant="body2">{labelText}</Typography>
+          <Typography variant="caption">{labelInfo}</Typography>
         </Box>
       }
+      style={{
+        "--tree-view-color": color,
+      }}
       {...other}
     />
   );
 }
 
 function Sidebar() {
+  const departments = useSelector(
+    (state: RootState) => state.dashboard.departments
+  );
+
   const navigate = useNavigate();
 
   const onTreeViewItemClicked = (e: React.MouseEvent<HTMLElement>) => {
@@ -88,6 +96,8 @@ function Sidebar() {
         navigate("dashboard");
         break;
       default:
+        const id = 1;
+        navigate(`departments/${id}`);
         break;
     }
   };
@@ -99,47 +109,30 @@ function Sidebar() {
         className={classes.root}
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowLeftIcon />}
+        defaultSelected="1"
       >
         <StyledTreeItem
-          name="dashboard"
           nodeId="1"
           labelText="דשבורד"
           labelIcon={DashboardOutlinedIcon}
           onClick={onTreeViewItemClicked}
         />
         <StyledTreeItem
-          name="departmens"
           nodeId="2"
           labelText="מחלקות"
           labelIcon={FolderOutlinedIcon}
         >
-          <StyledTreeItem
-            name="departmens"
-            nodeId="3"
-            labelText="מחלקת אסטרטגיה"
-            labelIcon={CircleIcon}
-          />
-          <StyledTreeItem
-            name="departmens"
-            nodeId="4"
-            labelText="מחלקת הדרכות"
-            labelIcon={CircleIcon}
-          />
-          <StyledTreeItem
-            name="departmens"
-            nodeId="5"
-            labelText="מחלקת הדרכות"
-            labelIcon={CircleIcon}
-          />
-          <StyledTreeItem
-            name="departmens"
-            nodeId="6"
-            labelText="מחלקת הדרכות"
-            labelIcon={CircleIcon}
-          />
+          {departments.map((department, idx) => (
+            <StyledTreeItem
+              nodeId={`2. + ${department.id}`}
+              labelText={department.name}
+              labelIcon={CircleIcon}
+              color={department.color}
+              onClick={onTreeViewItemClicked}
+            />
+          ))}
         </StyledTreeItem>
         <StyledTreeItem
-          name="users"
           nodeId="7"
           labelText="מאגר רשומים"
           labelIcon={PeopleOutlineIcon}

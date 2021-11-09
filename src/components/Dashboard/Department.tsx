@@ -1,8 +1,8 @@
+import { IDepartment } from "../../store/dashboard-Slice";
 import ProgressBar from "../Common/ProgressBar/ProgressBar";
 import classes from "./Department.module.css";
-import { IDepartment } from "../../store/dashboard-Slice";
 
-function Department({ color, projects, name }: IDepartment) {
+function Department({ color, projects, name, id }: IDepartment) {
   return (
     <div className={classes.root}>
       <div className={classes.topPart}>

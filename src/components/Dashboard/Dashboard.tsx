@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import DoughnutChart from "../Common/DoughnutChart";
@@ -11,9 +12,25 @@ function Dashboard() {
     (state: RootState) => state.dashboard.departments
   );
 
-  const labels = ["מחלקה 1", "מחלקה 2", "מחלקה 3"];
-  const datasetsData = [12, 30, 20];
-  const backgroundColors = ["#C73CA8", "#3CC73C", "#FDBC4E"];
+  const [labels, setLabels] = useState<string[]>([]);
+  const [colors, setColors] = useState<string[]>([]);
+  const [chartData, setChartData] = useState<number[]>([]);
+
+  useEffect(() => {
+    const labels: string[] = departments.map((department) => department.name);
+    setLabels(labels);
+
+    const colors: string[] = departments.map((department) => department.color);
+    setColors(colors);
+
+    const chartData: number[] = departments.map((department) =>
+      department.projects.reduce(
+        (previousValue, b) => previousValue + b.total,
+        0
+      )
+    );
+    setChartData(chartData);
+  }, [departments]);
 
   return (
     <div className={classes.root}>
@@ -23,13 +40,14 @@ function Dashboard() {
           <div className={classes.chartContainer}>
             <DoughnutChart
               labels={labels}
-              datasetsData={datasetsData}
-              backgroundColors={backgroundColors}
+              datasetsData={chartData}
+              backgroundColors={colors}
             />
           </div>
           {departments.map((department, idx) => (
             <Department
               key={idx}
+              id={department.id}
               color={department.color}
               projects={department.projects}
               name={department.name}

@@ -11,3 +11,9 @@
   /* background-color: rgb(234, 232, 236); */
   height: 400px;
 }
+
+.date {
+  color: var(--main-color);
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
