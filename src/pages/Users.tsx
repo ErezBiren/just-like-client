@@ -1,7 +1,32 @@
 import classes from "./Users.module.css";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridApi, GridCellValue, GridColDef } from "@mui/x-data-grid";
+import { Button } from "antd";
 
 const columns: GridColDef[] = [
+  // {
+  //   field: "action",
+  //   headerName: "Action",
+  //   sortable: false,
+  //   renderCell: (params) => {
+  //     const onClick = (e: any) => {
+  //       e.stopPropagation(); // don't select this row after clicking
+
+  //       const api: GridApi = params.api;
+  //       const thisRow: Record<string, GridCellValue> = {};
+
+  //       api
+  //         .getAllColumns()
+  //         .filter((c) => c.field !== "__check__" && !!c)
+  //         .forEach(
+  //           (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
+  //         );
+
+  //       return alert(JSON.stringify(thisRow));
+  //     };
+
+  //     return <Button onClick={onClick}>Click</Button>;
+  //   },
+  // },
   {
     field: "fullName",
     headerName: "שם מלא",

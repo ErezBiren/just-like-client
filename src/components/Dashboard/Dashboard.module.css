@@ -1,11 +1,13 @@
 .root {
   display: flex;
   flex-direction: row;
+  height: 90vh;
 }
 
 .rightSide {
   width: 60%;
-  margin: 0 5%;
+  padding: 0 5%;
+  overflow-y: auto;
 }
 
 .leftSide {
