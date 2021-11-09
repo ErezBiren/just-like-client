@@ -67,36 +67,50 @@ function Login() {
         <form onSubmit={handleSubmit}>
           <div className={classes.formContent}>
             <Logo width="125" height="125" />
-            <h1>התחברות למערכת</h1>
-            <div className={classes.communityButtons}>
-              <ButtonWithIcon
-                text="התחברות עם לינקדאין"
-                onClick={connectWithLinkedin}
-                Icon={LinkedinIcon}
-              />
-              <ButtonWithIcon
-                text="התחברות עם גוגל"
-                onClick={connectWithGoogle}
-                Icon={GoogleIcon}
+            <div className={classes.spacing}>
+              <h1>התחברות למערכת</h1>
+            </div>
+            <div className={classes.spacing}>
+              <div className={classes.communityButtons}>
+                <ButtonWithIcon
+                  text="התחברות עם לינקדאין"
+                  onClick={connectWithLinkedin}
+                  Icon={LinkedinIcon}
+                />
+                <ButtonWithIcon
+                  text="התחברות עם גוגל"
+                  onClick={connectWithGoogle}
+                  Icon={GoogleIcon}
+                />
+              </div>
+            </div>
+            <div className={classes.spacing}>
+              <HorizontalSeparatorWithText text="או התחברו עם">
+                {" "}
+              </HorizontalSeparatorWithText>
+            </div>
+            <div className={classes.spacing}>
+              <TextField
+                placeholder="כתובת מייל*"
+                onChange={handleChange}
+                name="email"
               />
             </div>
-            <HorizontalSeparatorWithText text="או התחברו עם">
-              {" "}
-            </HorizontalSeparatorWithText>
-            <TextField
-              placeholder="כתובת מייל*"
-              onChange={handleChange}
-              name="email"
-            />
-            <TextField
-              placeholder="סיסמא*"
-              onChange={handleChange}
-              name="password"
-            />
-            <RoundedButton>התחברות</RoundedButton>
-            <div className={classes.signupContainer}>
-              <span>לא נרשמת?</span>
-              <Link to="/signup">להרשמה</Link>
+            <div className={classes.spacing}>
+              <TextField
+                placeholder="סיסמא*"
+                onChange={handleChange}
+                name="password"
+              />
+            </div>
+            <div className={classes.spacing}>
+              <RoundedButton>התחברות</RoundedButton>
+            </div>
+            <div className={classes.spacing}>
+              <div className={classes.signupContainer}>
+                <span>לא נרשמת?</span>
+                <Link to="/signup">להרשמה</Link>
+              </div>
             </div>
           </div>
         </form>
