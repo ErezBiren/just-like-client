@@ -86,7 +86,7 @@ function Sidebar() {
 
   const onTreeViewItemClicked = (e: React.MouseEvent<HTMLElement>) => {
     const input = e.target as HTMLElement;
-
+    //todo: don't rely on inner text
     switch (input.innerText) {
       case "מאגר רשומים":
         navigate("users");
@@ -96,8 +96,6 @@ function Sidebar() {
         break;
       default:
         const department = departments.find((d) => d.name === input.innerText);
-        
-        
         navigate(`departments/${department?.id}`);
         break;
     }
