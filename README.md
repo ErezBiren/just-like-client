@@ -1,6 +1,4 @@
 
-# react-cakes
-
 ### Built With
 
 - [React](https://reactjs.org/)
