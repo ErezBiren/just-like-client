@@ -1,4 +1,4 @@
-import { IDepartment } from "../../store/dashboard-Slice";
+import { IDepartment } from "../../store/models";
 import ProgressBar from "../Common/ProgressBar/ProgressBar";
 import classes from "./Department.module.css";
 
