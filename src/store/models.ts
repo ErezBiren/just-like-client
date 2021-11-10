@@ -1,11 +1,17 @@
+
 export enum Priority {
     None,
     High,
 }
 
-export enum Status {
+export enum MissionStatus {
     InProgress,
     completed,
+}
+
+export enum UserStatus {
+    InActive,
+    Active,
 }
 
 export interface IMission {
@@ -13,7 +19,7 @@ export interface IMission {
     title: string;
     priority: Priority;
     dueDate: Date;
-    status: Status;
+    status: MissionStatus;
     participents?: IUser[];
 }
 
@@ -35,4 +41,8 @@ export interface IDepartment {
 
 export interface IUser {
     id: string;
+    fullName: string;
+    email: string;
+    linkedin: string;
+    status: UserStatus;
 }

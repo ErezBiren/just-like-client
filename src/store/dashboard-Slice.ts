@@ -1,9 +1,10 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IDepartment, Priority, Status } from "./models";
+import { createSlice } from "@reduxjs/toolkit";
+import { IDepartment, IUser, Priority, MissionStatus, UserStatus } from "./models";
 
 export interface IDashboardState {
     departments: IDepartment[];
     selectedDepartment?: IDepartment;
+    users: IUser[];
 }
 
 export const initialState: IDashboardState = {
@@ -23,15 +24,15 @@ export const initialState: IDashboardState = {
                     missions: [
                         {
                             id: "1",
-                            status: Status.InProgress,
+                            status: MissionStatus.InProgress,
                             title: "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
                             dueDate: new Date(),
                             priority: Priority.High,
-                            participents: [{ id: "1" }]
+                            participents: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active }]
                         },
                         {
                             id: "2",
-                            status: Status.completed,
+                            status: MissionStatus.completed,
                             title: "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
                             dueDate: new Date(),
                             priority: Priority.High,
@@ -83,25 +84,10 @@ export const initialState: IDashboardState = {
                 { id: "2", name: "ccc", total: 100, completed: 4, percentage: 63, missions: [] },
             ],
         },
-        // {
-        //     id: "5",
-        //     name: "מחלקת אסטרטגיה",
-        //     color: "#C73CA8",
-        //     projects: [
-        //         { name: "aa", total: 100, completed: 2, percentage: 100 },
-        //         { name: "ccc", total: 100, completed: 4, percentage: 63 },
-        //     ],
-        // },
-        // {
-        //     id: "6",
-        //     name: "מחלקת אסטרטגיה",
-        //     color: "#C73CA8",
-        //     projects: [
-        //         { name: "aa", total: 100, completed: 2, percentage: 100 },
-        //         { name: "ccc", total: 100, completed: 4, percentage: 63 },
-        //     ],
-        // },
+
     ],
+    users: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active },
+    { id: "2", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.InActive }]
 };
 
 // todo: change this to false
@@ -110,14 +96,7 @@ export const dashboardSlice = createSlice({
     name: "dashboard",
     initialState,
     reducers: {
-        // selectDepartment: (
-        //   state: IDashboardState,
-        //   action: PayloadAction<string>
-        // ) => {
-        //   state.selectedDepartment = state.departments.find(
-        //     (d) => d.id === action.payload
-        //   );
-        // },
+
     },
 });
 

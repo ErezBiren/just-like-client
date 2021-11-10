@@ -9,6 +9,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import MissionTable from "../components/Dashboard/MissionTable";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
 
 function DepartmentPage() {
   const params = useParams();
@@ -35,7 +36,9 @@ function DepartmentPage() {
           <div className={classes.accordion} key={idx}>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography color="#3CC73C">{project.name}</Typography>
+                <Box mx={2}>
+                  <Typography color="#3CC73C">{project.name}</Typography>
+                </Box>
               </AccordionSummary>
               <div className={classes.missionsTable}>
                 <MissionTable missions={project.missions} />

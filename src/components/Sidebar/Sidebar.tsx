@@ -64,8 +64,10 @@ function StyledTreeItem(props: StyledTreeItemProps) {
     <StyledTreeItemRoot
       label={
         <Box sx={{ display: "flex", alignItems: "center", p: 0.5, pr: 0 }}>
-          <LabelIcon />
-          <Typography variant="body2">{labelText}</Typography>
+          <Box ml={3}>
+            <LabelIcon />
+          </Box>
+          <Typography>{labelText}</Typography>
           <Typography variant="caption">{labelInfo}</Typography>
         </Box>
       }

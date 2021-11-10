@@ -1,37 +1,11 @@
 import classes from "./Users.module.css";
-import { DataGrid, GridApi, GridCellValue, GridColDef } from "@mui/x-data-grid";
-import { Button } from "antd";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
-  // {
-  //   field: "action",
-  //   headerName: "Action",
-  //   sortable: false,
-  //   renderCell: (params) => {
-  //     const onClick = (e: any) => {
-  //       e.stopPropagation(); // don't select this row after clicking
-
-  //       const api: GridApi = params.api;
-  //       const thisRow: Record<string, GridCellValue> = {};
-
-  //       api
-  //         .getAllColumns()
-  //         .filter((c) => c.field !== "__check__" && !!c)
-  //         .forEach(
-  //           (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
-  //         );
-
-  //       return alert(JSON.stringify(thisRow));
-  //     };
-
-  //     return <Button onClick={onClick}>Click</Button>;
-  //   },
-  // },
   {
     field: "fullName",
     headerName: "שם מלא",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -39,7 +13,6 @@ const columns: GridColDef[] = [
     field: "email",
     headerName: "אימייל",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -48,7 +21,6 @@ const columns: GridColDef[] = [
     headerName: "פרופיל לינקדאין",
     type: "number",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -57,7 +29,6 @@ const columns: GridColDef[] = [
     headerName: "נרשם בתאריך",
     type: "number",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -66,16 +37,27 @@ const columns: GridColDef[] = [
     headerName: "קטגוריה",
     type: "number",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
   {
     field: "status",
+    renderCell: (cellValues: any) => {
+      return (
+        <div
+          className={classes.status}
+          style={{
+            background:
+              cellValues.row.status === "פעיל" ? "#3CC73C25" : "#D92D2025",
+            color: cellValues.row.status === "פעיל" ? "#3CC73C" : "#D92D20",
+          }}
+        >
+          {cellValues.row.status}
+        </div>
+      );
+    },
     headerName: "סטטוס",
-    type: "number",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -84,7 +66,6 @@ const columns: GridColDef[] = [
     headerName: "פעילות",
     type: "number",
     width: 150,
-    editable: true,
     align: "center",
     headerAlign: "center",
   },
@@ -107,70 +88,7 @@ const rows = [
     linkedin: "https://www.linkedin.com/in/israel/",
     dateSubscribed: "12/11/2021",
     category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 3,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 4,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 5,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 6,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 7,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 8,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 9,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
+    status: "פעיל לא",
   },
 ];
 

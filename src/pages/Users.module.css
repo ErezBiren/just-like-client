@@ -8,3 +8,9 @@
   width: 100%;
   background-color: white;
 }
+
+.status {
+  width: 60px;
+
+  border-radius: 20px;
+}
