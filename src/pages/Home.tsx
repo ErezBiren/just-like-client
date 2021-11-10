@@ -21,6 +21,9 @@ function Home() {
         <div className={classes.topControls}>
           <div className={classes.searchContainer}>
             <TextField
+              style={{
+                backgroundColor: "white",
+              }}
               type="search"
               variant="outlined"
               margin="normal"
