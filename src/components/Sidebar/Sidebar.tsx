@@ -9,7 +9,7 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import classes from "./Sidebar.module.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
@@ -105,7 +105,9 @@ function Sidebar() {
 
   return (
     <>
-      <Logo width="125" height="125" />
+      <Link to="/">
+        <Logo width="125" height="125" />
+      </Link>
       <TreeView
         className={classes.root}
         defaultCollapseIcon={<ArrowDropDownIcon />}
