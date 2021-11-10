@@ -1,5 +1,10 @@
 import classes from "./Users.module.css";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { Link } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { useState, useEffect } from "react";
+import { UserStatus } from "../store/models";
 
 const columns: GridColDef[] = [
   {
@@ -15,12 +20,26 @@ const columns: GridColDef[] = [
     width: 150,
     align: "center",
     headerAlign: "center",
+    renderCell: (cellValues: any) => {
+      return (
+        <Link href={`mailto:${cellValues.row.email}`}>
+          {cellValues.row.email}
+        </Link>
+      );
+    },
   },
   {
     field: "linkedin",
+    renderCell: (cellValues: any) => {
+      return (
+        <Link target="_blank" href={`${cellValues.row.linkedin}`}>
+          {cellValues.row.linkedin}
+        </Link>
+      );
+    },
     headerName: "פרופיל לינקדאין",
     type: "number",
-    width: 150,
+    width: 270,
     align: "center",
     headerAlign: "center",
   },
@@ -28,7 +47,7 @@ const columns: GridColDef[] = [
     field: "dateSubscribed",
     headerName: "נרשם בתאריך",
     type: "number",
-    width: 150,
+    width: 200,
     align: "center",
     headerAlign: "center",
   },
@@ -71,28 +90,25 @@ const columns: GridColDef[] = [
   },
 ];
 
-const rows = [
-  {
-    id: 1,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל",
-  },
-  {
-    id: 2,
-    fullName: "ישראל ישראלי",
-    email: "israel@gmail.com",
-    linkedin: "https://www.linkedin.com/in/israel/",
-    dateSubscribed: "12/11/2021",
-    category: "מנהל משימות",
-    status: "פעיל לא",
-  },
-];
-
 function Users() {
+  const users = useSelector((state: RootState) => state.dashboard.users);
+
+  const [rows, setRows] = useState<any[]>([]);
+
+  useEffect(() => {
+    const newUsers = users.map((m) => ({
+      id: m.id,
+      fullName: m.fullName,
+      email: m.email,
+      linkedin: m.linkedin,
+      dateSubscribed: "12/11/2021",
+      category: m.category,
+      status: m.status === UserStatus.Active ? "פעיל" : "פעיל לא",
+    }));
+
+    setRows(newUsers);
+  }, [users]);
+
   return (
     <div className={classes.root}>
       <h2>מאגר רשומים</h2>

@@ -40,9 +40,10 @@ export interface IDepartment {
 }
 
 export interface IUser {
+    category?: string;
     id: string;
     fullName: string;
-    email: string;
-    linkedin: string;
+    email?: string;
+    linkedin?: string;
     status: UserStatus;
 }

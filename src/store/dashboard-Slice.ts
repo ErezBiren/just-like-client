@@ -86,8 +86,8 @@ export const initialState: IDashboardState = {
         },
 
     ],
-    users: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active },
-    { id: "2", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.InActive }]
+    users: [{ id: "1", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive },
+    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active }]
 };
 
 // todo: change this to false
