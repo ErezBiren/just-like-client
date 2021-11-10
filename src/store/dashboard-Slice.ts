@@ -28,7 +28,7 @@ export const initialState: IDashboardState = {
                             title: "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
                             dueDate: new Date(),
                             priority: Priority.High,
-                            participents: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active }]
+                            participents: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active, subscribedDate: new Date() }]
                         },
                         {
                             id: "2",
@@ -86,8 +86,8 @@ export const initialState: IDashboardState = {
         },
 
     ],
-    users: [{ id: "1", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive },
-    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active }]
+    users: [{ id: "1", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
+    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() }]
 };
 
 // todo: change this to false

@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useState, useEffect } from "react";
 import { UserStatus } from "../store/models";
+import { ReactComponent as MoreIcon } from "../assets/dashboard/more-horizontal.svg";
+import Moment from "moment";
 
 const columns: GridColDef[] = [
   {
@@ -82,6 +84,9 @@ const columns: GridColDef[] = [
   },
   {
     field: "activity",
+    renderCell: () => {
+      return <MoreIcon />;
+    },
     headerName: "פעילות",
     type: "number",
     width: 150,
@@ -101,7 +106,7 @@ function Users() {
       fullName: m.fullName,
       email: m.email,
       linkedin: m.linkedin,
-      dateSubscribed: "12/11/2021",
+      dateSubscribed: Moment(m.subscribedDate).format("L"),
       category: m.category,
       status: m.status === UserStatus.Active ? "פעיל" : "פעיל לא",
     }));

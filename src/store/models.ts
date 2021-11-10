@@ -40,6 +40,7 @@ export interface IDepartment {
 }
 
 export interface IUser {
+    subscribedDate: any;
     category?: string;
     id: string;
     fullName: string;

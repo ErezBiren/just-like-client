@@ -2,6 +2,9 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import { IMission } from "../../store/models";
 import CircleIcon from "@mui/icons-material/Circle";
+import { AvatarGroup } from "@mui/material";
+import { Avatar } from "@material-ui/core";
+import { deepOrange } from "@mui/material/colors";
 
 const columns: GridColDef[] = [
   {
@@ -20,14 +23,6 @@ const columns: GridColDef[] = [
     align: "center",
     headerAlign: "center",
   },
-  // {
-  //   field: "title",
-  //   headerName: "תיאור",
-  //   width: 350,
-  //   editable: true,
-  //   align: "center",
-  //   headerAlign: "center",
-  // },
   {
     field: "status",
     headerName: "סטטוס",
@@ -55,6 +50,16 @@ const columns: GridColDef[] = [
   {
     field: "participents",
     headerName: "משתתפים",
+    renderCell: (cellValues) => {
+      return (
+        <div>
+          <AvatarGroup max={3}>
+            <Avatar>B</Avatar>
+            <Avatar>B</Avatar>
+          </AvatarGroup>
+        </div>
+      );
+    },
     type: "number",
     width: 150,
     editable: true,
