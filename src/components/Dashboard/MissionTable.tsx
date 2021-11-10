@@ -4,7 +4,6 @@ import { IMission } from "../../store/models";
 import CircleIcon from "@mui/icons-material/Circle";
 import { AvatarGroup } from "@mui/material";
 import { Avatar } from "@material-ui/core";
-import { deepOrange } from "@mui/material/colors";
 
 const columns: GridColDef[] = [
   {

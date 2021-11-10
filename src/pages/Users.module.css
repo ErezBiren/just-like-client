@@ -11,6 +11,6 @@
 
 .status {
   width: 60px;
-
   border-radius: 20px;
+  line-height: 2rem;
 }
