@@ -1,9 +1,10 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { IMission } from "../../store/models";
+import { IMission, Priority } from "../../store/models";
 import { AvatarGroup, Box, Modal, Typography } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import StarIcon from "@mui/icons-material/Star";
+import classes from "./MissionsTable.module.css";
 
 const columns: GridColDef[] = [
   {
@@ -11,7 +12,9 @@ const columns: GridColDef[] = [
     renderCell: (cellValues) => {
       return (
         <div>
-          <li>{cellValues.row.title}</li>
+          <li style={{ color: "#fadaf" }}>
+            <span style={{ color: "#fadsf" }}>{cellValues.row.title}</span>
+          </li>
         </div>
       );
     },
@@ -32,9 +35,7 @@ const columns: GridColDef[] = [
   {
     field: "dueDate",
     headerName: "תאריך יעד",
-    renderCell: (cellValues) => {
-      return <div>נותרו 3 ימים</div>;
-    },
+    renderCell: () => <div>נותרו 3 ימים</div>,
     width: 150,
     editable: true,
     align: "center",
@@ -44,7 +45,7 @@ const columns: GridColDef[] = [
     field: "priority",
     headerName: "עדיפות",
     renderCell: (cellValues) => {
-      return cellValues.row.priority === 1 ? (
+      return cellValues.row.priority == Priority.High ? (
         <StarIcon sx={{ color: "#E32F2F" }} />
       ) : (
         <StarIcon sx={{ color: "#3CC73C" }} />
