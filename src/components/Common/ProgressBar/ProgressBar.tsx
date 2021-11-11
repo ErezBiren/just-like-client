@@ -1,8 +1,14 @@
-const ProgressBar = (props) => {
+interface IProgressBarProperties {
+  bgcolor: string;
+  completed: number;
+  percentage: number;
+}
+
+const ProgressBar = (props: IProgressBarProperties) => {
   const { bgcolor, completed, percentage } = props;
 
   const percentageStyles = {
-    textAlign: "left",
+    textAlign: "left" as const,
     marginBottom: 15,
   };
 
@@ -22,7 +28,7 @@ const ProgressBar = (props) => {
   };
 
   const completedStyles = {
-    textAlign: "left",
+    textAlign: "left" as const,
     borderRadius: 50,
     backgroundColor: "#aaaaf",
   };

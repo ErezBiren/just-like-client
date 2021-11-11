@@ -25,9 +25,9 @@ export interface IMission {
 
 export interface IProject {
     id: string;
-    completed: Number;
-    percentage: Number;
-    name: String;
+    completed: number;
+    percentage: number;
+    name: string;
     total: number;
     missions: IMission[];
 }
