@@ -13,6 +13,7 @@ import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../../store/auth-Slice";
+import { Box } from "@mui/system";
 
 function Login() {
   const navigate = useNavigate();
@@ -72,16 +73,28 @@ function Login() {
             </div>
             <div className={classes.spacing}>
               <div className={classes.communityButtons}>
-                <ButtonWithIcon
-                  text="התחברות עם לינקדאין"
-                  onClick={connectWithLinkedin}
-                  Icon={LinkedinIcon}
-                />
-                <ButtonWithIcon
-                  text="התחברות עם גוגל"
-                  onClick={connectWithGoogle}
-                  Icon={GoogleIcon}
-                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                  }}
+                >
+                  <Box sx={{ width: 1 / 2.1 }}>
+                    <ButtonWithIcon
+                      text="התחברות עם לינקדאין"
+                      onClick={connectWithLinkedin}
+                      Icon={LinkedinIcon}
+                    />
+                  </Box>
+                  <Box sx={{ width: 1 / 2.1 }}>
+                    <ButtonWithIcon
+                      text="התחברות עם גוגל"
+                      onClick={connectWithGoogle}
+                      Icon={GoogleIcon}
+                    />
+                  </Box>
+                </Box>
               </div>
             </div>
             <div className={classes.spacing}>

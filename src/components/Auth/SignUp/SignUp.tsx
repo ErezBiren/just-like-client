@@ -7,6 +7,8 @@ import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
 import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
+import { Box } from "@mui/material";
+import { Row } from "antd";
 
 function SignUp() {
   const [data, setData] = useState({
@@ -46,37 +48,59 @@ function SignUp() {
           <div className={classes.formContent}>
             <Logo width="125" height="125" />
             <h1>הרשמה למערכת</h1>
-            <TextField
-              placeholder="שם פרטי*"
-              onChange={handleChange}
-              name="firstName"
-            />
-            <TextField
-              placeholder="שם משפחה*"
-              onChange={handleChange}
-              name="lastName"
-            />
-            <TextField
-              placeholder="קישור לפרופיל לינקדאין*"
-              onChange={handleChange}
-              name="linkedin"
-            />
-            <TextField
-              placeholder="נייד*"
-              onChange={handleChange}
-              name="phone"
-            />
-            <TextField
-              placeholder="כתובת מייל*"
-              onChange={handleChange}
-              name="email"
-            />
-            <TextField
-              placeholder="סיסמא*"
-              onChange={handleChange}
-              name="password"
-            />
-            <RoundedButton style="width:50px">להרשמה</RoundedButton>
+            <Box
+              sx={{
+                mt: 2,
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <Box sx={{ ml: 2 }}>
+                <TextField
+                  placeholder="שם פרטי*"
+                  onChange={handleChange}
+                  name="firstName"
+                />
+              </Box>
+              <TextField
+                placeholder="שם משפחה*"
+                onChange={handleChange}
+                name="lastName"
+              />
+            </Box>
+
+            <Box sx={{ mt: 2, width: 1 / 2.5 }}></Box>
+            <Box sx={{ mt: 2 }}>
+              <TextField
+                placeholder="קישור לפרופיל לינקדאין*"
+                onChange={handleChange}
+                name="linkedin"
+              />
+            </Box>
+            <Box sx={{ mt: 2 }}>
+              <TextField
+                placeholder="נייד*"
+                onChange={handleChange}
+                name="phone"
+              />
+            </Box>
+            <Box sx={{ mt: 2 }}>
+              <TextField
+                placeholder="כתובת מייל*"
+                onChange={handleChange}
+                name="email"
+              />
+            </Box>
+            <Box sx={{ mt: 2 }}>
+              <TextField
+                placeholder="סיסמא*"
+                onChange={handleChange}
+                name="password"
+              />
+            </Box>
+            <Box sx={{ mt: 2 }}>
+              <RoundedButton>להרשמה</RoundedButton>
+            </Box>
             <div className={classes.signupContainer}>
               <span>נרשמת?</span>
               <Link to="/login">להתחברות</Link>

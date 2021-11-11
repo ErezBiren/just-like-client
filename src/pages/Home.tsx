@@ -4,7 +4,6 @@ import Dashboard from "../components/Dashboard/Dashboard";
 import { ReactComponent as BellIcon } from "../assets/dashboard/bell.svg";
 import { ReactComponent as MessageCircleIcon } from "../assets/dashboard/message-circle.svg";
 import { ReactComponent as UserPlusIcon } from "../assets/dashboard/user-plus.svg";
-
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Route, Routes } from "react-router-dom";
