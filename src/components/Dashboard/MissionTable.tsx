@@ -1,9 +1,9 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import { IMission } from "../../store/models";
-import CircleIcon from "@mui/icons-material/Circle";
 import { AvatarGroup, Box, Modal, Typography } from "@mui/material";
-import { Avatar } from "@material-ui/core";
+import Avatar from "@mui/material/Avatar";
+import StarIcon from "@mui/icons-material/Star";
 
 const columns: GridColDef[] = [
   {
@@ -11,28 +11,30 @@ const columns: GridColDef[] = [
     renderCell: (cellValues) => {
       return (
         <div>
-          {/* <CircleIcon /> */}
-          {cellValues.row.title}
+          <li>{cellValues.row.title}</li>
         </div>
       );
     },
     headerName: "תיאור",
-    width: 350,
+    width: 450,
     editable: true,
-    align: "center",
+    align: "left",
     headerAlign: "center",
   },
-  {
-    field: "status",
-    headerName: "סטטוס",
-    width: 150,
-    editable: true,
-    align: "center",
-    headerAlign: "center",
-  },
+  // {
+  //   field: "status",
+  //   headerName: "סטטוס",
+  //   width: 150,
+  //   editable: true,
+  //   align: "center",
+  //   headerAlign: "center",
+  // },
   {
     field: "dueDate",
     headerName: "תאריך יעד",
+    renderCell: (cellValues) => {
+      return <div>נותרו 3 ימים</div>;
+    },
     width: 150,
     editable: true,
     align: "center",
@@ -41,6 +43,13 @@ const columns: GridColDef[] = [
   {
     field: "priority",
     headerName: "עדיפות",
+    renderCell: (cellValues) => {
+      return cellValues.row.priority === 1 ? (
+        <StarIcon sx={{ color: "#E32F2F" }} />
+      ) : (
+        <StarIcon sx={{ color: "#3CC73C" }} />
+      );
+    },
     width: 150,
     editable: true,
     align: "center",
@@ -53,8 +62,10 @@ const columns: GridColDef[] = [
       return (
         <div>
           <AvatarGroup max={3}>
-            <Avatar>B</Avatar>
-            <Avatar>B</Avatar>
+            <Avatar sx={{ bgcolor: "#E5BB69" }}>נב</Avatar>
+            <Avatar sx={{ bgcolor: "#E569E0" }}>עש</Avatar>
+            <Avatar sx={{ bgcolor: "#69E5C0" }}>מג</Avatar>
+            <Avatar sx={{ bgcolor: "#69B1E5" }}>מג</Avatar>
           </AvatarGroup>
         </div>
       );
