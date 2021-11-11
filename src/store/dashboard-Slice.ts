@@ -25,7 +25,7 @@ export const initialState: IDashboardState = {
                         {
                             id: "1",
                             status: MissionStatus.InProgress,
-                            title: "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
+                            title: "בניית תיק עבודות ",
                             dueDate: new Date(),
                             priority: Priority.High,
                             participents: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active, subscribedDate: new Date() }]
@@ -33,7 +33,7 @@ export const initialState: IDashboardState = {
                         {
                             id: "2",
                             status: MissionStatus.completed,
-                            title: "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
+                            title: "התחלת עיצוב ארכיטקטורה",
                             dueDate: new Date(),
                             priority: Priority.High,
                         },
