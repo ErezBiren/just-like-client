@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window {
+  position: absolute;
+  background-color: white;
+  width: 85vw;
+  height: 80vh;
+  box-shadow: 5px 10px 18px #3833332c;
+  top: 10%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.topBar {
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.rightSide {
+  height: 100%;
+  width: 50%;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.missionDetails {
+  
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+h4 {
+  margin-bottom: 1rem;
+}
+
+h5 {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  /* background-color: rebeccapurple; */
+  width: 8rem;
+  display: flex;
+  color: #979797;
+  align-items: center;
+}

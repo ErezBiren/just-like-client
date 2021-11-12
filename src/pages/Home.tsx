@@ -8,7 +8,7 @@ import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Route, Routes } from "react-router-dom";
 import Users from "./Users";
-import DepartmentPage from "./DepartmentPage";
+import Department from "./Department";
 
 function Home() {
   return (
@@ -53,7 +53,7 @@ function Home() {
             <Route path="/*" element={<Dashboard />} />
             <Route
               path="departments/:departmentId"
-              element={<DepartmentPage />}
+              element={<Department />}
             />
             <Route path="users" element={<Users />} />
           </Routes>

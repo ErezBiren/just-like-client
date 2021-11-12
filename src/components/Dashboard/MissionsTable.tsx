@@ -1,10 +1,11 @@
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridCellParams } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { IMission, Priority } from "../../store/models";
-import { AvatarGroup, Box, Modal, Typography } from "@mui/material";
+import { IMission, Priority, MissionStatus } from "../../store/models";
+import { AvatarGroup, Modal } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import StarIcon from "@mui/icons-material/Star";
-import classes from "./MissionsTable.module.css";
+import MissionDetails from "./MissionDetails";
+import AddIcon from "@mui/icons-material/Add";
 
 const columns: GridColDef[] = [
   {
@@ -63,6 +64,9 @@ const columns: GridColDef[] = [
       return (
         <div>
           <AvatarGroup max={3}>
+            <Avatar>
+              <AddIcon />
+            </Avatar>
             <Avatar sx={{ bgcolor: "#E5BB69" }}>נב</Avatar>
             <Avatar sx={{ bgcolor: "#E569E0" }}>עש</Avatar>
             <Avatar sx={{ bgcolor: "#69E5C0" }}>מג</Avatar>
@@ -79,33 +83,26 @@ const columns: GridColDef[] = [
   },
 ];
 
-interface MissionDataParams {
+interface IMissionsTableDataParams {
   missions: IMission[];
 }
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
-function MissionTable(props: MissionDataParams) {
+function MissionsTable(props: IMissionsTableDataParams) {
   const [missions, setMissions] = useState<any[]>([]);
 
   const [open, setOpen] = useState(false);
+  const [selectedMission, setSelectedMission] = useState<IMission>({
+    id: "",
+    title: "",
+    priority: Priority.None,
+    dueDate: new Date(),
+    status: MissionStatus.InProgress ,
+  });
 
-  const handleRowDoubleClick = () => {
-    setOpen(true);
-    alert("123");
-  };
+  const handleDoubleClick = (e: GridCellParams) => {
+    console.log(JSON.stringify(e));
 
-  const handleOpen = () => {
+    setSelectedMission(missions.find((m) => m.id == e.row.id));
     setOpen(true);
   };
 
@@ -135,25 +132,16 @@ function MissionTable(props: MissionDataParams) {
         pageSize={5}
         rowsPerPageOptions={[5]}
         disableSelectionOnClick
-        //  onRowDoubleClick={handleRowDoubleClick}
+        onCellDoubleClick={handleDoubleClick}
       />
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
+      <Modal open={open} onClose={handleClose}>
+        <MissionDetails
+          mission={selectedMission}
+          onClose={handleClose}
+        ></MissionDetails>
       </Modal>
     </div>
   );
 }
 
-export default MissionTable;
+export default MissionsTable;

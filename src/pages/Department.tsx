@@ -1,17 +1,17 @@
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
-import classes from "./DepartmentPage.module.css";
+import classes from "./Department.module.css";
 import { RootState } from "../store/store";
 import { useEffect, useState } from "react";
 import { IProject } from "../store/models";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import MissionTable from "../components/Dashboard/MissionTable";
+import MissionTable from "../components/Dashboard/MissionsTable";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
-function DepartmentPage() {
+function Department() {
   const params = useParams();
   const [projects, setProjects] = useState<IProject[]>([]);
 
@@ -31,6 +31,7 @@ function DepartmentPage() {
   return (
     <div>
       <div className={classes.root}>
+       
         <h2>פרוייקטים</h2>
         {projects?.map((project, idx) => (
           <div className={classes.accordion} key={idx}>
@@ -51,4 +52,4 @@ function DepartmentPage() {
   );
 }
 
-export default DepartmentPage;
+export default Department;

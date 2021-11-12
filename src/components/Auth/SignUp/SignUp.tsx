@@ -8,7 +8,6 @@ import classes from "./SignUp.module.css";
 import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/material";
-import { Row } from "antd";
 
 function SignUp() {
   const [data, setData] = useState({
