@@ -20,7 +20,7 @@ h1 {
   border-style: solid;
   border-width: 1px;
   margin-right: 5%;
-  box-shadow: 5px 10px 18px #3833332c;
+  box-shadow: var(--box-shadow);
 }
 
 .formContent {

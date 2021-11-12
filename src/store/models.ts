@@ -32,6 +32,12 @@ export interface IProject {
     missions: IMission[];
 }
 
+export interface INotification {
+    id: string;
+    text: string;
+    dataTime: Date;
+}
+
 export interface IDepartment {
     id: string;
     name: string;

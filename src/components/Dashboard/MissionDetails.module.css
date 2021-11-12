@@ -9,7 +9,7 @@
   background-color: white;
   width: 85vw;
   height: 80vh;
-  box-shadow: 5px 10px 18px #3833332c;
+  box-shadow: var(--box-shadow);
   top: 10%;
   border-radius: 20px;
   display: flex;
@@ -36,7 +36,6 @@
 }
 
 .missionDetails {
-  
   border-bottom: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;

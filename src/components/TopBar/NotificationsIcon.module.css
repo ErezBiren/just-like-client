@@ -1,0 +1,14 @@
+.root {
+  padding: 1rem;
+  width: 300px;
+  height: 300px;
+  box-shadow: var(--box-shadow);
+}
+
+.row {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

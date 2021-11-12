@@ -16,15 +16,15 @@
   align-items: center;
   width: 40%;
   background-color: white;
-  border-right: 2px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
 }
 
 .chartContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  box-shadow: 5px 10px 18px #3833332c;
-  /* border: 1px solid var(--border-color); */
+  box-shadow: var(--box-shadow);
   background-color: white;
   border-radius: 20px;
   margin-bottom: 20px; /*todo: erez fix this */

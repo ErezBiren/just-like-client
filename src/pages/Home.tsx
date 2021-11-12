@@ -1,14 +1,16 @@
 import classes from "./Home.module.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Dashboard from "../components/Dashboard/Dashboard";
-import { ReactComponent as BellIcon } from "../assets/dashboard/bell.svg";
-import { ReactComponent as MessageCircleIcon } from "../assets/dashboard/message-circle.svg";
+
 import { ReactComponent as UserPlusIcon } from "../assets/dashboard/user-plus.svg";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Route, Routes } from "react-router-dom";
 import Users from "./Users";
 import Department from "./Department";
+import NotificationsIcon from "../components/TopBar/NotificationsIcon";
+import { ReactComponent as MessageCircleIcon } from "../assets/dashboard/message-circle.svg";
+
 
 function Home() {
   return (
@@ -44,17 +46,14 @@ function Home() {
               <MessageCircleIcon />
             </div>
             <div className={classes.bellContainer}>
-              <BellIcon />
+            <NotificationsIcon />
             </div>
           </div>
         </div>
         <div className={classes.mainArea}>
           <Routes>
             <Route path="/*" element={<Dashboard />} />
-            <Route
-              path="departments/:departmentId"
-              element={<Department />}
-            />
+            <Route path="departments/:departmentId" element={<Department />} />
             <Route path="users" element={<Users />} />
           </Routes>
         </div>

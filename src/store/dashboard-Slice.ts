@@ -1,15 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IDepartment, IUser, Priority, MissionStatus, UserStatus, ISubsribersData } from "./models";
+import { IDepartment, IUser, Priority, MissionStatus, UserStatus, ISubsribersData, INotification } from "./models";
 
 export interface IDashboardState {
     subscribers: ISubsribersData[];
     departments: IDepartment[];
+    notifications: INotification[];
     selectedDepartment?: IDepartment;
     users: IUser[];
 }
 
 export const initialState: IDashboardState = {
     selectedDepartment: undefined,
+    notifications: [
+        {
+            id: "1",
+            text: "טל בראל רוצה להירשם לאפרוחיה",
+            dataTime: new Date()
+        },
+        {
+            id: "2",
+            text: "ליאור כהן רוצה להירשם לאפרוחיה",
+            dataTime: new Date()
+        },
+        {
+            id: "3",
+            text: "יונתן איינשטיין אישר השתתפות",
+            dataTime: new Date()
+        }
+    ],
     departments: [
         {
             id: "1",
@@ -86,9 +104,15 @@ export const initialState: IDashboardState = {
             ],
         },
 
+
     ],
-    users: [{ id: "1", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
-    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() }],
+    users:
+        [
+            { id: "1", email: "aa@gmail.co.il", fullName: "Erez Birenholz", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
+            { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+            { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+            { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+        ],
     subscribers: [
         {
             id: "1",
