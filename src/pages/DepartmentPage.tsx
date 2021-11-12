@@ -32,7 +32,7 @@ function DepartmentPage() {
     <div>
       <div className={classes.root}>
         <h2>פרוייקטים</h2>
-        {projects.map((project, idx) => (
+        {projects?.map((project, idx) => (
           <div className={classes.accordion} key={idx}>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>

@@ -101,7 +101,7 @@ function Users() {
   const [rows, setRows] = useState<any[]>([]);
 
   useEffect(() => {
-    const newUsers = users.map((m) => ({
+    const newUsers = users?.map((m) => ({
       id: m.id,
       fullName: m.fullName,
       email: m.email,

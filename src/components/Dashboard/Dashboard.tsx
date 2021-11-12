@@ -5,7 +5,7 @@ import DoughnutChart from "../Common/DoughnutChart";
 import RoundedButton from "../Common/RoundedButton/RoundedButton";
 import Subscribers from "../Subscribers/Subscribers";
 import classes from "./Dashboard.module.css";
-import Department from "./Department";
+import DepartmentCard from "./DepartmentCard";
 
 function Dashboard() {
   const departments = useSelector(
@@ -17,13 +17,13 @@ function Dashboard() {
   const [chartData, setChartData] = useState<number[]>([]);
 
   useEffect(() => {
-    const labels: string[] = departments.map((department) => department.name);
+    const labels: string[] = departments?.map((department) => department.name);
     setLabels(labels);
 
-    const colors: string[] = departments.map((department) => department.color);
+    const colors: string[] = departments?.map((department) => department.color);
     setColors(colors);
 
-    const chartData: number[] = departments.map((department) =>
+    const chartData: number[] = departments?.map((department) =>
       department.projects.reduce(
         (previousValue, b) => previousValue + b.total,
         0
@@ -44,8 +44,8 @@ function Dashboard() {
               backgroundColors={colors}
             />
           </div>
-          {departments.map((department, idx) => (
-            <Department
+          {departments?.map((department, idx) => (
+            <DepartmentCard
               key={idx}
               id={department.id}
               color={department.color}

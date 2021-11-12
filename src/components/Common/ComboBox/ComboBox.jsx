@@ -7,7 +7,7 @@ function ComboBox({ placeHolder, items }) {
         {placeHolder}
       </option>
       {items &&
-        items.map((item) => (
+        items?.map((item) => (
           <option key={item.id} value={item.id}>
             {item}
           </option>

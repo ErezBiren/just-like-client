@@ -42,7 +42,7 @@ function DoughnutChart(props: IDougnatProps) {
       <Doughnut data={data} options={options}></Doughnut>
       {
         // <div className={classes.legend}>
-        //   {datasetsData.map((datasetData, idx) => (
+        //   {datasetsData?.map((datasetData, idx) => (
         //     <div key={idx}>{datasetData}</div>
         //   ))}
         // </div>

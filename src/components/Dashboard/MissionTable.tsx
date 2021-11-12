@@ -114,7 +114,7 @@ function MissionTable(props: MissionDataParams) {
   };
 
   useEffect(() => {
-    const newMissions = props.missions.map((m) => ({
+    const newMissions = props.missions?.map((m) => ({
       id: m.id,
       title: m.title,
       status: m.status.toString(),

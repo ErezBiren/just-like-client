@@ -48,3 +48,10 @@ export interface IUser {
     linkedin?: string;
     status: UserStatus;
 }
+
+export interface ISubsribersData {
+    id: string;
+    title: string;
+    amount: number;
+    percentage: number;
+}

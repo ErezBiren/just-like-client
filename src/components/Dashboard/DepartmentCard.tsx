@@ -1,8 +1,8 @@
 import { IDepartment } from "../../store/models";
 import ProgressBar from "../Common/ProgressBar/ProgressBar";
-import classes from "./Department.module.css";
+import classes from "./DepartmentCard.module.css";
 
-function Department({ color, projects, name, id }: IDepartment) {
+function DepartmentCard({ color, projects, name, id }: IDepartment) {
   return (
     <div className={classes.root}>
       <div className={classes.topPart}>
@@ -13,7 +13,7 @@ function Department({ color, projects, name, id }: IDepartment) {
         <div className={classes.userIcon}></div>
       </div>
       <div className={classes.missions}>
-        {projects.map((project, idx) => (
+        {projects?.map((project, idx) => (
           <ProgressBar
             key={idx}
             bgcolor={color}
@@ -26,4 +26,4 @@ function Department({ color, projects, name, id }: IDepartment) {
   );
 }
 
-export default Department;
+export default DepartmentCard;

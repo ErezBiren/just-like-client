@@ -125,7 +125,7 @@ function Sidebar() {
           labelText="מחלקות"
           labelIcon={FolderOutlinedIcon}
         >
-          {departments.map((department, idx) => (
+          {departments?.map((department, idx) => (
             <StyledTreeItem
               nodeId={`2. + ${department.id}`}
               labelText={department.name}

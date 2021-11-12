@@ -29,7 +29,7 @@ function Login() {
 
     if (e.target.name === "email") {
       if (!validateEmail(e.target.value)) {
-        error = "כתובת דואר לא חוקית";
+        // error = "כתובת דואר לא חוקית";
       }
     }
 

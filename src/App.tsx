@@ -3,14 +3,14 @@ import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
 import SignUp2 from "./components/Auth/SignUp2/SignUp2";
 import Home from "./pages/Home";
-import NotFoundPage from "./pages/NotFoundPage";
-import { useSelector } from "react-redux";
+// import NotFoundPage from "./pages/NotFoundPage";
+// import { useSelector } from "react-redux";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { RootState } from "./store/store";
-import Dashboard from "./components/Dashboard/Dashboard";
+// import { RootState } from "./store/store";
+// import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  //const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   return (
     <HashRouter>

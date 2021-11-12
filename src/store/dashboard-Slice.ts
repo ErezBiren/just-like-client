@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IDepartment, IUser, Priority, MissionStatus, UserStatus } from "./models";
+import { IDepartment, IUser, Priority, MissionStatus, UserStatus, ISubsribersData } from "./models";
 
 export interface IDashboardState {
+    subscribers: ISubsribersData[];
     departments: IDepartment[];
     selectedDepartment?: IDepartment;
     users: IUser[];
@@ -87,7 +88,27 @@ export const initialState: IDashboardState = {
 
     ],
     users: [{ id: "1", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
-    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() }]
+    { id: "2", email: "aa@gmail.co.il", fullName: "a a ", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() }],
+    subscribers: [
+        {
+            id: "1",
+            title: "מתנדבים",
+            amount: 290,
+            percentage: 100,
+        },
+        {
+            id: "2",
+            title: "ג'וניורים",
+            amount: 320,
+            percentage: 10,
+        },
+        {
+            id: "3",
+            title: "אפרוחים",
+            amount: 750,
+            percentage: 50,
+        }]
+
 };
 
 // todo: change this to false
