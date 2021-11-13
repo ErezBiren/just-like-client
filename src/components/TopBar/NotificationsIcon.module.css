@@ -1,14 +1,36 @@
 .root {
   padding: 1rem;
   width: 300px;
-  height: 300px;
-  box-shadow: var(--box-shadow);
 }
 
 .row {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+.h4 {
+  margin-bottom: -0.2rem;
+}
+
+.p {
+  color: grey;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text {
+  margin-right: 20px;
 }
