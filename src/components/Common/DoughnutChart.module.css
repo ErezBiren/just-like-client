@@ -1,11 +1,30 @@
 .root {
   margin: 7%;
+  position: relative;
+  width: 100px;
+  height: 300px;
 }
 
-.legend {
-  width: 100%;
-  height: 100px;
+.chart,
+.textContainer {
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.chart {
+  z-index: 2;
+  transform: translateX(33%);
+}
+.textContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.h1 {
+  color: black;
 }

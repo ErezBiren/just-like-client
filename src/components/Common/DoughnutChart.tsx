@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import classes from "./DoughnutChart.module.css";
 
@@ -9,6 +10,19 @@ interface IDougnatProps {
 
 function DoughnutChart(props: IDougnatProps) {
   const { labels, backgroundColors, datasetsData } = props;
+
+  const [numOfMissions, setNumOfMissions] = useState(0);
+
+  useEffect(() => {
+    console.log(datasetsData);
+
+    if (datasetsData.length > 0) {
+      const mumOfMissions = datasetsData?.reduce(
+        (previousNumber, currentNumber) => previousNumber + currentNumber
+      );
+      setNumOfMissions(mumOfMissions);
+    }
+  }, [datasetsData]);
 
   const data = {
     labels: labels,
@@ -39,14 +53,13 @@ function DoughnutChart(props: IDougnatProps) {
 
   return (
     <div className={classes.root}>
-      <Doughnut data={data} options={options}></Doughnut>
-      {
-        // <div className={classes.legend}>
-        //   {datasetsData?.map((datasetData, idx) => (
-        //     <div key={idx}>{datasetData}</div>
-        //   ))}
-        // </div>
-      }
+      <div className={classes.chart}>
+        <Doughnut data={data} options={options} />
+      </div>
+      <div className={classes.textContainer}>
+        <div>משימות</div>
+        <h1 className={classes.h1}>{numOfMissions}</h1>
+      </div>
     </div>
   );
 }

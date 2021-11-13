@@ -17,7 +17,9 @@ function Dashboard() {
   const [chartData, setChartData] = useState<number[]>([]);
 
   useEffect(() => {
-    const labels: string[] = departments?.map((department) => department.name);
+    const labels: string[] = departments?.map((department) =>
+      department.name.replace("מחלקת", "")
+    );
     setLabels(labels);
 
     const colors: string[] = departments?.map((department) => department.color);
