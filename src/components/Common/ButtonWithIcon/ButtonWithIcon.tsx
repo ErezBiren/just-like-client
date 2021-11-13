@@ -1,8 +1,16 @@
 import classes from "./ButtonWithIcon.module.css";
 
-function ButtonWithIcon({ text, Icon, onClick }) {
+interface IButtonWithIconProperties {
+  text: string;
+  Icon: any;
+  onClick: any;
+}
+
+function ButtonWithIcon(params: IButtonWithIconProperties) {
+  const { text, Icon, onClick } = params;
+
   return (
-    <button className={classes.button} onClick={onclick}>
+    <button className={classes.button} onClick={onClick}>
       <div className={classes.buttonContent}>
         <Icon />
 

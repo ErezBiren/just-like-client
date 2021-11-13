@@ -1,7 +1,13 @@
-import React from "react";
 import classes from "./TextField.module.css";
+interface ITextFieldProperties {
+  name: string;
+  placeholder: string;
+  onChange: any;
+}
 
-function TextField({ name, placeholder, onChange }) {
+function TextField(params: ITextFieldProperties) {
+  const { name, placeholder, onChange } = params;
+
   return (
     <input
       name={name}

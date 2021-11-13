@@ -1,6 +1,13 @@
 import classes from "./VerticalProgressBar.module.css";
 
-const VerticalProgressBar = (props) => {
+interface IVerticalProgressBarProperties {
+  bgcolor: string;
+  percentage: number;
+  amount: number;
+  title: any;
+}
+
+const VerticalProgressBar = (props: IVerticalProgressBarProperties) => {
   const { bgcolor, percentage, amount, title } = props;
 
   const containerStyles = {
@@ -11,7 +18,7 @@ const VerticalProgressBar = (props) => {
     borderRadius: 50,
     marginBottom: 20,
     verticalAlign: "bottom",
-    position: "relative",
+    position: "relative" as "relative",
   };
 
   const fillerStyles = {
@@ -19,7 +26,7 @@ const VerticalProgressBar = (props) => {
     width: "100%",
     backgroundColor: bgcolor,
     borderRadius: "inherit",
-    position: "absolute",
+    position: "absolute" as "absolute",
     bottom: 0,
   };
 
