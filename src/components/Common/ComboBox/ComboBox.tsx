@@ -1,13 +1,20 @@
 import classes from "./ComboBox.module.css";
 
-function ComboBox({ placeHolder, items }) {
+interface IComboBoxProperties {
+  placeHolder: string;
+  items: any;
+}
+
+function ComboBox(params: IComboBoxProperties) {
+  const { placeHolder, items } = params;
+
   return (
     <select className={classes.select}>
       <option value="" disabled selected hidden>
         {placeHolder}
       </option>
       {items &&
-        items?.map((item) => (
+        items?.map((item: any) => (
           <option key={item.id} value={item.id}>
             {item}
           </option>
