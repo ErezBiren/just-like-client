@@ -1,7 +1,7 @@
 import classes from "./MissionDetails.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { Avatar, AvatarGroup, IconButton } from "@mui/material";
-import { IMission } from "../../store/models";
+import { Mission } from "../../store/models";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import StarIcon from "@mui/icons-material/Star";
@@ -10,12 +10,12 @@ import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
 import AddIcon from "@mui/icons-material/Add";
 
-export interface IMissionDetailsProps {
+export interface MissionDetailsParams {
   onClose: () => void;
-  mission: IMission;
+  mission: Mission;
 }
 
-function MissionDetails(props: IMissionDetailsProps) {
+function MissionDetails(props: MissionDetailsParams) {
   const { onClose, mission } = props;
 
   return (

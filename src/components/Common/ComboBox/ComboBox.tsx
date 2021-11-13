@@ -1,11 +1,11 @@
 import classes from "./ComboBox.module.css";
 
-interface IComboBoxProperties {
+interface ComboBoxParams {
   placeHolder: string;
   items: any;
 }
 
-function ComboBox(params: IComboBoxProperties) {
+function ComboBox(params: ComboBoxParams) {
   const { placeHolder, items } = params;
 
   return (

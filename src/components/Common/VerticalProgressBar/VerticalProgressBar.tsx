@@ -1,13 +1,13 @@
 import classes from "./VerticalProgressBar.module.css";
 
-interface IVerticalProgressBarProperties {
+interface VerticalProgressBarParams {
   bgcolor: string;
   percentage: number;
   amount: number;
   title: any;
 }
 
-const VerticalProgressBar = (props: IVerticalProgressBarProperties) => {
+const VerticalProgressBar = (props: VerticalProgressBarParams) => {
   const { bgcolor, percentage, amount, title } = props;
 
   const containerStyles = {

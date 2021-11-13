@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IDepartment, IUser, Priority, MissionStatus, UserStatus, ISubsribersData, INotification } from "./models";
+import { Department, User, Priority, MissionStatus, UserStatus, SubsribersData, Notification } from "./models";
 
-export interface IDashboardState {
-    subscribers: ISubsribersData[];
-    departments: IDepartment[];
-    notifications: INotification[];
-    selectedDepartment?: IDepartment;
-    users: IUser[];
+export interface DashboardState {
+    subscribers: SubsribersData[];
+    departments: Department[];
+    notifications: Notification[];
+    selectedDepartment?: Department;
+    users: User[];
 }
 
-export const initialState: IDashboardState = {
+export const initialState: DashboardState = {
     selectedDepartment: undefined,
     notifications: [
         {

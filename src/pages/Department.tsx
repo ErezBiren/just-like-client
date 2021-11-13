@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import classes from "./Department.module.css";
 import { RootState } from "../store/store";
 import { useEffect, useState } from "react";
-import { IProject } from "../store/models";
+import { Project } from "../store/models";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import MissionTable from "../components/Dashboard/MissionsTable";
@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 
 function Department() {
   const params = useParams();
-  const [projects, setProjects] = useState<IProject[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   const departments = useSelector(
     (state: RootState) => state.dashboard.departments

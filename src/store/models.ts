@@ -14,38 +14,38 @@ export enum UserStatus {
     Active,
 }
 
-export interface IMission {
+export interface Mission {
     id: string;
     title: string;
     priority: Priority;
     dueDate: Date;
     status: MissionStatus;
-    participents?: IUser[];
+    participents?: User[];
 }
 
-export interface IProject {
+export interface Project {
     id: string;
     completed: number;
     percentage: number;
     name: string;
     total: number;
-    missions: IMission[];
+    missions: Mission[];
 }
 
-export interface INotification {
+export interface Notification {
     id: string;
     text: string;
     dataTime: Date;
 }
 
-export interface IDepartment {
+export interface Department {
     id: string;
     name: string;
     color: string;
-    projects: IProject[];
+    projects: Project[];
 }
 
-export interface IUser {
+export interface User {
     subscribedDate: any;
     category?: string;
     id: string;
@@ -55,7 +55,7 @@ export interface IUser {
     status: UserStatus;
 }
 
-export interface ISubsribersData {
+export interface SubsribersData {
     id: string;
     title: string;
     amount: number;

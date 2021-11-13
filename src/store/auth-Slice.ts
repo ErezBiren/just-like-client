@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IAuthState {
+interface AuthState {
   isAdmin: boolean,
   selectUser: number,
   token: string,
   isLoggedIn: Boolean
 }
 
-export const initialState: IAuthState = {
+export const initialState: AuthState = {
   isAdmin: false,
   selectUser: 0,
   token: localStorage.getItem("token") || "",
@@ -20,7 +20,7 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    toggleAdmin: (state: IAuthState) => {
+    toggleAdmin: (state: AuthState) => {
       state.isAdmin = !state.isAdmin;
     },
     login: (state, action) => {
@@ -37,6 +37,6 @@ export const authSlice = createSlice({
 
 export const authActions = authSlice.actions;
 
-export const isAdmin = (state: IAuthState) => isAdmin;
+export const isAdmin = (state: AuthState) => isAdmin;
 
 export default authSlice.reducer;

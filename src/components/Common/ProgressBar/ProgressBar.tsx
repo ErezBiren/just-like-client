@@ -1,10 +1,10 @@
-interface IProgressBarProperties {
+interface ProgressBarParams {
   bgcolor: string;
   completed: number;
   percentage: number;
 }
 
-const ProgressBar = (props: IProgressBarProperties) => {
+const ProgressBar = (props: ProgressBarParams) => {
   const { bgcolor, completed, percentage } = props;
 
   const percentageStyles = {

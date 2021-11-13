@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import classes from "./DoughnutChart.module.css";
 
-interface IDougnatProps {
+interface DougnatParams {
   labels: string[];
   backgroundColors: string[];
   datasetsData: number[];
 }
 
-function DoughnutChart(props: IDougnatProps) {
+function DoughnutChart(props: DougnatParams) {
   const { labels, backgroundColors, datasetsData } = props;
 
   const [numOfMissions, setNumOfMissions] = useState(0);

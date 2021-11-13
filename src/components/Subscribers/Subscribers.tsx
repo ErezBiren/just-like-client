@@ -2,7 +2,7 @@ import classes from "./Subscribers.module.css";
 import VerticalProgressBar from "../Common/VerticalProgressBar/VerticalProgressBar";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { ISubsribersData } from "../../store/models";
+import { SubsribersData } from "../../store/models";
 
 function Subscribers() {
   const subscribers = useSelector(
@@ -15,7 +15,7 @@ function Subscribers() {
       <h2>1,500</h2>
       <h5 className={classes.date}>15 נובמבר 2021</h5>
       <div className={classes.charts}>
-        {subscribers?.map((subscriber: ISubsribersData, idx: any) => (
+        {subscribers?.map((subscriber: SubsribersData, idx: any) => (
           <VerticalProgressBar
             key={idx}
             bgcolor={"#9869E4"}

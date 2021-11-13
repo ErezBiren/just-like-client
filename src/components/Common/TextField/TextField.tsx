@@ -1,11 +1,11 @@
 import classes from "./TextField.module.css";
-interface ITextFieldProperties {
+interface TextFieldParams {
   name: string;
   placeholder: string;
   onChange: any;
 }
 
-function TextField(params: ITextFieldProperties) {
+function TextField(params: TextFieldParams) {
   const { name, placeholder, onChange } = params;
 
   return (

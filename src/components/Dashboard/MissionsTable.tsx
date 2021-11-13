@@ -1,6 +1,6 @@
 import { DataGrid, GridColDef, GridCellParams } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { IMission, Priority, MissionStatus } from "../../store/models";
+import { Mission, Priority, MissionStatus } from "../../store/models";
 import { AvatarGroup, Modal } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import StarIcon from "@mui/icons-material/Star";
@@ -83,15 +83,15 @@ const columns: GridColDef[] = [
   },
 ];
 
-interface IMissionsTableDataParams {
-  missions: IMission[];
+interface MissionsTableDataParams {
+  missions: Mission[];
 }
 
-function MissionsTable(props: IMissionsTableDataParams) {
+function MissionsTable(props: MissionsTableDataParams) {
   const [missions, setMissions] = useState<any[]>([]);
 
   const [open, setOpen] = useState(false);
-  const [selectedMission, setSelectedMission] = useState<IMission>({
+  const [selectedMission, setSelectedMission] = useState<Mission>({
     id: "",
     title: "",
     priority: Priority.None,
