@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/just-like-client/static/css/main.b3e24a7e.chunk.css",
-    "main.js": "/just-like-client/static/js/main.0bfad4be.chunk.js",
-    "main.js.map": "/just-like-client/static/js/main.0bfad4be.chunk.js.map",
-    "runtime-main.js": "/just-like-client/static/js/runtime-main.22503302.js",
-    "runtime-main.js.map": "/just-like-client/static/js/runtime-main.22503302.js.map",
-    "static/js/2.b687387c.chunk.js": "/just-like-client/static/js/2.b687387c.chunk.js",
-    "static/js/2.b687387c.chunk.js.map": "/just-like-client/static/js/2.b687387c.chunk.js.map",
-    "static/js/3.f277495b.chunk.js": "/just-like-client/static/js/3.f277495b.chunk.js",
-    "static/js/3.f277495b.chunk.js.map": "/just-like-client/static/js/3.f277495b.chunk.js.map",
+    "main.css": "/just-like-client/static/css/main.7b3e7106.chunk.css",
+    "main.js": "/just-like-client/static/js/main.cda3f060.chunk.js",
+    "main.js.map": "/just-like-client/static/js/main.cda3f060.chunk.js.map",
+    "runtime-main.js": "/just-like-client/static/js/runtime-main.523e685a.js",
+    "runtime-main.js.map": "/just-like-client/static/js/runtime-main.523e685a.js.map",
+    "static/js/2.991d7034.chunk.js": "/just-like-client/static/js/2.991d7034.chunk.js",
+    "static/js/2.991d7034.chunk.js.map": "/just-like-client/static/js/2.991d7034.chunk.js.map",
+    "static/js/3.2140773a.chunk.js": "/just-like-client/static/js/3.2140773a.chunk.js",
+    "static/js/3.2140773a.chunk.js.map": "/just-like-client/static/js/3.2140773a.chunk.js.map",
     "index.html": "/just-like-client/index.html",
-    "static/css/main.b3e24a7e.chunk.css.map": "/just-like-client/static/css/main.b3e24a7e.chunk.css.map",
-    "static/js/2.b687387c.chunk.js.LICENSE.txt": "/just-like-client/static/js/2.b687387c.chunk.js.LICENSE.txt",
+    "static/css/main.7b3e7106.chunk.css.map": "/just-like-client/static/css/main.7b3e7106.chunk.css.map",
+    "static/js/2.991d7034.chunk.js.LICENSE.txt": "/just-like-client/static/js/2.991d7034.chunk.js.LICENSE.txt",
     "static/media/bell.a098d659.svg": "/just-like-client/static/media/bell.a098d659.svg",
     "static/media/coupleDancing.2e5b201f.svg": "/just-like-client/static/media/coupleDancing.2e5b201f.svg",
     "static/media/girlSittingWifhLaptop.53623d1a.svg": "/just-like-client/static/media/girlSittingWifhLaptop.53623d1a.svg",
@@ -24,9 +24,9 @@
     "static/media/user-plus.f0aa6d71.svg": "/just-like-client/static/media/user-plus.f0aa6d71.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.22503302.js",
-    "static/js/2.b687387c.chunk.js",
-    "static/css/main.b3e24a7e.chunk.css",
-    "static/js/main.0bfad4be.chunk.js"
+    "static/js/runtime-main.523e685a.js",
+    "static/js/2.991d7034.chunk.js",
+    "static/css/main.7b3e7106.chunk.css",
+    "static/js/main.cda3f060.chunk.js"
   ]
 }
