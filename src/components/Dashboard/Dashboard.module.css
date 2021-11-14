@@ -27,8 +27,6 @@
   box-shadow: var(--box-shadow);
   background-color: white;
   border-radius: 20px;
-  margin-bottom: 20px; /*todo: erez fix this */
-  margin-top: 20px;
 }
 
 .departments {
@@ -37,6 +35,7 @@
   grid-gap: 5%;
   justify-content: space-between;
   grid-template-columns: repeat(auto-fill, 370px);
+  margin-top: 5%;
 }
 
 .subscribers {

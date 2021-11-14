@@ -118,19 +118,19 @@ export const initialState: DashboardState = {
             id: "1",
             title: "מתנדבים",
             amount: 290,
-            percentage: 100,
+            percentage: 29,
         },
         {
             id: "2",
             title: "ג'וניורים",
             amount: 320,
-            percentage: 10,
+            percentage: 32,
         },
         {
             id: "3",
             title: "אפרוחים",
             amount: 750,
-            percentage: 50,
+            percentage: 75,
         }]
 
 };
