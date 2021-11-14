@@ -12,6 +12,7 @@ import classes from "./Sidebar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
 
 declare module "react" {
   interface CSSProperties {
@@ -96,6 +97,9 @@ function Sidebar() {
       case "דשבורד":
         navigate("dashboard");
         break;
+        case "המשימות שלי":
+          navigate("dashboard");
+          break;
       default:
         const department = departments.find((d) => d.name === input.innerText);
         navigate(`departments/${department?.id}`);
@@ -122,12 +126,18 @@ function Sidebar() {
         />
         <StyledTreeItem
           nodeId="2"
+          labelText="המשימות שלי"
+          labelIcon={AssignmentTurnedInOutlinedIcon}
+          onClick={onTreeViewItemClicked}
+        />
+        <StyledTreeItem
+          nodeId="3"
           labelText="מחלקות"
           labelIcon={FolderOutlinedIcon}
         >
           {departments?.map((department, idx) => (
             <StyledTreeItem
-              nodeId={`2. + ${department.id}`}
+              nodeId={`3. + ${department.id}`}
               labelText={department.name}
               labelIcon={CircleIcon}
               color={department.color}
@@ -136,7 +146,7 @@ function Sidebar() {
           ))}
         </StyledTreeItem>
         <StyledTreeItem
-          nodeId="7"
+          nodeId="4"
           labelText="מאגר רשומים"
           labelIcon={PeopleOutlineIcon}
           onClick={onTreeViewItemClicked}
