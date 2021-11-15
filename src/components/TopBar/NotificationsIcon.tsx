@@ -44,7 +44,7 @@ function NotificationsIcon() {
             <div className={classes.rightSide}>
               <Avatar sx={{ bgcolor: "#BA11D5" }}>טב</Avatar>
               <div className={classes.text}>
-                <h4 className={classes.h4}>שלום שלום</h4>
+                <h4 className={classes.h4}>טל בראל רוצה להירשם לאפרוחיה</h4>
                 <p className={classes.p}>לפני 20 דקות</p>
               </div>
             </div>
