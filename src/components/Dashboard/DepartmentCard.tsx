@@ -13,9 +13,9 @@ function DepartmentCard({ color, projects, name, id }: Department) {
         <div className={classes.userIcon}></div>
       </div>
       <div className={classes.missions}>
-        {projects?.map((project, idx) => (
+        {projects?.map((project) => (
           <ProgressBar
-            key={idx}
+            key={project.id}
             bgcolor={color}
             percentage={project.percentage}
             completed={project.completed}

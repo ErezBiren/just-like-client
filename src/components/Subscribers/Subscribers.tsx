@@ -17,7 +17,7 @@ function Subscribers() {
       <div className={classes.charts}>
         {subscribers?.map((subscriber: SubsribersData, idx: any) => (
           <VerticalProgressBar
-            key={idx}
+            key={subscriber.id}
             bgcolor={"#9869E4"}
             title={subscriber.title}
             percentage={subscriber.percentage}

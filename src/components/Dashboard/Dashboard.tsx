@@ -46,9 +46,9 @@ function Dashboard() {
               backgroundColors={colors}
             />
           </div>
-          {departments?.map((department, idx) => (
+          {departments?.map((department) => (
             <DepartmentCard
-              key={idx}
+              key={department.id}
               id={department.id}
               color={department.color}
               projects={department.projects}
