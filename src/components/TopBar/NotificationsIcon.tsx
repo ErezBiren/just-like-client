@@ -1,26 +1,36 @@
 import classes from "./NotificationsIcon.module.css";
-import { Avatar, IconButton } from "@mui/material";
+import { Avatar, IconButton, Modal } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
 import { ReactComponent as BellIcon } from "../../assets/dashboard/bell.svg";
 import Badge from "@mui/material/Badge";
 import CircleIcon from "@mui/icons-material/Circle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import NotificationDetails from "./NotificationDetails";
 
 function NotificationsIcon() {
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorElement);
+  const [openModal, setOpenModal] = useState(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleNotificationsIConClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     setAnchorElement(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorElement(null);
+    setOpenModal(false);
+  };
+
+  const handleRowClicked = () => {
+    setOpenModal(true);
   };
 
   return (
     <div>
-      <IconButton onClick={handleClick}>
+      <IconButton onClick={handleNotificationsIConClick}>
         <Badge
           badgeContent={2}
           sx={{
@@ -50,7 +60,7 @@ function NotificationsIcon() {
             </div>
             <CircleIcon fontSize="small" sx={{ color: "var(--main-color)" }} />
           </div> */}
-          <div className={classes.row}>
+          <div className={classes.row} onClick={handleRowClicked}>
             <div className={classes.rightSide}>
               <Avatar sx={{ bgcolor: "#11D548" }}>לכ</Avatar>
               <div className={classes.text}>
@@ -60,7 +70,7 @@ function NotificationsIcon() {
             </div>
             <CircleIcon fontSize="small" sx={{ color: "var(--main-color)" }} />
           </div>
-          <div className={classes.row}>
+          <div className={classes.row} onClick={handleRowClicked}>
             <div className={classes.rightSide}>
               <Avatar sx={{ bgcolor: "#E5BB69" }}>יא</Avatar>
               <div className={classes.text}>
@@ -72,6 +82,10 @@ function NotificationsIcon() {
           </div>
         </div>
       </Menu>
+
+      <Modal open={openModal} onClose={handleClose}>
+        <NotificationDetails onClose={handleClose} />
+      </Modal>
     </div>
   );
 }

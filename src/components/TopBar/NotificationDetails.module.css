@@ -1,0 +1,48 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window {
+  position: absolute;
+  background-color: white;
+  width: 40vw;
+  height: 50vh;
+  box-shadow: var(--box-shadow);
+  top: 15%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  height: 100%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBar {
+  display: flex;
+  justify-content: end;
+  /* border-bottom: 1px solid var(--border-color); */
+}
+
+.row {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.header {
+  /* background-color: rebeccapurple; */
+  width: 8rem;
+
+  color: #979797;
+}
+
+.h2 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
