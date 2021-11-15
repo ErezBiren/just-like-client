@@ -36,6 +36,7 @@ export interface Notification {
     id: string;
     text: string;
     dataTime: Date;
+    user: User;
 }
 
 export interface Department {

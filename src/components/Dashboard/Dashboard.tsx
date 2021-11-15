@@ -37,7 +37,7 @@ function Dashboard() {
   return (
     <div className={classes.root}>
       <div className={classes.rightSide}>
-        <h2>היי שמעון, צהריים טובים</h2>
+        <h2>היי שמעון, צהריים טובים!</h2>
         <div className={classes.departments}>
           <div className={classes.chartContainer}>
             <DoughnutChart

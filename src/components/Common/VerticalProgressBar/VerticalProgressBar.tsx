@@ -13,7 +13,7 @@ const VerticalProgressBar = (props: VerticalProgressBarParams) => {
   const containerStyles = {
     margin: "0px 50px",
     height: "100%",
-    width: 12,
+    width: 15,
     backgroundColor: "#DDDDDD",
     borderRadius: 50,
     marginBottom: 20,

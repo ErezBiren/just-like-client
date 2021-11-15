@@ -15,17 +15,44 @@ export const initialState: DashboardState = {
         {
             id: "1",
             text: "טל בראל רוצה להירשם לאפרוחיה",
-            dataTime: new Date()
+            dataTime: new Date(),
+            user: {
+                subscribedDate: new Date(),
+                category: "פיתוח",
+                id: "1",
+                fullName: "טל בראל",
+                email: "talbarel@gmail.com",
+                linkedin: "linkedin.com\talbarel",
+                status: UserStatus.Active,
+            }
         },
         {
             id: "2",
             text: "ליאור כהן רוצה להירשם לאפרוחיה",
-            dataTime: new Date()
+            dataTime: new Date(),
+            user: {
+                subscribedDate: new Date(),
+                category: "פיתוח",
+                id: "1",
+                fullName: "טל בראל",
+                email: "talbarel@gmail.com",
+                linkedin: "linkedin.com\talbarel",
+                status: UserStatus.Active,
+            }
         },
         {
             id: "3",
             text: "יונתן איינשטיין אישר השתתפות",
-            dataTime: new Date()
+            dataTime: new Date(),
+            user: {
+                subscribedDate: new Date(),
+                category: "פיתוח",
+                id: "1",
+                fullName: "טל בראל",
+                email: "talbarel@gmail.com",
+                linkedin: "linkedin.com\talbarel",
+                status: UserStatus.Active,
+            }
         }
     ],
     departments: [

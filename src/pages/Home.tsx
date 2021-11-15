@@ -1,7 +1,6 @@
 import classes from "./Home.module.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Dashboard from "../components/Dashboard/Dashboard";
-
 import { ReactComponent as UserPlusIcon } from "../assets/dashboard/user-plus.svg";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,8 +8,8 @@ import { Route, Routes } from "react-router-dom";
 import Users from "./Users";
 import Department from "./Department";
 import NotificationsIcon from "../components/TopBar/NotificationsIcon";
-import { ReactComponent as MessageCircleIcon } from "../assets/dashboard/message-circle.svg";
-
+import { Avatar } from "@mui/material";
+import MessagesIcon from "../components/TopBar/MessagesIcon";
 
 function Home() {
   return (
@@ -43,10 +42,13 @@ function Home() {
               <UserPlusIcon />
             </div>
             <div className={classes.messageIconContainer}>
-              <MessageCircleIcon />
+              <MessagesIcon />
             </div>
             <div className={classes.bellContainer}>
-            <NotificationsIcon />
+              <NotificationsIcon />
+            </div>
+            <div className={classes.userContainer}>
+              <Avatar sx={{ bgcolor: "#9869E4" }}>שמ</Avatar>
             </div>
           </div>
         </div>
