@@ -95,7 +95,7 @@ const columns: GridColDef[] = [
   },
 ];
 
-function Users() {
+const Users = () => {
   const users = useSelector((state: RootState) => state.dashboard.users);
 
   const [rows, setRows] = useState<any[]>([]);
@@ -129,6 +129,6 @@ function Users() {
       </div>
     </div>
   );
-}
+};
 
 export default Users;

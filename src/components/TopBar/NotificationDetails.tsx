@@ -7,7 +7,7 @@ export interface NotificationDetailsParams {
   onClose: () => void;
 }
 
-function NotificationDetails(props: NotificationDetailsParams) {
+const NotificationDetails = (props: NotificationDetailsParams) => {
   const { onClose } = props;
 
   return (
@@ -46,6 +46,6 @@ function NotificationDetails(props: NotificationDetailsParams) {
       </div>
     </div>
   );
-}
+};
 
 export default NotificationDetails;

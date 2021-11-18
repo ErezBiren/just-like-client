@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { SubsribersData } from "../../store/models";
 
-function Subscribers() {
+const Subscribers = () => {
   const subscribers = useSelector(
     (state: RootState) => state.dashboard.subscribers
   );
@@ -27,6 +27,6 @@ function Subscribers() {
       </div>
     </div>
   );
-}
+};
 
 export default Subscribers;

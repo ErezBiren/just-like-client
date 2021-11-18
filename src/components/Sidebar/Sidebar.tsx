@@ -58,7 +58,7 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   },
 }));
 
-function StyledTreeItem(props: StyledTreeItemProps) {
+const StyledTreeItem = (props: StyledTreeItemProps) => {
   const { labelIcon: LabelIcon, labelInfo, labelText, color, ...other } = props;
 
   return (
@@ -78,9 +78,9 @@ function StyledTreeItem(props: StyledTreeItemProps) {
       {...other}
     />
   );
-}
+};
 
-function Sidebar() {
+const Sidebar = () => {
   const departments = useSelector(
     (state: RootState) => state.dashboard.departments
   );
@@ -97,9 +97,9 @@ function Sidebar() {
       case "דשבורד":
         navigate("dashboard");
         break;
-        case "המשימות שלי":
-          navigate("dashboard");
-          break;
+      case "המשימות שלי":
+        navigate("dashboard");
+        break;
       default:
         const department = departments.find((d) => d.name === input.innerText);
         navigate(`departments/${department?.id}`);
@@ -154,6 +154,6 @@ function Sidebar() {
       </TreeView>
     </>
   );
-}
+};
 
 export default Sidebar;

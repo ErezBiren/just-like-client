@@ -7,7 +7,7 @@ import Subscribers from "../Subscribers/Subscribers";
 import classes from "./Dashboard.module.css";
 import DepartmentCard from "./DepartmentCard";
 
-function Dashboard() {
+const Dashboard = ()=> {
   const departments = useSelector(
     (state: RootState) => state.dashboard.departments
   );

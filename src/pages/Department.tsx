@@ -11,7 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
-function Department() {
+const Department = () => {
   const params = useParams();
   const [projects, setProjects] = useState<Project[]>([]);
 
@@ -31,7 +31,6 @@ function Department() {
   return (
     <div>
       <div className={classes.root}>
-       
         <h2>פרוייקטים</h2>
         {projects?.map((project, idx) => (
           <div className={classes.accordion} key={idx}>
@@ -50,6 +49,6 @@ function Department() {
       </div>
     </div>
   );
-}
+};
 
 export default Department;

@@ -8,7 +8,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import NotificationDetails from "./NotificationDetails";
 
-function NotificationsIcon() {
+const NotificationsIcon = () => {
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorElement);
   const [openModal, setOpenModal] = useState(false);
@@ -88,6 +88,6 @@ function NotificationsIcon() {
       </Modal>
     </div>
   );
-}
+};
 
 export default NotificationsIcon;

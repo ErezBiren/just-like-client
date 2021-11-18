@@ -87,7 +87,7 @@ interface MissionsTableDataParams {
   missions: Mission[];
 }
 
-function MissionsTable(props: MissionsTableDataParams) {
+const MissionsTable = (props: MissionsTableDataParams) => {
   const [missions, setMissions] = useState<any[]>([]);
 
   const [open, setOpen] = useState(false);
@@ -96,7 +96,7 @@ function MissionsTable(props: MissionsTableDataParams) {
     title: "",
     priority: Priority.None,
     dueDate: new Date(),
-    status: MissionStatus.InProgress ,
+    status: MissionStatus.InProgress,
   });
 
   const handleDoubleClick = (e: GridCellParams) => {
@@ -142,6 +142,6 @@ function MissionsTable(props: MissionsTableDataParams) {
       </Modal>
     </div>
   );
-}
+};
 
 export default MissionsTable;

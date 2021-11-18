@@ -5,7 +5,7 @@ interface TextFieldParams {
   onChange: any;
 }
 
-function TextField(params: TextFieldParams) {
+const TextField = (params: TextFieldParams) => {
   const { name, placeholder, onChange } = params;
 
   return (
@@ -16,6 +16,6 @@ function TextField(params: TextFieldParams) {
       onChange={onChange}
     ></input>
   );
-}
+};
 
 export default TextField;

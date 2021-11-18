@@ -15,7 +15,7 @@ export interface MissionDetailsParams {
   mission: Mission;
 }
 
-function MissionDetails(props: MissionDetailsParams) {
+const MissionDetails = (props: MissionDetailsParams)=>{
   const { onClose, mission } = props;
 
   return (

@@ -9,7 +9,7 @@ import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/material";
 
-function SignUp() {
+const SignUp = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -113,6 +113,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;

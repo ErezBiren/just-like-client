@@ -7,7 +7,7 @@ import Badge from "@mui/material/Badge";
 import CircleIcon from "@mui/icons-material/Circle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
-function MessagesIcon() {
+const MessagesIcon = () => {
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorElement);
 
@@ -91,6 +91,6 @@ function MessagesIcon() {
       </Menu>
     </div>
   );
-}
+};
 
 export default MessagesIcon;

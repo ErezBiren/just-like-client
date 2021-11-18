@@ -11,7 +11,7 @@ import NotificationsIcon from "../components/TopBar/NotificationsIcon";
 import { Avatar } from "@mui/material";
 import MessagesIcon from "../components/TopBar/MessagesIcon";
 
-function Home() {
+const Home = () => {
   return (
     <div className={classes.root}>
       <div className={classes.sidebar}>
@@ -62,6 +62,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

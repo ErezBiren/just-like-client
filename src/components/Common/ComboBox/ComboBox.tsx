@@ -5,7 +5,7 @@ interface ComboBoxParams {
   items: any;
 }
 
-function ComboBox(params: ComboBoxParams) {
+const ComboBox = (params: ComboBoxParams) => {
   const { placeHolder, items } = params;
 
   return (
@@ -21,6 +21,6 @@ function ComboBox(params: ComboBoxParams) {
         ))}
     </select>
   );
-}
+};
 
 export default ComboBox;

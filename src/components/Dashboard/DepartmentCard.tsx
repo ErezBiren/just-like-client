@@ -2,7 +2,7 @@ import { Department } from "../../store/models";
 import ProgressBar from "../Common/ProgressBar/ProgressBar";
 import classes from "./DepartmentCard.module.css";
 
-function DepartmentCard({ color, projects, name, id }: Department) {
+const DepartmentCard = ({ color, projects, name, id }: Department)=> {
   return (
     <div className={classes.root}>
       <div className={classes.topPart}>

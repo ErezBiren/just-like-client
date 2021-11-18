@@ -6,7 +6,7 @@ import classes from "./SignUp2.module.css";
 import { logIn } from "../../../services/AuthService";
 import ComboBox from "../../Common/ComboBox/ComboBox";
 
-function SignUp2() {
+const SignUp2 = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -65,6 +65,6 @@ function SignUp2() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp2;

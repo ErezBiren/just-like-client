@@ -6,7 +6,7 @@ interface ButtonWithIconParams {
   onClick: any;
 }
 
-function ButtonWithIcon(params: ButtonWithIconParams) {
+const ButtonWithIcon = (params: ButtonWithIconParams) => {
   const { text, Icon, onClick } = params;
 
   return (

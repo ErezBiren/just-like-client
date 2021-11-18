@@ -8,7 +8,7 @@ interface DougnatParams {
   datasetsData: number[];
 }
 
-function DoughnutChart(props: DougnatParams) {
+const DoughnutChart = (props: DougnatParams) => {
   const { labels, backgroundColors, datasetsData } = props;
 
   const [numOfMissions, setNumOfMissions] = useState(0);
@@ -62,6 +62,6 @@ function DoughnutChart(props: DougnatParams) {
       </div>
     </div>
   );
-}
+};
 
 export default DoughnutChart;

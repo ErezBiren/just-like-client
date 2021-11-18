@@ -18,7 +18,7 @@ import { Box } from "@mui/system";
 
 // const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -146,6 +146,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
