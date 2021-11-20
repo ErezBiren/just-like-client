@@ -8,7 +8,7 @@ import { UserStatus } from "../store/models";
 import { useDispatch } from "react-redux";
 import { ReactComponent as MoreIcon } from "../assets/dashboard/more-horizontal.svg";
 import Moment from "moment";
-import { getUsers } from "../store/usersActions";
+import { getUsers } from "../store/dashboardActions";
 
 const columns: GridColDef[] = [
   {

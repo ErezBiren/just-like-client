@@ -12,6 +12,7 @@ import { Avatar } from "@mui/material";
 import MessagesIcon from "../components/TopBar/MessagesIcon";
 
 const Home = () => {
+
   return (
     <div className={classes.root}>
       <div className={classes.sidebar}>

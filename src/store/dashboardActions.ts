@@ -1,5 +1,5 @@
 import { dashboardActions } from "./dashboard-Slice";
-import { User } from "./models";
+import { Department, User } from "./models";
 import { AppDispatch } from "./store";
 
 
@@ -21,3 +21,20 @@ export const getUsers = () => {
     }
   };
 };
+
+export const getDepartments = () => {
+  return async (dispatch: AppDispatch) => {
+    const response = await fetch(baseUrl + "/departments");
+
+    if (response.ok) {
+      const departments = await response.json();
+      console.log(departments);
+
+      departments.forEach((department: Department) => {
+        dispatch(dashboardActions.addDepartment(department));
+      });
+    }
+  };
+};
+
+

@@ -11,13 +11,18 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
+
 const Department = () => {
+
   const params = useParams();
   const [projects, setProjects] = useState<Project[]>([]);
 
   const departments = useSelector(
     (state: RootState) => state.dashboard.departments
   );
+
+
+
   useEffect(() => {
     const selectedDepartment = departments.find(
       (d) => d.id === params.departmentId

@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import DoughnutChart from "../Common/DoughnutChart";
 import RoundedButton from "../Common/RoundedButton/RoundedButton";
 import Subscribers from "../Subscribers/Subscribers";
 import classes from "./Dashboard.module.css";
 import DepartmentCard from "./DepartmentCard";
+import { getDepartments } from "../../store/dashboardActions";
 
-const Dashboard = ()=> {
+const Dashboard = () => {
+  const dispatch = useDispatch();
+
   const departments = useSelector(
     (state: RootState) => state.dashboard.departments
   );
@@ -15,6 +18,10 @@ const Dashboard = ()=> {
   const [labels, setLabels] = useState<string[]>([]);
   const [colors, setColors] = useState<string[]>([]);
   const [chartData, setChartData] = useState<number[]>([]);
+
+  useEffect(() => {
+    dispatch(getDepartments());
+  }, [dispatch]);
 
   useEffect(() => {
     const labels: string[] = departments?.map((department) =>
@@ -67,6 +74,6 @@ const Dashboard = ()=> {
       </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
