@@ -5,8 +5,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useState, useEffect } from "react";
 import { UserStatus } from "../store/models";
+import { useDispatch } from "react-redux";
 import { ReactComponent as MoreIcon } from "../assets/dashboard/more-horizontal.svg";
 import Moment from "moment";
+import { getUsers } from "../store/usersActions";
 
 const columns: GridColDef[] = [
   {
@@ -96,9 +98,14 @@ const columns: GridColDef[] = [
 ];
 
 const Users = () => {
+  const dispatch = useDispatch();
   const users = useSelector((state: RootState) => state.dashboard.users);
 
   const [rows, setRows] = useState<any[]>([]);
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
 
   useEffect(() => {
     const newUsers = users?.map((m) => ({

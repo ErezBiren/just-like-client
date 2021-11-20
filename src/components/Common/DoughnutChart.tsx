@@ -14,8 +14,6 @@ const DoughnutChart = (props: DougnatParams) => {
   const [numOfMissions, setNumOfMissions] = useState(0);
 
   useEffect(() => {
-    console.log(datasetsData);
-
     if (datasetsData.length > 0) {
       const mumOfMissions = datasetsData?.reduce(
         (previousNumber, currentNumber) => previousNumber + currentNumber

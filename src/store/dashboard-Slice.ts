@@ -133,13 +133,13 @@ export const initialState: DashboardState = {
 
 
     ],
-    users:
-        [
-            { id: "1", email: "aa@gmail.co.il", fullName: "Erez Birenholz", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
-            { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
-            { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
-            { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
-        ],
+    users: [],
+    //     [
+    //         { id: "1", email: "aa@gmail.co.il", fullName: "Erez Birenholz", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
+    //         { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+    //         { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+    //         { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+    //     ],
     subscribers: [
         {
             id: "1",
@@ -168,9 +168,14 @@ export const dashboardSlice = createSlice({
     name: "dashboard",
     initialState,
     reducers: {
-
+        addUser: (state: DashboardState, action) => {
+            const exists = state.users.some((user) => user.id === action.payload);
+            if (!exists) {
+                state.users.push(action.payload);
+            }
+        },
     },
 });
 
-export const dashActions = dashboardSlice.actions;
+export const dashboardActions = dashboardSlice.actions;
 export default dashboardSlice.reducer;

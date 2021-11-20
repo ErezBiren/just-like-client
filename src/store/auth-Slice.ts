@@ -11,7 +11,7 @@ export const initialState: AuthState = {
   isAdmin: false,
   selectUser: 0,
   token: localStorage.getItem("token") || "",
-  isLoggedIn: false
+  isLoggedIn: true
 };
 
 // todo: change this to false
