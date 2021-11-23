@@ -142,7 +142,8 @@
       "linkedin": "https://www.linkedin.com/in/erezbirenholz/",
       "status": "1",
       "category": "junior",
-      "subscribedDate": "1.1.2001"
+      "subscribedDate": "1.1.2001",
+      "domain": "פיתוח"
     },
     {
       "id": "2",
@@ -151,7 +152,8 @@
       "linkedin": "https://www.linkedin.com/in/erezbirenholz/",
       "status": "1",
       "category": "chick",
-      "subscribedDate": "1.1.2001"
+      "subscribedDate": "1.1.2001",
+      "domain": "פיתוח"
     }
   ]
 }

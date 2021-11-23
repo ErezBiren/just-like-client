@@ -44,7 +44,7 @@ export const mockedInitialState = {
                             title: "בניית תיק עבודות ",
                             dueDate: new Date(),
                             priority: Priority.High,
-                            participents: [{ id: "1", email: "aa@aa.co.il", fullName: "a a ", linkedin: "aa", status: UserStatus.Active, subscribedDate: new Date() }]
+                            participents: []
                         },
                         {
                             id: "2",
@@ -109,25 +109,5 @@ export const mockedInitialState = {
             { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
             { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
             { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
-        ],
-    subscribers: [
-        {
-            id: "1",
-            title: "מתנדבים",
-            amount: 0,
-            percentage: 0,
-        },
-        {
-            id: "2",
-            title: "ג'וניורים",
-            amount: 0,
-            percentage: 0,
-        },
-        {
-            id: "3",
-            title: "אפרוחים",
-            amount: 0,
-            percentage: 0,
-        }]
-
+        ]
 };

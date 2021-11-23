@@ -4,7 +4,7 @@ import { Link } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { useState, useEffect } from "react";
-import { UserStatus } from "../store/models";
+import { UserCategory, UserStatus } from "../store/models";
 import { useDispatch } from "react-redux";
 import { ReactComponent as MoreIcon } from "../assets/dashboard/more-horizontal.svg";
 import Moment from "moment";
@@ -43,7 +43,7 @@ const columns: GridColDef[] = [
     },
     headerName: "פרופיל לינקדאין",
     type: "number",
-    width: 270,
+    width: 220,
     align: "center",
     headerAlign: "center",
   },
@@ -51,7 +51,7 @@ const columns: GridColDef[] = [
     field: "dateSubscribed",
     headerName: "נרשם בתאריך",
     type: "number",
-    width: 200,
+    width: 150,
     align: "center",
     headerAlign: "center",
   },
@@ -60,6 +60,14 @@ const columns: GridColDef[] = [
     headerName: "קטגוריה",
     type: "number",
     width: 150,
+    align: "center",
+    headerAlign: "center",
+  },
+  {
+    field: "domain",
+    headerName: "תחום התמחות",
+    type: "string",
+    width: 200,
     align: "center",
     headerAlign: "center",
   },
@@ -114,7 +122,8 @@ const Users = () => {
       email: m.email,
       linkedin: m.linkedin,
       dateSubscribed: Moment(m.subscribedDate).format("L"),
-      category: m.category,
+      category: categoryToString(m.category),
+      domain: m.domain,
       status: m.status === UserStatus.Active ? "פעיל" : "פעיל לא",
     }));
 
@@ -139,3 +148,14 @@ const Users = () => {
 };
 
 export default Users;
+
+function categoryToString(category: UserCategory): string {
+  switch (category) {
+    case UserCategory.Volunteer:
+      return "מתנדב";
+    case UserCategory.Chick:
+      return "אפרוח";
+    case UserCategory.Junior:
+      return "ג'וניור";
+  }
+}

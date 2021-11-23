@@ -54,7 +54,7 @@ export interface Department {
 
 export interface User {
     subscribedDate: any;
-    category?: UserCategory;
+    category: UserCategory;
     id: string;
     fullName: string;
     email?: string;

@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Department, User, SubsribersData, Notification, UserCategory } from "./models";
+import { Department, User, Notification, UserCategory } from "./models";
 import { mockedInitialState, isMockedData } from "./mockedInitialState"
 
 export interface DashboardState {
-    subscribers: SubsribersData[];
     departments: Department[];
     notifications: Notification[];
     selectedDepartment?: Department;
@@ -21,7 +20,6 @@ else {
         notifications: [],
         departments: [],
         users: [],
-        subscribers: []
     };
 }
 
