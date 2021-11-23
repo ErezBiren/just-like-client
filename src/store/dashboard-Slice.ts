@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Department, User, SubsribersData, Notification } from "./models";
+import { Department, User, SubsribersData, Notification, UserCategory } from "./models";
 import { mockedInitialState, isMockedData } from "./mockedInitialState"
 
 export interface DashboardState {
@@ -32,7 +32,7 @@ export const dashboardSlice = createSlice({
         addUser: (state: DashboardState, action) => {
             const exists = state.users.some((user) => user.id === action.payload.id);
             if (!exists) {
-                state.users.push(action.payload);
+                state.users.push({ ...action.payload, category: convertStringToCategory(action.payload.category) });
             }
         },
         addDepartment: (state: DashboardState, action) => {
@@ -46,3 +46,14 @@ export const dashboardSlice = createSlice({
 
 export const dashboardActions = dashboardSlice.actions;
 export default dashboardSlice.reducer;
+
+function convertStringToCategory(category: string) {
+    switch (category.toLowerCase()) {
+        case "volunteer":
+            return UserCategory.Volunteer;
+        case "chick":
+            return UserCategory.Chick;
+        case "junior":
+            return UserCategory.Junior;
+    }
+}

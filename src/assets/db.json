@@ -141,38 +141,17 @@
       "fullName": "a a ",
       "linkedin": "https://www.linkedin.com/in/erezbirenholz/",
       "status": "1",
-      "category": "aa",
+      "category": "junior",
       "subscribedDate": "1.1.2001"
     },
     {
       "id": "2",
       "email": "aa@gmail.co.il",
-      "fullName": "a a ",
+      "fullName": "b b ",
       "linkedin": "https://www.linkedin.com/in/erezbirenholz/",
       "status": "1",
-      "category": "aa",
+      "category": "chick",
       "subscribedDate": "1.1.2001"
-    }
-  ],
-
-  "subscribers": [
-    {
-      "id": "1",
-      "title": "מתנדבים",
-      "amount": 290,
-      "percentage": 29
-    },
-    {
-      "id": "2",
-      "title": "ג'וניורים",
-      "amount": 320,
-      "percentage": 32
-    },
-    {
-      "id": "3",
-      "title": "אפרוחים",
-      "amount": 750,
-      "percentage": 75
     }
   ]
 }

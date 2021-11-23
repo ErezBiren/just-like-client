@@ -1,4 +1,4 @@
-import { MissionStatus, Priority, UserStatus } from "./models";
+import { MissionStatus, Priority, UserStatus, UserCategory } from "./models";
 
 
 export const isMockedData = false;
@@ -10,43 +10,19 @@ export const mockedInitialState = {
             id: "1",
             text: "טל בראל רוצה להירשם לאפרוחיה",
             dataTime: new Date(),
-            user: {
-                subscribedDate: new Date(),
-                category: "פיתוח",
-                id: "1",
-                fullName: "טל בראל",
-                email: "talbarel@gmail.com",
-                linkedin: "linkedin.com\talbarel",
-                status: UserStatus.Active,
-            }
+            userId: "1"
         },
         {
             id: "2",
             text: "ליאור כהן רוצה להירשם לאפרוחיה",
             dataTime: new Date(),
-            user: {
-                subscribedDate: new Date(),
-                category: "פיתוח",
-                id: "1",
-                fullName: "טל בראל",
-                email: "talbarel@gmail.com",
-                linkedin: "linkedin.com\talbarel",
-                status: UserStatus.Active,
-            }
+            userId: "2"
         },
         {
             id: "3",
             text: "יונתן איינשטיין אישר השתתפות",
             dataTime: new Date(),
-            user: {
-                subscribedDate: new Date(),
-                category: "פיתוח",
-                id: "1",
-                fullName: "טל בראל",
-                email: "talbarel@gmail.com",
-                linkedin: "linkedin.com\talbarel",
-                status: UserStatus.Active,
-            }
+            userId: "2"
         }
     ],
     departments: [
@@ -129,29 +105,29 @@ export const mockedInitialState = {
     ],
     users:
         [
-            { id: "1", email: "aa@gmail.co.il", fullName: "Erez Birenholz", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: "aa", subscribedDate: new Date() },
-            { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
-            { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
-            { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: "aa", subscribedDate: new Date() },
+            { id: "1", email: "aa@gmail.co.il", fullName: "Erez Birenholz", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.InActive, category: UserCategory.Chick, subscribedDate: new Date() },
+            { id: "2", email: "aa@gmail.co.il", fullName: "Adi Sharon", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
+            { id: "3", email: "aa@gmail.co.il", fullName: "Rachel Mulla", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
+            { id: "4", email: "aa@gmail.co.il", fullName: "Meial Ben-Ami", linkedin: "https://www.linkedin.com/in/erezbirenholz/", status: UserStatus.Active, category: UserCategory.Chick, subscribedDate: new Date() },
         ],
     subscribers: [
         {
             id: "1",
             title: "מתנדבים",
-            amount: 290,
-            percentage: 29,
+            amount: 0,
+            percentage: 0,
         },
         {
             id: "2",
             title: "ג'וניורים",
-            amount: 320,
-            percentage: 32,
+            amount: 0,
+            percentage: 0,
         },
         {
             id: "3",
             title: "אפרוחים",
-            amount: 750,
-            percentage: 75,
+            amount: 0,
+            percentage: 0,
         }]
 
 };

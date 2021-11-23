@@ -3,8 +3,8 @@ import { Department, User } from "./models";
 import { AppDispatch } from "./store";
 
 
-//const baseUrl = process.env.REACT_APP_BACKEND_URL;
-const baseUrl = 'http://localhost:3001'; // todo : take if from env
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
+//const baseUrl = 'http://localhost:3001'; // todo : take if from env
 
 
 export const getUsers = () => {

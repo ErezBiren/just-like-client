@@ -14,6 +14,12 @@ export enum UserStatus {
     Active,
 }
 
+export enum UserCategory {
+    Volunteer,
+    Chick,
+    Junior
+}
+
 export interface Mission {
     id: string;
     title: string;
@@ -36,7 +42,7 @@ export interface Notification {
     id: string;
     text: string;
     dataTime: Date;
-    user: User;
+    userId: string;
 }
 
 export interface Department {
@@ -48,12 +54,13 @@ export interface Department {
 
 export interface User {
     subscribedDate: any;
-    category?: string;
+    category?: UserCategory;
     id: string;
     fullName: string;
     email?: string;
     linkedin?: string;
     status: UserStatus;
+    domain?: string;
 }
 
 export interface SubsribersData {
