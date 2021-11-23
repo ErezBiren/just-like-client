@@ -18,16 +18,7 @@
               "title": "לבנות מותג בלינקדאין כדי למצוא עבודה ראשונה",
               "dueDate": "1.1.2021",
               "priority": 1,
-              "participents": [
-                {
-                  "id": "1",
-                  "email": "aa@aa.co.il",
-                  "fullName": "a a ",
-                  "linkedin": "aa",
-                  "status": "1",
-                  "subscribedDate": "1.1.2001"
-                }
-              ]
+              "participents": []
             },
             {
               "id": "2",
