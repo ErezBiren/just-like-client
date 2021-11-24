@@ -14,9 +14,6 @@ import { validateEmail } from "../../../services/validationsService";
 import { useDispatch } from "react-redux";
 import { authActions } from "../../../store/auth-Slice";
 import { Box } from "@mui/system";
-// import GoogleLogin from "react-google-login";
-
-// const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -100,13 +97,6 @@ const Login = () => {
                     />
                   </Box>
                 </Box>
-                {/* <GoogleLogin
-                  clientId={googleClientId}
-                  buttonText="Login"
-                  onSuccess={handleGoogleResponse}
-                  onFailure={handleGoogleResponse}
-                  cookiePolicy={"single_host_origin"}
-                /> */}
               </div>
             </div>
             <div className={classes.spacing}>
