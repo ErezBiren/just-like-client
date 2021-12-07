@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/girlSittingWifhLaptop.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
-import classes from "./SignUp2.module.css";
+import classes from "./SignUpUserType.module.css";
 import { logIn } from "../../../services/AuthService";
 import ComboBox from "../../Common/ComboBox/ComboBox";
 
-const SignUp2 = () => {
+const SignUpUserType = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -67,4 +67,4 @@ const SignUp2 = () => {
   );
 };
 
-export default SignUp2;
+export default SignUpUserType;

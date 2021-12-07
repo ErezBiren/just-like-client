@@ -1,7 +1,7 @@
 import "./App.css";
 import Login from "./components/Auth/Login/Login";
 import SignUp from "./components/Auth/SignUp/SignUp";
-import SignUp2 from "./components/Auth/SignUp2/SignUp2";
+import SignUpUserType from "./components/Auth/SignUpUserType/SignUpUserType";
 import Home from "./pages/Home";
 // import NotFoundPage from "./pages/NotFoundPage";
 import { useSelector } from "react-redux";
@@ -18,7 +18,7 @@ function App() {
         <Route path="/*" element={isLoggedIn ? <Home /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/signup2" element={<SignUp2 />} />
+        <Route path="/SignUpUserType" element={<SignUpUserType />} />
         {/* <Route path="/" element={<NotFoundPage />} /> */}
       </Routes>
     </HashRouter>
