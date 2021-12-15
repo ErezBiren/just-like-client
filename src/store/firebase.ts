@@ -1,4 +1,3 @@
-import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
@@ -16,6 +15,7 @@ import {
   getAuth,
   signInWithPopup,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { FacebookAuthProvider } from "firebase/auth";
@@ -34,54 +34,80 @@ const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
 
+const fetchUsers = async () => {
+
+  try {
+    const docRef = doc(db, "users");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  } catch (error) {
+
+  }
+
+}
+
+
 const signInWithGoogle = async () => {
   try {
+
     const provider = new GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");
-    const result = await signInWithPopup(auth, provider);
+    const credentials = await signInWithPopup(auth, provider);
 
     // The signed-in user info.
-    const user = result.user;
+    const user = credentials.user;
 
-    // if (query.docs?.length === 0) {
-    //   await setDoc(doc(db, "users"), {
-    //     uid: user.uid,
-    //     name: user.displayName,
-    //     authProvider: "google",
-    //     email: user.email,
-    //   });
-    // }
     const loggedUser = {
       displayName: user.displayName,
       email: user.email,
       photoURL: user.photoURL,
-      accessToken: user.accessToken,
+      accessToken: user.refreshToken,
     };
 
+    //await setDoc(doc(db, "users", user.uid), loggedUser);
+
     return loggedUser;
-  } catch (error) {
+  } catch (error: any) {
     console.error(error.message);
   }
 };
 
-const signInWithEmailPassword = async (email, password) => {
+const signInWithEmailPassword = async (email: string, password: string) => {
   try {
-    const result = await signInWithEmailAndPassword(auth, email, password);
-    const user = result.user;
-    return user;
+    const credentials = await signInWithEmailAndPassword(auth, email, password);
+    const user = credentials.user;
+    const loggedUser = {
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL,
+      accessToken: user.refreshToken,
+    };
+    return loggedUser;
   } catch (err) {
     console.error(err);
   }
 };
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (email: string, password: string) => {
   try {
-    const res = await auth.createUserWithEmailAndPassword(email, password);
-    const user = res.user;
+    const credentials = await createUserWithEmailAndPassword(auth, email, password);
+    const user = credentials.user;
+    const loggedUser = {
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL,
+      accessToken: user.refreshToken,
+    };
+    return loggedUser;
   } catch (err) {
     console.error(err);
-    alert(err.message);
   }
 };
 
@@ -105,6 +131,9 @@ export {
   signInWithGoogle,
   signInWithEmailPassword,
   registerWithEmailAndPassword,
+  //registerWithEmailAndPassword,
   //   sendPasswordResetEmail,
   //   logout,
+
+  fetchUsers
 };

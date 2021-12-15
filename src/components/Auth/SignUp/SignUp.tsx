@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
-import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/material";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -37,7 +38,7 @@ const SignUp = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    logIn(data.email, data.password);
+    navigate("/SignUpUserType");
   };
 
   return (

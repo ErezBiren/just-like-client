@@ -9,7 +9,6 @@ import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./Login.module.css";
-import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/system";
 import useAuth from "../../../hooks/useAuth";
