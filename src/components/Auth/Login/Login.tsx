@@ -17,7 +17,7 @@ import useAuth from "../../../hooks/useAuth";
 const Login = () => {
   const navigate = useNavigate();
 
-  const signInWithGoogleAuth = useAuth();
+  const { signInWithGoogleAuth, signInEmailPassAuth } = useAuth();
 
   const [data, setData] = useState({
     email: "",
@@ -25,8 +25,6 @@ const Login = () => {
   });
 
   const handleChange = (e: any) => {
-    let error = "";
-
     if (e.target.name === "email") {
       if (!validateEmail(e.target.value)) {
         // error = "כתובת דואר לא חוקית";
@@ -41,10 +39,7 @@ const Login = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    logIn(data.email, data.password);
-
-    navigate("/");
+    signInEmailPassAuth(data.email, data.password);
   };
   const setUser = (e: any) => {};
 
