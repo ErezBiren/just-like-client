@@ -10,8 +10,11 @@ import Department from "./Department";
 import NotificationsIcon from "../components/TopBar/NotificationsIcon";
 import { Avatar } from "@mui/material";
 import MessagesIcon from "../components/TopBar/MessagesIcon";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const Home = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <div className={classes.root}>
@@ -49,7 +52,15 @@ const Home = () => {
               <NotificationsIcon />
             </div>
             <div className={classes.userContainer}>
-              <Avatar sx={{ bgcolor: "#9869E4" }}>שמ</Avatar>
+              {user?.photoURL && (
+                <Avatar
+                  alt={user?.displayName}
+                  src="https://lh3.googleusercontent.com/a/AATXAJw_PGhdz23kT5kvNjAYcKJQrSIJfGaF5fkTI2Sw=s96-c"
+                />
+              )}
+              {!user?.photoURL && (
+                <Avatar sx={{ bgcolor: "#9869E4" }}>שמ</Avatar> // todo: show displayName in 2 letters
+              )}
             </div>
           </div>
         </div>

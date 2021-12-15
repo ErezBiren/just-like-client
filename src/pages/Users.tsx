@@ -118,11 +118,11 @@ const Users = () => {
   useEffect(() => {
     const newUsers = users?.map((m) => ({
       id: m.id,
-      fullName: m.fullName,
+      fullName: m.displayName,
       email: m.email,
       linkedin: m.linkedin,
       dateSubscribed: Moment(m.subscribedDate).format("L"),
-      category: categoryToString(m.category),
+      category: m.category ? categoryToString(m.category) : "",
       domain: m.domain,
       status: m.status === UserStatus.Active ? "פעיל" : "פעיל לא",
     }));

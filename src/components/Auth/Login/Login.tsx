@@ -11,13 +11,13 @@ import TextField from "../../Common/TextField/TextField";
 import classes from "./Login.module.css";
 import { logIn } from "../../../services/AuthService";
 import { validateEmail } from "../../../services/validationsService";
-import { useDispatch } from "react-redux";
-import { authActions } from "../../../store/auth-Slice";
 import { Box } from "@mui/system";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
+  const signInWithGoogleAuth = useAuth();
 
   const [data, setData] = useState({
     email: "",
@@ -44,25 +44,20 @@ const Login = () => {
 
     logIn(data.email, data.password);
 
-    dispatch(authActions.login({}));
-
     navigate("/");
   };
-  const connectWithLinkedin = (e: any) => {
-    e.preventDefault();
-    alert("linkedin");
-  };
+  const setUser = (e: any) => {};
+
   const connectWithGoogle = (e: any) => {
     e.preventDefault();
-    alert("google");
+    signInWithGoogleAuth();
+    navigate("/");
   };
 
   // const handleOpenResetPassword = (e) => {
   //   e.preventDefault();
   //   alert("handleOpenResetPassword");
   // };
-
-  const handleGoogleResponse = (response: any) => {};
 
   return (
     <div className={classes.main}>
@@ -85,7 +80,7 @@ const Login = () => {
                   <Box sx={{ width: 1 / 2.1 }}>
                     <ButtonWithIcon
                       text="התחברות עם לינקדאין"
-                      onClick={connectWithLinkedin}
+                      onClick={() => {}}
                       Icon={LinkedinIcon}
                     />
                   </Box>

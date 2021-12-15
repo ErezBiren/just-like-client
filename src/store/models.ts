@@ -53,14 +53,16 @@ export interface Department {
 }
 
 export interface User {
-    subscribedDate: any;
-    category: UserCategory;
-    id: string;
-    fullName: string;
+    subscribedDate?: any;
+    category?: UserCategory;
+    id?: string;
+    displayName?: string;
     email?: string;
     linkedin?: string;
-    status: UserStatus;
+    status?: UserStatus;
     domain?: string;
+    photoURL?: string;
+    accessToken?: string;
 }
 
 export interface SubsribersData {

@@ -1,18 +1,18 @@
+import { User } from './models';
 import { createSlice } from "@reduxjs/toolkit";
 
 interface AuthState {
   isAdmin: boolean,
   selectUser: number,
-  token: string,
   isLoggedIn: Boolean
+  user: User | null
 }
 
 export const initialState: AuthState = {
   isAdmin: false,
   selectUser: 0,
-  token: localStorage.getItem("token") || "",
-  isLoggedIn: false
-
+  isLoggedIn: false,
+  user: null
 };
 
 // todo: change this to false
@@ -24,14 +24,16 @@ export const authSlice = createSlice({
     toggleAdmin: (state: AuthState) => {
       state.isAdmin = !state.isAdmin;
     },
+    // signup: (state,action) => {
+    //   return auth.createUserWithEmailAndPassword(action.payload.email, action.payload.password)
+    // },
     login: (state, action) => {
-
-      state.token = action.payload;
+      state.user = action.payload;
       state.isLoggedIn = true;
+
     },
     logout: (state) => {
-      state.token = "";
-      state.isLoggedIn = false;
+      // state.isLoggedIn = false;
     }
   },
 });
