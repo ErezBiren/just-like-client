@@ -40,7 +40,6 @@ const Login = () => {
     e.preventDefault();
     signInEmailPassAuth(data.email, data.password);
   };
-  const setUser = (e: any) => {};
 
   const connectWithGoogle = (e: any) => {
     e.preventDefault();

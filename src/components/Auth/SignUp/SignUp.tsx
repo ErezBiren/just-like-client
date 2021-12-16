@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
@@ -7,11 +8,14 @@ import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
 import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/material";
+import { User } from "../../../store/models";
+import { authActions } from "../../../store/auth-Slice";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [data, setData] = useState({
+  const [data, setData] = useState<User>({
     firstName: "",
     lastName: "",
     phone: "",
@@ -37,6 +41,10 @@ const SignUp = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    if (!data.email || !data.password) return;
+
+    dispatch(authActions.setSignupUser(data));
 
     navigate("/SignUpUserType");
   };

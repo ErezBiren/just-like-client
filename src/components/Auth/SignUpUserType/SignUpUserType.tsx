@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/girlSittingWifhLaptop.svg";
 import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import classes from "./SignUpUserType.module.css";
-import { logIn } from "../../../services/AuthService";
 import ComboBox from "../../Common/ComboBox/ComboBox";
+import useAuth from "../../../hooks/useAuth";
+import { User } from "../../../store/models";
+import { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const SignUpUserType = () => {
-  const [data, setData] = useState({
+  const { registerWithEmailAndPasswordAuth } = useAuth();
+
+  const signupUser = useSelector((state: RootState) => state.auth.signupUser);
+
+  const [data, setData] = useState<User>({
     firstName: "",
     lastName: "",
     phone: "",
@@ -15,6 +22,10 @@ const SignUpUserType = () => {
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    if (signupUser) setData(signupUser);
+  }, [signupUser]);
 
   const handleChange = (e: any) => {
     setData({
@@ -26,7 +37,7 @@ const SignUpUserType = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    logIn(data.email, data.password);
+    registerWithEmailAndPasswordAuth(data);
   };
 
   const userTypes = ["ג'וניורים\\מחפשי עבודה", "מתנדבים", "מנהלי משימות"];
@@ -47,9 +58,27 @@ const SignUpUserType = () => {
             <Logo width="125" height="125" />
             <h1>נשמח להכיר אותך</h1>
 
-            <ComboBox placeHolder="סוג משתמש*" items={userTypes} />
-            <ComboBox placeHolder="תחומי ענין*" items={interests} />
-            <ComboBox placeHolder="תחום התמחות" items={specialties} />
+            <ComboBox
+              placeHolder="סוג משתמש*"
+              name="userType"
+              items={userTypes}
+              value={data.userType}
+              handleChange={handleChange}
+            />
+            <ComboBox
+              placeHolder="תחומי ענין*"
+              name="interest"
+              items={interests}
+              value={data.interest}
+              handleChange={handleChange}
+            />
+            <ComboBox
+              placeHolder="תחום התמחות"
+              name="speciality"
+              items={specialties}
+              value={data.speciality}
+              handleChange={handleChange}
+            />
 
             <RoundedButton style="width:50px">להרשמה</RoundedButton>
             <div className={classes.signupContainer}>

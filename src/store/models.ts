@@ -1,73 +1,79 @@
-
 export enum Priority {
-    None,
-    High,
+  None,
+  High,
 }
 
 export enum MissionStatus {
-    InProgress,
-    completed,
+  InProgress,
+  completed,
 }
 
 export enum UserStatus {
-    InActive,
-    Active,
+  InActive,
+  Active,
 }
 
 export enum UserCategory {
-    Volunteer,
-    Chick,
-    Junior
+  Volunteer,
+  Chick,
+  Junior,
 }
 
 export interface Mission {
-    id: string;
-    title: string;
-    priority: Priority;
-    dueDate: Date;
-    status: MissionStatus;
-    participents?: User[];
+  id: string;
+  title: string;
+  priority: Priority;
+  dueDate: Date;
+  status: MissionStatus;
+  participents?: User[];
 }
 
 export interface Project {
-    id: string;
-    completed: number;
-    percentage: number;
-    name: string;
-    total: number;
-    missions: Mission[];
+  id: string;
+  completed: number;
+  percentage: number;
+  name: string;
+  total: number;
+  missions: Mission[];
 }
 
 export interface Notification {
-    id: string;
-    text: string;
-    dataTime: Date;
-    userId: string;
+  id: string;
+  text: string;
+  dataTime: Date;
+  userId: string;
 }
 
 export interface Department {
-    id: string;
-    name: string;
-    color: string;
-    projects: Project[];
+  id: string;
+  name: string;
+  color: string;
+  projects: Project[];
 }
 
 export interface User {
-    subscribedDate?: any;
-    category?: UserCategory;
-    id?: string;
-    displayName?: string;
-    email?: string;
-    linkedin?: string;
-    status?: UserStatus;
-    domain?: string;
-    photoURL?: string;
-    accessToken?: string;
+  subscribedDate?: any;
+  category?: UserCategory;
+  id?: string;
+  firstName?: string;
+  lastName?: string;
+  displayName?: string;
+  email?: string;
+  phone?: string;
+  password?: string;
+  linkedin?: string;
+  status?: UserStatus;
+  domain?: string;
+  photoURL?: string;
+  accessToken?: string;
+  userType?: string;
+  interest?: string;
+  speciality?: string;
 }
 
 export interface SubsribersData {
-    id: string;
-    title: string;
-    amount: number;
-    percentage: number;
+  id: string;
+  title: string;
+  amount: number;
+  percentage: number;
 }
