@@ -46,7 +46,7 @@ const fetchUsers = async () => {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
-  } catch (error) {}
+  } catch (error) { }
 };
 
 const signInWithGoogle = async () => {
@@ -106,10 +106,13 @@ const registerWithEmailAndPassword = async (
     const user = credentials.user;
 
     const loggedUser: User = {
+      id: user.uid,
       displayName: user.displayName || undefined,
       email: user.email || undefined,
       photoURL: user.photoURL || undefined,
       accessToken: user.refreshToken,
+      firstName: "",
+      lastName: ""
     };
 
     return loggedUser;
@@ -119,7 +122,7 @@ const registerWithEmailAndPassword = async (
 };
 
 const saveUser = async (user: User) => {
-  const usersRef = doc(db, "users", "123");
+  const usersRef = doc(db, "users", "1");
   setDoc(usersRef, user, { merge: true });
 };
 

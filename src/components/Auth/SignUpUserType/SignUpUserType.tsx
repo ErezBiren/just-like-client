@@ -80,7 +80,7 @@ const SignUpUserType = () => {
               handleChange={handleChange}
             />
 
-            <RoundedButton style="width:50px">להרשמה</RoundedButton>
+            <RoundedButton style={{ width: "50px" }}>להרשמה</RoundedButton>
             <div className={classes.signupContainer}>
               <span>כבר נרשמת?</span>
               <a href="#">להתחברות</a>

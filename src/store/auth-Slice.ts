@@ -5,7 +5,7 @@ interface AuthState {
   isAdmin: boolean;
   selectUser: number;
   isLoggedIn: Boolean;
-  user: User | null;
+  user: User;
   signupUser: User | null;
 }
 
@@ -13,7 +13,7 @@ export const initialState: AuthState = {
   isAdmin: false,
   selectUser: 0,
   isLoggedIn: false,
-  user: null,
+  user: { firstName: "", lastName: "" },
   signupUser: null,
 };
 
@@ -32,6 +32,7 @@ export const authSlice = createSlice({
     login: (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
+      state.signupUser = null;
     },
     logout: (state) => {
       // state.isLoggedIn = false;

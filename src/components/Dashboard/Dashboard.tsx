@@ -16,6 +16,10 @@ const Dashboard = () => {
     (state: RootState) => state.dashboard.departments
   );
 
+  const userFirstName = useSelector(
+    (state: RootState) => state.auth.user?.firstName
+  );
+
   const [labels, setLabels] = useState<string[]>([]);
   const [colors, setColors] = useState<string[]>([]);
   const [chartData, setChartData] = useState<number[]>([]);
@@ -45,7 +49,7 @@ const Dashboard = () => {
   return (
     <div className={classes.root}>
       <div className={classes.rightSide}>
-        <h2>היי שמעון, צהריים טובים!</h2>
+        <h2>היי {userFirstName}, צהריים טובים!</h2>
         <div className={classes.departments}>
           <div className={classes.chartContainer}>
             <DoughnutChart

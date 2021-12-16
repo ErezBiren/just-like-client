@@ -7,9 +7,11 @@ import {
 } from "../store/firebase";
 import { authActions } from "../store/auth-Slice";
 import { User } from "../store/models";
+import { useNavigate } from "react-router-dom";
 
 const useAuth = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const signInWithGoogleAuth = async () => {
     const loggedUser = await signInWithGoogle();
@@ -31,10 +33,16 @@ const useAuth = () => {
     );
 
     if (loggedUser) {
-      saveUser(user);
-    }
+      user.accessToken = loggedUser.accessToken;
+      user.id = loggedUser.id;
+      user.displayName = loggedUser.displayName;
+      user.email = loggedUser.email;
+      user.photoURL = loggedUser.photoURL;
 
-    dispatch(authActions.login(loggedUser));
+      saveUser(user);
+      dispatch(authActions.login(user));
+      navigate("/");
+    }
   };
 
   return {

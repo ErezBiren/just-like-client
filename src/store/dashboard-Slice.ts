@@ -11,17 +11,17 @@ export interface DashboardState {
 
 export let initialState: DashboardState;
 
-if (isMockedData) {
-    initialState = mockedInitialState;
-}
-else {
-    initialState = {
-        selectedDepartment: undefined,
-        notifications: [],
-        departments: [],
-        users: [],
-    };
-}
+// if (isMockedData) {
+//     initialState = mockedInitialState;
+// }
+// else {
+initialState = {
+    selectedDepartment: undefined,
+    notifications: [],
+    departments: [],
+    users: [],
+};
+//}
 
 export const dashboardSlice = createSlice({
     name: "dashboard",

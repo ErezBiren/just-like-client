@@ -12,9 +12,14 @@ import { Avatar } from "@mui/material";
 import MessagesIcon from "../components/TopBar/MessagesIcon";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import { User } from "../store/models";
 
 const Home = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
+  const user: User = useSelector((state: RootState) => state.auth.user);
+
+  const getShortName = (firstName: string, lastName: string) => {
+    return firstName[0] + lastName[0];
+  };
 
   return (
     <div className={classes.root}>
@@ -59,7 +64,9 @@ const Home = () => {
                 />
               )}
               {!user?.photoURL && (
-                <Avatar sx={{ bgcolor: "#9869E4" }}>שמ</Avatar> // todo: show displayName in 2 letters
+                <Avatar sx={{ bgcolor: "#9869E4" }}>
+                  {getShortName(user.firstName, user.lastName)}
+                </Avatar> // todo: show displayName in 2 letters
               )}
             </div>
           </div>

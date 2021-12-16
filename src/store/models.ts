@@ -55,8 +55,8 @@ export interface User {
   subscribedDate?: any;
   category?: UserCategory;
   id?: string;
-  firstName?: string;
-  lastName?: string;
+  firstName: string;
+  lastName: string;
   displayName?: string;
   email?: string;
   phone?: string;
