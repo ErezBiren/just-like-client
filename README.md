@@ -1,4 +1,3 @@
-
 ### Management System for JustLike community
 
 ![image](https://user-images.githubusercontent.com/7828909/141840225-51c43364-5c40-4bfb-9130-e0efef245e11.png)
@@ -7,7 +6,6 @@
 
 ![image](https://user-images.githubusercontent.com/7828909/141840169-776c3d2d-b3ac-43fa-a6a9-030f8289e479.png)
 
-
 ### Built With
 
 - [React](https://reactjs.org/)
@@ -15,5 +13,4 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Material-UI](https://material-ui.com/)
 - [CssModules](https://github.com/css-modules/css-modules)
- 
-
+- [Vite](https://vitejs.dev/)
