@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from "../../assets/auth/justLikeLogo.svg";
+import { ReactComponent as Logo } from "../../assets/justLikeLogo.svg";
 import TreeView from "@mui/lab/TreeView";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";

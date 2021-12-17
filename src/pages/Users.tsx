@@ -121,7 +121,7 @@ const Users = () => {
       fullName: m.displayName,
       email: m.email,
       linkedin: m.linkedin,
-      dateSubscribed: Moment(m.subscribedDate).format("L"),
+      dateSubscribed: Moment(m.createTime).format("L"),
       category: m.category ? categoryToString(m.category) : "",
       domain: m.domain,
       status: m.status === UserStatus.Active ? "פעיל" : "פעיל לא",
@@ -149,7 +149,7 @@ const Users = () => {
 
 export default Users;
 
-function categoryToString(category: UserCategory): string {
+function categoryToString(category: UserCategory): string | undefined {
   switch (category) {
     case UserCategory.Volunteer:
       return "מתנדב";

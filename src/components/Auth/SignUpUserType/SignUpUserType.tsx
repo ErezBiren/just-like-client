@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/girlSittingWifhLaptop.svg";
-import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
+import { ReactComponent as Logo } from "../../../assets/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import classes from "./SignUpUserType.module.css";
 import ComboBox from "../../Common/ComboBox/ComboBox";
@@ -21,6 +21,7 @@ const SignUpUserType = () => {
     linkedin: "",
     email: "",
     password: "",
+    accessToken: "",
   });
 
   useEffect(() => {

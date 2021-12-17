@@ -33,6 +33,7 @@ const useAuth = () => {
     );
 
     if (loggedUser) {
+      
       user.accessToken = loggedUser.accessToken;
       user.id = loggedUser.id;
       user.displayName = loggedUser.displayName;

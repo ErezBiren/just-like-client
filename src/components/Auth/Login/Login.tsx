@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/coupleDancing.svg";
-import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
+import { ReactComponent as Logo } from "../../../assets/justLikeLogo.svg";
 import { ReactComponent as LinkedinIcon } from "../../../assets/auth/linkedinLogin.svg";
 import { ReactComponent as GoogleIcon } from "../../../assets/auth/googleLogin.svg";
 import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";

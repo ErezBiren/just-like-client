@@ -65,7 +65,7 @@ const Home = () => {
               )}
               {!user?.photoURL && (
                 <Avatar sx={{ bgcolor: "#9869E4" }}>
-                  {getShortName(user.firstName, user.lastName)}
+                  {getShortName(user?.firstName || "", user?.lastName || "")}
                 </Avatar> // todo: show displayName in 2 letters
               )}
             </div>

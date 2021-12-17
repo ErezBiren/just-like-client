@@ -1,13 +1,14 @@
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import axios from 'axios';
 
 import {
   doc,
   setDoc,
   getDoc,
-  where,
-  query,
-  collection,
+  // where,
+  // query,
+  // collection,
 } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -18,8 +19,8 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-import { FacebookAuthProvider } from "firebase/auth";
-import { GithubAuthProvider } from "firebase/auth";
+// import { FacebookAuthProvider } from "firebase/auth";
+// import { GithubAuthProvider } from "firebase/auth";
 import { User } from "./models";
 
 const firebaseConfig = {
@@ -34,6 +35,8 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp);
+
+const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 const fetchUsers = async () => {
   try {
@@ -121,10 +124,29 @@ const registerWithEmailAndPassword = async (
   }
 };
 
+
+
 const saveUser = async (user: User) => {
-  const usersRef = doc(db, "users", "1");
-  setDoc(usersRef, user, { merge: true });
-};
+  try {
+
+    const res = await axios.post(baseUrl + "/users",
+      {
+        fields: {
+          displayName: { stringValue: user.displayName },
+          email: { stringValue: user.email },
+          createTime: { timestampValue: user.createTime },
+          photoURL: { stringValue: user.photoURL },
+          accessToken: { stringValue: user.accessToken },
+        }
+      });
+
+  } catch (error) {
+    console.error(error);
+  }
+
+  // const usersRef = doc(db, "users", "1");
+  // setDoc(usersRef, user, { merge: true });
+}
 
 // const sendPasswordResetEmail = async (email) => {
 //   try {

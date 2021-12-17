@@ -14,6 +14,7 @@ export enum UserStatus {
 }
 
 export enum UserCategory {
+  None,
   Volunteer,
   Chick,
   Junior,
@@ -52,7 +53,6 @@ export interface Department {
 }
 
 export interface User {
-  subscribedDate?: any;
   category?: UserCategory;
   id?: string;
   firstName: string;
@@ -69,6 +69,7 @@ export interface User {
   userType?: string;
   interest?: string;
   speciality?: string;
+  createTime?: Date;
 }
 
 export interface SubsribersData {

@@ -46,7 +46,7 @@ export const dashboardActions = dashboardSlice.actions;
 export default dashboardSlice.reducer;
 
 function convertStringToCategory(category: string) {
-    switch (category.toLowerCase()) {
+    switch (category?.toLowerCase()) {
         case "volunteer":
             return UserCategory.Volunteer;
         case "chick":

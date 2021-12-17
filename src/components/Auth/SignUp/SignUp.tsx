@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
-import { ReactComponent as Logo } from "../../../assets/auth/justLikeLogo.svg";
+import { ReactComponent as Logo } from "../../../assets/justLikeLogo.svg";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
@@ -107,7 +107,7 @@ const SignUp = () => {
               />
             </Box>
             <Box sx={{ mt: 2 }}>
-              <RoundedButton>להרשמה</RoundedButton>
+              <RoundedButton>להמשך הרשמה</RoundedButton>
             </Box>
             <div className={classes.signupContainer}>
               <span>נרשמת?</span>
