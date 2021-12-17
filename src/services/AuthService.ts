@@ -1,5 +1,5 @@
 export const logIn = (email: string, password: string) => {
-  let url = `http:\\aaa?key=${process.env.REACT_APP_FIREBASE_WEB_API_KEY}`;
+  let url = `http:\\aaa?key=${import.meta.env.VITE_FIREBASE_WEB_API_KEY}`;
 
   fetch(url, {
     method: "POST",

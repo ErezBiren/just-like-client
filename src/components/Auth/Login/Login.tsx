@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ReactComponent as BackgroundImage } from "../../../assets/auth/coupleDancing.svg";
-import { ReactComponent as Logo } from "../../../assets/justLikeLogo.svg";
-import { ReactComponent as LinkedinIcon } from "../../../assets/auth/linkedinLogin.svg";
-import { ReactComponent as GoogleIcon } from "../../../assets/auth/googleLogin.svg";
+import BackgroundImage from "../../../assets/auth/coupleDancing.svg?component";
+import Logo from "../../../assets/justLikeLogo.svg?component";
+import LinkedinIcon from "../../../assets/auth/linkedinLogin.svg?component";
+import GoogleIcon from "../../../assets/auth/googleLogin.svg?component";
 import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";

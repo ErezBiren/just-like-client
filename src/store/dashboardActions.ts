@@ -2,7 +2,7 @@ import { dashboardActions } from "./dashboard-Slice";
 import { Department, User } from "./models";
 import { AppDispatch } from "./store";
 
-const baseUrl = process.env.REACT_APP_BACKEND_URL;
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
 export const getUsers = () => {
   return async (dispatch: AppDispatch) => {

@@ -6,7 +6,7 @@ import { RootState } from "../store/store";
 import { useState, useEffect } from "react";
 import { UserCategory, UserStatus } from "../store/models";
 import { useDispatch } from "react-redux";
-import { ReactComponent as MoreIcon } from "../assets/dashboard/more-horizontal.svg";
+import MoreIcon from "../assets/dashboard/more-horizontal.svg?component";
 import Moment from "moment";
 import { getUsers } from "../store/dashboardActions";
 

@@ -1,7 +1,7 @@
 import classes from "./Home.module.css";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Dashboard from "../components/Dashboard/Dashboard";
-import { ReactComponent as UserPlusIcon } from "../assets/dashboard/user-plus.svg";
+import UserPlusIcon from "../assets/dashboard/user-plus.svg?component";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Route, Routes } from "react-router-dom";

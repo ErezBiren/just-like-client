@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { ReactComponent as BackgroundImage } from "../../../assets/auth/team.svg";
-import { ReactComponent as Logo } from "../../../assets/justLikeLogo.svg";
+import BackgroundImage from "../../../assets/auth/team.svg?component";
+import Logo from "../../../assets/justLikeLogo.svg?component";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";

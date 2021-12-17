@@ -2,7 +2,7 @@ import classes from "./NotificationsIcon.module.css";
 import { Avatar, IconButton, Modal } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import { useState } from "react";
-import { ReactComponent as BellIcon } from "../../assets/dashboard/bell.svg";
+import BellIcon from "../../assets/dashboard/bell.svg?component";
 import Badge from "@mui/material/Badge";
 import CircleIcon from "@mui/icons-material/Circle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
