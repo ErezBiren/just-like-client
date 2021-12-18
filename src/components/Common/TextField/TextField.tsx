@@ -1,22 +1,8 @@
 import React from "react";
 import classes from "./TextField.module.css";
-interface TextFieldParams {
-  name: string;
-  placeholder: string;
-  onChange: any;
-}
 
-const TextField = React.memo<TextFieldParams>((params) => {
-  const { name, placeholder, onChange } = params;
-
-  return (
-    <input
-      name={name}
-      className={classes.input}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
-  );
+const TextField = React.forwardRef((props: any, ref: any) => {
+  return <input ref={ref} {...props} className={classes.input} />;
 });
 
 export default TextField;

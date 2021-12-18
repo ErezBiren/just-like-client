@@ -10,55 +10,41 @@ import { validateEmail } from "../../../services/validationsService";
 import { Box } from "@mui/material";
 import { User } from "../../../store/models";
 import { authActions } from "../../../store/auth-Slice";
+import { useForm } from "react-hook-form";
+
+const REQUIRED_FIELD_MESSAGE = "שדה חובה";
+
+const defaultValues = {
+  firstName: "",
+  lastName: "",
+  phone: "",
+  linkedin: "",
+  email: "",
+  password: "",
+  displayName: "",
+};
 
 const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const [data, setData] = useState<User>({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    linkedin: "",
-    email: "",
-    password: "",
-    displayName: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues,
   });
 
-  const handleChange = (e: any) => {
-    let error = "";
-
-    if (e.target.name === "email") {
-      if (!validateEmail(e.target.value)) {
-        error = "כתובת דואר לא חוקית";
-      }
-    }
-
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    if (!data.email || !data.password) return;
-
+  const onSubmit = (data: any) => {
     const displayName = `${data.firstName}  ${data.lastName}`;
-    // setData((prevData) => {
-    //   return { ...prevData, displayName: displayName };
-    // });
-
-    dispatch(authActions.setSignupUser({ ...data, displayName: displayName }));
-
+    dispatch(authActions.setSignupUser({ ...data, displayName }));
     navigate("/SignUpUserType");
   };
 
   return (
     <div className={classes.main}>
       <div className={classes.form}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className={classes.formContent}>
             <Logo width="125" height="125" />
             <h1>הרשמה למערכת</h1>
@@ -67,52 +53,80 @@ const SignUp = () => {
                 mt: 2,
                 display: "flex",
                 flexDirection: "row",
+                justifyContent: "space-between",
               }}
             >
-              <Box sx={{ ml: 2 }}>
-                <TextField
-                  placeholder="שם פרטי*"
-                  onChange={handleChange}
-                  name="firstName"
-                />
+              <Box sx={{ ml: 3 }}>
+                <>
+                  <TextField
+                    placeholder="שם פרטי*"
+                    {...register("firstName", {
+                      required: REQUIRED_FIELD_MESSAGE,
+                    })}
+                    type="text"
+                  />
+                  {errors.firstName && (
+                    <span style={{ position: "relative" }}>
+                      {errors.firstName.message}
+                    </span>
+                  )}
+                </>
               </Box>
-              <TextField
-                placeholder="שם משפחה*"
-                onChange={handleChange}
-                name="lastName"
-              />
+              <Box sx={{ flexGrow: 1 }}>
+                <>
+                  <TextField
+                    placeholder="שם משפחה*"
+                    {...register("lastName", {
+                      required: REQUIRED_FIELD_MESSAGE,
+                    })}
+                    type="text"
+                  />
+                  {errors.lastName && <span>{errors.lastName.message}</span>}
+                </>
+              </Box>
             </Box>
-
-            <Box sx={{ mt: 2, width: 1 / 2.5 }}></Box>
-            <Box sx={{ mt: 2 }}>
-              <TextField
-                placeholder="קישור לפרופיל לינקדאין*"
-                onChange={handleChange}
-                name="linkedin"
-              />
+            <Box>
+              <>
+                <TextField
+                  placeholder="קישור לפרופיל לינקדאין*"
+                  {...register("linkedin")}
+                  type="text"
+                />
+                {errors.linkedin && <span>{errors.linkedin.message}</span>}
+              </>
             </Box>
-            <Box sx={{ mt: 2 }}>
-              <TextField
-                placeholder="נייד*"
-                onChange={handleChange}
-                name="phone"
-              />
+            <Box>
+              <>
+                <TextField placeholder="נייד*" {...register("phone")} />
+                {errors.phone && <span>{errors.phone.message}</span>}
+              </>
             </Box>
-            <Box sx={{ mt: 2 }}>
-              <TextField
-                placeholder="כתובת מייל*"
-                onChange={handleChange}
-                name="email"
-              />
+            <Box>
+              <>
+                <TextField
+                  placeholder="כתובת מייל*"
+                  {...register("email", {
+                    required: REQUIRED_FIELD_MESSAGE,
+                    minLength: 5,
+                  })}
+                  type="text"
+                />
+                {errors.email && <span>{errors.email.message}</span>}
+              </>
             </Box>
-            <Box sx={{ mt: 2 }}>
-              <TextField
-                placeholder="סיסמא*"
-                onChange={handleChange}
-                name="password"
-              />
+            <Box>
+              <>
+                <TextField
+                  placeholder="סיסמא*"
+                  {...register("password", {
+                    required: REQUIRED_FIELD_MESSAGE,
+                  })}
+                  type="password"
+                />
+                {errors.password && <span>{errors.password.message}</span>}
+              </>
             </Box>
-            <Box sx={{ mt: 2 }}>
+            <Box>
               <RoundedButton>להמשך הרשמה</RoundedButton>
             </Box>
             <div className={classes.signupContainer}>
