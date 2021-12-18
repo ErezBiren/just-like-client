@@ -112,7 +112,9 @@ const Login = () => {
             <div className={classes.spacing}>
               <div className={classes.signupContainer}>
                 <span>לא נרשמת?</span>
-                <Link to="/signup">להרשמה</Link>
+                <Link to="/signup">
+                  <b>להרשמה</b>
+                </Link>
               </div>
             </div>
           </div>

@@ -85,7 +85,9 @@ const SignUpUserType = () => {
             <RoundedButton style={{ width: "50px" }}>להרשמה</RoundedButton>
             <div className={classes.signupContainer}>
               <span>כבר נרשמת?</span>
-              <a href="#">להתחברות</a>
+              <a href="#">
+                <b>להתחברות</b>
+              </a>
             </div>
           </div>
         </form>

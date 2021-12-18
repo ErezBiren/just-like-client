@@ -131,7 +131,9 @@ const SignUp = () => {
             </Box>
             <div className={classes.signupContainer}>
               <span>נרשמת?</span>
-              <Link to="/login">להתחברות</Link>
+              <Link to="/login">
+                <b>להתחברות</b>
+              </Link>
             </div>
           </div>
         </form>
