@@ -15,6 +15,7 @@ const SignUpUserType = () => {
   const signupUser = useSelector((state: RootState) => state.auth.signupUser);
 
   const [data, setData] = useState<User>({
+    id: "",
     firstName: "",
     lastName: "",
     phone: "",

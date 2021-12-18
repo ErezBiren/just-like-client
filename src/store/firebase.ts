@@ -132,17 +132,17 @@ const saveUser = async (user: User) => {
     const res = await axios.post(baseUrl + "/users",
       {
         fields: {
-          firstName: { stringValue: user.firstName || "" },
-          lastName: { stringValue: user.lastName || "" },
-          displayName: { stringValue: user.displayName || "" },
-          email: { stringValue: user.email },
-          linkedin: { stringValue: user.linkedin || "" },
+          firstName: user.firstName || "",
+          lastName: user.lastName || "",
+          displayName: user.displayName || "",
+          email: user.email,
+          linkedin: user.linkedin || "",
           //createTime: { timestampValue: user.createTime  },
-          photoURL: { stringValue: user.photoURL || "" },
-          //accessToken: { stringValue: user.accessToken },
-          userType: { stringValue: user.userType || "" },
-          interest: { stringValue: user.interest || "" },
-          seciality: { stringValue: user.speciality || "" },
+          photoURL: user.photoURL || "",
+          //accessToken:  user.accessToken ,
+          userType: user.userType || "",
+          interest: user.interest || "",
+          seciality: user.speciality || "",
         }
       });
 

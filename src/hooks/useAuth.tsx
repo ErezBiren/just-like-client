@@ -34,7 +34,7 @@ const useAuth = () => {
 
     if (loggedUser) {
       //user.accessToken = loggedUser.accessToken;
-      user.id = loggedUser.id;
+      // user.id = loggedUser.id;
       user.email = loggedUser.email;
       user.photoURL = loggedUser.photoURL;
 
