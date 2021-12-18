@@ -22,6 +22,7 @@ const SignUp = () => {
     linkedin: "",
     email: "",
     password: "",
+    displayName: "",
   });
 
   const handleChange = (e: any) => {
@@ -44,7 +45,12 @@ const SignUp = () => {
 
     if (!data.email || !data.password) return;
 
-    dispatch(authActions.setSignupUser(data));
+    const displayName = `${data.firstName}  ${data.lastName}`;
+    // setData((prevData) => {
+    //   return { ...prevData, displayName: displayName };
+    // });
+
+    dispatch(authActions.setSignupUser({ ...data, displayName: displayName }));
 
     navigate("/SignUpUserType");
   };

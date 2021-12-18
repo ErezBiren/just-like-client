@@ -1,7 +1,8 @@
+import React from "react";
 import classes from "./RoundedButton.module.css";
 
-const RoundedButton = (props: any) => {
+const RoundedButton = React.memo((props) => {
   return <button className={classes.button}>{props.children}</button>;
-};
+});
 
 export default RoundedButton;

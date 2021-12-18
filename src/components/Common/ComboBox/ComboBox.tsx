@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./ComboBox.module.css";
 
 interface ComboBoxParams {
@@ -8,7 +9,7 @@ interface ComboBoxParams {
   handleChange: any;
 }
 
-const ComboBox = (params: ComboBoxParams) => {
+const ComboBox = React.memo<ComboBoxParams>((params) => {
   const { placeHolder, items, value, name, handleChange } = params;
 
   return (
@@ -29,6 +30,6 @@ const ComboBox = (params: ComboBoxParams) => {
         ))}
     </select>
   );
-};
+});
 
 export default ComboBox;

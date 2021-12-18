@@ -45,6 +45,11 @@ export interface Notification {
   userId: string;
 }
 
+export interface Message {
+
+}
+
+
 export interface Department {
   id: string;
   name: string;
@@ -70,6 +75,8 @@ export interface User {
   interest?: string;
   speciality?: string;
   createTime?: Date;
+  messages?: Message[];
+  notifications?: Notification[];
 }
 
 export interface SubsribersData {

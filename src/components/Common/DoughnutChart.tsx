@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import classes from "./DoughnutChart.module.css";
@@ -8,7 +9,7 @@ interface DougnatParams {
   datasetsData: number[];
 }
 
-const DoughnutChart = (props: DougnatParams) => {
+const DoughnutChart = React.memo<DougnatParams>((props) => {
   const { labels, backgroundColors, datasetsData } = props;
 
   const [numOfMissions, setNumOfMissions] = useState(0);
@@ -60,6 +61,6 @@ const DoughnutChart = (props: DougnatParams) => {
       </div>
     </div>
   );
-};
+});
 
 export default DoughnutChart;

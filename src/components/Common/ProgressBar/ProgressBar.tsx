@@ -1,10 +1,12 @@
+import React from "react";
+
 interface ProgressBarParams {
   bgcolor: string;
   completed: number;
   percentage: number;
 }
 
-const ProgressBar = (props: ProgressBarParams) => {
+const ProgressBar = React.memo<ProgressBarParams>((props) => {
   const { bgcolor, completed, percentage } = props;
 
   const percentageStyles = {
@@ -53,6 +55,6 @@ const ProgressBar = (props: ProgressBarParams) => {
       </div>
     </div>
   );
-};
+});
 
 export default ProgressBar;

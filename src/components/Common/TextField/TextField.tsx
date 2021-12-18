@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./TextField.module.css";
 interface TextFieldParams {
   name: string;
@@ -5,7 +6,7 @@ interface TextFieldParams {
   onChange: any;
 }
 
-const TextField = (params: TextFieldParams) => {
+const TextField = React.memo<TextFieldParams>((params) => {
   const { name, placeholder, onChange } = params;
 
   return (
@@ -14,8 +15,8 @@ const TextField = (params: TextFieldParams) => {
       className={classes.input}
       placeholder={placeholder}
       onChange={onChange}
-    ></input>
+    />
   );
-};
+});
 
 export default TextField;
