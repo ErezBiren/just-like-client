@@ -1,4 +1,9 @@
-export const validateEmail = (email: string) => {
-  var re = /\S+@\S+\.\S+/;
-  return re.test(email);
-};
+
+export const phoneRegExp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+export const emailRegExp = /\S+@\S+\.\S+/;
+
+
+
+
+
+

@@ -1,18 +1,19 @@
 import Logo from "../../assets/justLikeLogo.svg?component";
-import TreeView from "@mui/lab/TreeView";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import { TreeItem, treeItemClasses, TreeItemProps } from "@mui/lab";
-import { Box, styled, SvgIconProps, Typography } from "@mui/material";
-import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import CircleIcon from "@mui/icons-material/Circle";
-import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import classes from "./Sidebar.module.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
 import AssignmentTurnedInOutlinedIcon from "@mui/icons-material/AssignmentTurnedInOutlined";
+import CircleIcon from "@mui/icons-material/Circle";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
+import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
+import { TreeItem, treeItemClasses, TreeItemProps } from "@mui/lab";
+import TreeView from "@mui/lab/TreeView";
+import { Box, styled, SvgIconProps, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { RootState } from "../../store/store";
+import classes from "./Sidebar.module.css";
 
 declare module "react" {
   interface CSSProperties {

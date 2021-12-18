@@ -1,14 +1,15 @@
-import classes from "./Users.module.css";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import { Link } from "@material-ui/core";
-import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
-import { useState, useEffect } from "react";
-import { UserCategory, UserStatus } from "../store/models";
-import { useDispatch } from "react-redux";
 import MoreIcon from "../assets/dashboard/more-horizontal.svg?component";
+import { Link } from "@material-ui/core";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Moment from "moment";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
 import { getUsers } from "../store/dashboardActions";
+import { UserCategory, UserStatus } from "../store/models";
+import { RootState } from "../store/store";
+import classes from "./Users.module.css";
 
 const columns: GridColDef[] = [
   {

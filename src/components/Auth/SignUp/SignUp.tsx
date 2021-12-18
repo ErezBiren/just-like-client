@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import BackgroundImage from "../../../assets/auth/team.svg?component";
 import Logo from "../../../assets/justLikeLogo.svg?component";
+import { Box } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { emailRegExp, phoneRegExp } from "../../../services/validationsService";
+import { authActions } from "../../../store/auth-Slice";
+import { User } from "../../../store/models";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
-import { validateEmail } from "../../../services/validationsService";
-import { Box } from "@mui/material";
-import { User } from "../../../store/models";
-import { authActions } from "../../../store/auth-Slice";
-import { useForm } from "react-hook-form";
 
 const REQUIRED_FIELD_MESSAGE = "שדה חובה";
 
@@ -97,7 +97,10 @@ const SignUp = () => {
             </Box>
             <Box>
               <>
-                <TextField placeholder="נייד*" {...register("phone")} />
+                <TextField
+                  placeholder="נייד*"
+                  {...register("phone", { pattern: phoneRegExp })}
+                />
                 {errors.phone && <span>{errors.phone.message}</span>}
               </>
             </Box>
@@ -107,7 +110,7 @@ const SignUp = () => {
                   placeholder="כתובת מייל*"
                   {...register("email", {
                     required: REQUIRED_FIELD_MESSAGE,
-                    minLength: 5,
+                    pattern: emailRegExp,
                   })}
                   type="text"
                 />

@@ -1,17 +1,18 @@
+import BackgroundImage from "../../../assets/auth/coupleDancing.svg?component";
+import GoogleIcon from "../../../assets/auth/googleLogin.svg?component";
+import LinkedinIcon from "../../../assets/auth/linkedinLogin.svg?component";
+import Logo from "../../../assets/justLikeLogo.svg?component";
+import { Box } from "@mui/system";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import BackgroundImage from "../../../assets/auth/coupleDancing.svg?component";
-import Logo from "../../../assets/justLikeLogo.svg?component";
-import LinkedinIcon from "../../../assets/auth/linkedinLogin.svg?component";
-import GoogleIcon from "../../../assets/auth/googleLogin.svg?component";
+
+import useAuth from "../../../hooks/useAuth";
+import { validateEmail } from "../../../services/validationsService";
 import ButtonWithIcon from "../../Common/ButtonWithIcon/ButtonWithIcon";
-import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import HorizontalSeparatorWithText from "../../Common/HorizontalSeparatorWithText/HorizontalSeparatorWithText";
+import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./Login.module.css";
-import { validateEmail } from "../../../services/validationsService";
-import { Box } from "@mui/system";
-import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();

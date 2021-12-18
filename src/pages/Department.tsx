@@ -1,16 +1,16 @@
-import { useParams } from "react-router";
-import { useSelector } from "react-redux";
-import classes from "./Department.module.css";
-import { RootState } from "../store/store";
-import { useEffect, useState } from "react";
-import { Project } from "../store/models";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import MissionTable from "../components/Dashboard/MissionsTable";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 
+import MissionTable from "../components/Dashboard/MissionsTable";
+import { Project } from "../store/models";
+import { RootState } from "../store/store";
+import classes from "./Department.module.css";
 
 const Department = () => {
 

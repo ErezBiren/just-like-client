@@ -1,18 +1,19 @@
-import classes from "./Home.module.css";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Dashboard from "../components/Dashboard/Dashboard";
 import UserPlusIcon from "../assets/dashboard/user-plus.svg?component";
-import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { Route, Routes } from "react-router-dom";
-import Users from "./Users";
-import Department from "./Department";
-import NotificationsIcon from "../components/TopBar/NotificationsIcon";
+import { InputAdornment, TextField } from "@mui/material";
 import { Avatar } from "@mui/material";
-import MessagesIcon from "../components/TopBar/MessagesIcon";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { Route, Routes } from "react-router-dom";
+
+import Dashboard from "../components/Dashboard/Dashboard";
+import Sidebar from "../components/Sidebar/Sidebar";
+import MessagesIcon from "../components/TopBar/MessagesIcon";
+import NotificationsIcon from "../components/TopBar/NotificationsIcon";
 import { User } from "../store/models";
+import { RootState } from "../store/store";
+import Department from "./Department";
+import classes from "./Home.module.css";
+import Users from "./Users";
 
 const Home = () => {
   const user: User = useSelector((state: RootState) => state.auth.user);

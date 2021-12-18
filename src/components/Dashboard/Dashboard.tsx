@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { getDepartments } from "../../store/dashboardActions";
 import { RootState } from "../../store/store";
 import DoughnutChart from "../Common/DoughnutChart";
 import RoundedButton from "../Common/RoundedButton/RoundedButton";
 import Subscribers from "../Subscribers/Subscribers";
 import classes from "./Dashboard.module.css";
 import DepartmentCard from "./DepartmentCard";
-import { getDepartments } from "../../store/dashboardActions";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
