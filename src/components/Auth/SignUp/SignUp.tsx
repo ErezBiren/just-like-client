@@ -5,14 +5,16 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { emailRegExp, phoneRegExp } from "../../../services/validationsService";
+import {
+  emailRegExp,
+  phoneRegExp,
+  REQUIRED_FIELD_MESSAGE,
+} from "../../../services/validationsService";
 import { authActions } from "../../../store/auth-Slice";
 import { User } from "../../../store/models";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";
-
-const REQUIRED_FIELD_MESSAGE = "שדה חובה";
 
 const defaultValues = {
   firstName: "",
@@ -32,6 +34,7 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    mode: "all",
     defaultValues,
   });
 
@@ -66,7 +69,7 @@ const SignUp = () => {
                     type="text"
                   />
                   {errors.firstName && (
-                    <span style={{ position: "relative" }}>
+                    <span className={classes.error}>
                       {errors.firstName.message}
                     </span>
                   )}
@@ -81,7 +84,11 @@ const SignUp = () => {
                     })}
                     type="text"
                   />
-                  {errors.lastName && <span>{errors.lastName.message}</span>}
+                  {errors.lastName && (
+                    <span className={classes.error}>
+                      {errors.lastName.message}
+                    </span>
+                  )}
                 </>
               </Box>
             </Box>
@@ -92,16 +99,27 @@ const SignUp = () => {
                   {...register("linkedin")}
                   type="text"
                 />
-                {errors.linkedin && <span>{errors.linkedin.message}</span>}
+                {errors.linkedin && (
+                  <span className={classes.error}>
+                    {errors.linkedin.message}
+                  </span>
+                )}
               </>
             </Box>
             <Box>
               <>
                 <TextField
                   placeholder="נייד*"
-                  {...register("phone", { pattern: phoneRegExp })}
+                  {...register("phone", {
+                    pattern: {
+                      value: phoneRegExp,
+                      message: "מספר טלפון לא תקין",
+                    },
+                  })}
                 />
-                {errors.phone && <span>{errors.phone.message}</span>}
+                {errors.phone && (
+                  <span className={classes.error}>{errors.phone.message}</span>
+                )}
               </>
             </Box>
             <Box>
@@ -110,11 +128,16 @@ const SignUp = () => {
                   placeholder="כתובת מייל*"
                   {...register("email", {
                     required: REQUIRED_FIELD_MESSAGE,
-                    pattern: emailRegExp,
+                    pattern: {
+                      value: emailRegExp,
+                      message: 'כתובת דוא"ל לא חוקית',
+                    },
                   })}
                   type="text"
                 />
-                {errors.email && <span>{errors.email.message}</span>}
+                {errors.email && (
+                  <span className={classes.error}>{errors.email.message}</span>
+                )}
               </>
             </Box>
             <Box>
@@ -126,15 +149,19 @@ const SignUp = () => {
                   })}
                   type="password"
                 />
-                {errors.password && <span>{errors.password.message}</span>}
+                {errors.password && (
+                  <span className={classes.error}>
+                    {errors.password.message}
+                  </span>
+                )}
               </>
             </Box>
             <Box>
               <RoundedButton>להמשך הרשמה</RoundedButton>
             </Box>
             <div className={classes.signupContainer}>
-              <span>נרשמת?</span>
-              <Link to="/login">
+              <span>נרשמת? </span>
+              <Link to="/login" className={classes.link}>
                 <b>להתחברות</b>
               </Link>
             </div>

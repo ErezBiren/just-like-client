@@ -9,6 +9,7 @@ import { RootState } from "../../../store/store";
 import ComboBox from "../../Common/ComboBox/ComboBox";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import classes from "./SignUpUserType.module.css";
+import { Link } from "react-router-dom";
 
 const SignUpUserType = () => {
   const { registerWithEmailAndPasswordAuth } = useAuth();
@@ -86,9 +87,9 @@ const SignUpUserType = () => {
             <RoundedButton style={{ width: "50px" }}>להרשמה</RoundedButton>
             <div className={classes.signupContainer}>
               <span>כבר נרשמת?</span>
-              <a href="#">
+              <Link to="/login" className={classes.link}>
                 <b>להתחברות</b>
-              </a>
+              </Link>
             </div>
           </div>
         </form>

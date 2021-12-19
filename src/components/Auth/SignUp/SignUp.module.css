@@ -53,3 +53,12 @@ h1 {
   flex-direction: row;
   justify-content: center;
 }
+
+.error {
+  color: var(--validation-error-color);
+  font-weight: 700;
+}
+
+.link {
+  color: var(--main-color);
+}

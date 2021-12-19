@@ -53,3 +53,12 @@ h1 {
 .spacing {
   margin-top: 5%;
 }
+
+.error {
+  color: var(--validation-error-color);
+  font-weight: 700;
+}
+
+.link {
+  color: var(--main-color);
+}
