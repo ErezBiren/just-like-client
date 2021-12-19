@@ -44,9 +44,15 @@ const SignUpUserType = () => {
     registerWithEmailAndPasswordAuth(data);
   };
 
-  const userTypes = ["ג'וניורים\\מחפשי עבודה", "מתנדבים", "מנהלי משימות"];
-  const interests = ["חיפוש עבודה", "הרצאות", "סדנאות"];
+  const userTypes = [
+    "סוג משתמש*",
+    "ג'וניורים\\מחפשי עבודה",
+    "מתנדבים",
+    "מנהלי משימות",
+  ];
+  const interests = ["תחומי ענין*", "חיפוש עבודה", "הרצאות", "סדנאות"];
   const specialties = [
+    "תחום התמחות",
     "תכנון",
     "אפיון ועיצוב",
     "ניהול מוצר",
