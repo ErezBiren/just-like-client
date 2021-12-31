@@ -11,7 +11,6 @@ import {
   REQUIRED_FIELD_MESSAGE,
 } from "../../../services/validationsService";
 import { authActions } from "../../../store/auth-Slice";
-import { User } from "../../../store/models";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import TextField from "../../Common/TextField/TextField";
 import classes from "./SignUp.module.css";

@@ -1,12 +1,13 @@
-import classes from "./NotificationsIcon.module.css";
-import { Avatar, IconButton, Modal } from "@mui/material";
-import Menu from "@mui/material/Menu";
-import { useState } from "react";
 import BellIcon from "../../assets/dashboard/bell.svg?component";
-import Badge from "@mui/material/Badge";
 import CircleIcon from "@mui/icons-material/Circle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Avatar, IconButton, Modal } from "@mui/material";
+import Badge from "@mui/material/Badge";
+import Menu from "@mui/material/Menu";
+import { useState } from "react";
+
 import NotificationDetails from "./NotificationDetails";
+import classes from "./NotificationsIcon.module.css";
 
 const NotificationsIcon = () => {
   const [anchorElement, setAnchorElement] = useState<null | HTMLElement>(null);
@@ -84,7 +85,10 @@ const NotificationsIcon = () => {
       </Menu>
 
       <Modal open={openModal} onClose={handleClose}>
-        <NotificationDetails onClose={handleClose} />
+        <div>
+          {/* without the div there is error by material ui */}
+          <NotificationDetails onClose={handleClose} />
+        </div>
       </Modal>
     </div>
   );

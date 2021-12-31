@@ -1,13 +1,9 @@
 import { useDispatch } from "react-redux";
-import {
-  signInWithGoogle,
-  signInWithEmailPassword,
-  registerWithEmailAndPassword,
-  saveUser,
-} from "../store/firebase";
-import { authActions } from "../store/auth-Slice";
-import { User } from "../store/models";
 import { useNavigate } from "react-router-dom";
+
+import { authActions } from "../store/auth-Slice";
+import { registerWithEmailAndPassword, saveUser, signInWithEmailPassword, signInWithGoogle } from "../store/firebase";
+import { User } from "../store/models";
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -34,7 +30,7 @@ const useAuth = () => {
 
     if (loggedUser) {
       //user.accessToken = loggedUser.accessToken;
-      // user.id = loggedUser.id;
+      user.id = loggedUser.id;
       user.email = loggedUser.email;
       user.photoURL = loggedUser.photoURL;
 

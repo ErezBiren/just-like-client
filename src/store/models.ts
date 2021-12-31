@@ -60,8 +60,8 @@ export interface Department {
 export interface User {
   category?: UserCategory;
   id?: string;
-  firstName: string;
-  lastName: string;
+  firstName?: string;
+  lastName?: string;
   displayName?: string;
   email?: string;
   phone?: string;

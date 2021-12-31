@@ -2,6 +2,7 @@ import BackgroundImage from "../../../assets/auth/girlSittingWifhLaptop.svg?comp
 import Logo from "../../../assets/justLikeLogo.svg?component";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import useAuth from "../../../hooks/useAuth";
 import { User } from "../../../store/models";
@@ -9,7 +10,6 @@ import { RootState } from "../../../store/store";
 import ComboBox from "../../Common/ComboBox/ComboBox";
 import RoundedButton from "../../Common/RoundedButton/RoundedButton";
 import classes from "./SignUpUserType.module.css";
-import { Link } from "react-router-dom";
 
 const SignUpUserType = () => {
   const { registerWithEmailAndPasswordAuth } = useAuth();

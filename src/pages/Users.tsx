@@ -7,11 +7,12 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 import { getUsers } from "../store/dashboardActions";
-import { UserCategory, UserStatus } from "../store/models";
+import { User, UserCategory, UserStatus } from "../store/models";
 import { RootState } from "../store/store";
 import classes from "./Users.module.css";
 
 const columns: GridColDef[] = [
+  { field: 'id', headerName: 'ID', width: 90 },
   {
     field: "fullName",
     headerName: "שם מלא",
@@ -110,11 +111,11 @@ const Users = () => {
   const dispatch = useDispatch();
   const users = useSelector((state: RootState) => state.dashboard.users);
 
-  const [rows, setRows] = useState<any[]>([]);
+  const [rows, setRows] = useState<User[]>([]);
 
-  useEffect(() => {
-    dispatch(getUsers());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getUsers());
+  // }, []);
 
   useEffect(() => {
     const newUsers = users?.map((m) => ({
@@ -135,14 +136,16 @@ const Users = () => {
     <div className={classes.root}>
       <h2>מאגר רשומים</h2>
       <div className={classes.dataGrid}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
-          disableSelectionOnClick
-        />
+        {users && (
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        )}
       </div>
     </div>
   );

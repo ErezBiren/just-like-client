@@ -1,27 +1,16 @@
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
 import axios from 'axios';
-
-import {
-  doc,
-  setDoc,
-  getDoc,
-  // where,
-  // query,
-  // collection,
-} from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import {
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-// import { FacebookAuthProvider } from "firebase/auth";
+import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+
+// import { User } from "firebase/auth";
 // import { GithubAuthProvider } from "firebase/auth";
 import { User } from "./models";
+
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -53,7 +42,7 @@ const fetchUsers = async () => {
 };
 
 const signInWithGoogle = async () => {
-  let loggedUser;
+  let loggedUser: User | undefined;
 
   try {
     const provider = new GoogleAuthProvider();
@@ -64,17 +53,24 @@ const signInWithGoogle = async () => {
     // The signed-in user info.
     const user = credentials.user;
 
+    let splitedName = credentials.user.displayName?.split(" ");
+    if (!splitedName) {
+      splitedName = ["", ""];
+    }
+
     loggedUser = {
-      displayName: user.displayName,
-      email: user.email,
-      photoURL: user.photoURL,
+      displayName: user.displayName || undefined,
+      email: user.email || undefined,
+      photoURL: user.photoURL || undefined,
       accessToken: user.refreshToken,
+      firstName: splitedName[0] || undefined,
+      lastName: splitedName[1] || undefined,
     };
 
     await setDoc(doc(db, "users", user.uid), loggedUser);
+
   } catch (error: any) {
     console.error(error.message);
-    loggedUser = null;
   }
 
   return loggedUser;
@@ -114,8 +110,6 @@ const registerWithEmailAndPassword = async (
       email: user.email || undefined,
       photoURL: user.photoURL || undefined,
       accessToken: user.refreshToken,
-      firstName: "",
-      lastName: ""
     };
 
     return loggedUser;
@@ -124,35 +118,61 @@ const registerWithEmailAndPassword = async (
   }
 };
 
-
-
 const saveUser = async (user: User) => {
   try {
 
-    const res = await axios.post(baseUrl + "/users",
-      {
-        fields: {
-          firstName: user.firstName || "",
-          lastName: user.lastName || "",
-          displayName: user.displayName || "",
-          email: user.email,
-          linkedin: user.linkedin || "",
-          //createTime: { timestampValue: user.createTime  },
-          photoURL: user.photoURL || "",
-          //accessToken:  user.accessToken ,
-          userType: user.userType || "",
-          interest: user.interest || "",
-          seciality: user.speciality || "",
-        }
-      });
+    const dbUser = {
+      firstName: user.firstName || "",
+      lastName: user.lastName || "",
+      displayName: user.displayName || "",
+      email: user.email,
+      linkedin: user.linkedin || "",
+      //createTime: { timestampValue: user.createTime  },
+      photoURL: user.photoURL || "",
+      //accessToken:  user.accessToken ,
+      userType: user.userType || "",
+      interest: user.interest || "",
+      seciality: user.speciality || "",
+    };
 
-  } catch (error) {
+    if (user.id) {
+      await setDoc(doc(db, 'users', user.id), dbUser);
+    }
+    else {
+      await addDoc(collection(db, "users",), dbUser);
+    }
+  } catch (error: any) {
     console.error(error);
   }
-
-  // const usersRef = doc(db, "users", "1");
-  // setDoc(usersRef, user, { merge: true });
 }
+//REST API
+// const saveUser = async (user: User) => {
+//   try {
+
+//     const res = await axios.post(baseUrl + "/users",
+//       {
+//         fields: {
+//           firstName: user.firstName || "",
+//           lastName: user.lastName || "",
+//           displayName: user.displayName || "",
+//           email: user.email,
+//           linkedin: user.linkedin || "",
+//           //createTime: { timestampValue: user.createTime  },
+//           photoURL: user.photoURL || "",
+//           //accessToken:  user.accessToken ,
+//           userType: user.userType || "",
+//           interest: user.interest || "",
+//           seciality: user.speciality || "",
+//         }
+//       });
+
+//   } catch (error: any) {
+//     console.error(error.response.data.error.message);
+//   }
+
+// const usersRef = doc(db, "users", "1");
+// setDoc(usersRef, user, { merge: true });
+// }
 
 // const sendPasswordResetEmail = async (email) => {
 //   try {
